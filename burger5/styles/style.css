@@ -158,8 +158,10 @@ margin-top: 35px;
   height: 55px;
   position: absolute;
   padding: 10px 30px;
-  top:102%;
-  left:81%;
+  /* top:102%; */
+  /* left:81%; */
+  bottom: -60px;
+  right: 0;
   font-weight: bold;
   background: black;
   color: white;
