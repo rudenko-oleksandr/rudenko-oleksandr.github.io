@@ -1,0 +1,42 @@
+* {
+    margin: 0; 
+    padding: 0; 
+    font-family: Arial, sans-serif;
+}
+
+body{
+    position:relative;           /*додано код - для вертикального і горизонтального центрування*/
+}
+
+.myblock {
+    width: 400px;
+    height: 200px;
+    border: 3px solid black;
+    border-radius: 4px;
+
+    position: absolute;   /*додано код - для вертикального і горизонтального центрування*/
+    top: 50%;             /*додано код - для вертикального і горизонтального центрування*/
+    left: 50%;            /*додано код - для вертикального і горизонтального центрування*/
+    transform: translate(-50%, 200%);       /*додано код - для вертикального і горизонтального центрування*/
+    
+}
+
+.lemon {
+    width: 180px;
+    height: 180px;
+    margin: 10px;
+    background: url(https://cdn4.iconfinder.com/data/icons/Limon_iContainer/512/Grapefruit.png);
+    background-size: contain;
+    background-position: 50%;
+    border-radius: 5px;
+    float: left;
+}
+.about-lemon h3 {
+    text-align: center;
+    padding: 10px 0px;
+}
+.about-lemon p {
+    font-size: 12px;
+    line-height: 150%
+    margin 20px 0px;
+}
