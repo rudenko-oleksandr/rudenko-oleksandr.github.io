@@ -1,2 +1,0 @@
-<!-- Як змінити ширину сайту в залежності від розміру екрану -->
-<!-- https://rullan.in.ua/veb/faq/230-yak-zminiti-shirinu-saytu-v-zalezhnosti-vid-rozmiru-ekranu.html -->
