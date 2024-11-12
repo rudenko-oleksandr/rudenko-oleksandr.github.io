@@ -1,0 +1,29 @@
+
+div{
+  margin: 300px;
+  padding-top: 30px;
+  font-size: 64px;
+  position: relative;
+}
+div::before{
+  content: " ";
+  display: block;
+  height: 100px;
+  width: 100px;
+  border-radius: 50%;
+  top: -30px;
+  left: -53px;
+  position: absolute;
+  border: 50px solid rgb(255, 242, 0);
+}
+div::after{
+  content: " ";
+  display: block;
+  height: 200px;
+  width: 200px;
+  position: absolute;
+  border-radius: 50%;
+  top: -80px;
+  left: -105px;
+  border: 50px solid rgb(0, 34, 255);
+}
