@@ -121,6 +121,26 @@ hr{
   margin-top: 15px;
 }
 
+.btn{
+    display: block;
+/*   position: relative; */
+  width: 130px;
+  height: 40px;
+  border:2px solid blue;
+  text-align: center;
+  color:white;
+  text-decoration:none;
+  line-height: 40px;
+  background: blue;
+  transition:all .3s ease;
+}
+
+.btn:hover{
+  background: white;
+  color:black;
+  transition:all .3s ease;
+}
+
 .content-item_personal-data__right-side ul li{
   margin-bottom: 15px;
 }
