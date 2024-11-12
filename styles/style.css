@@ -121,26 +121,41 @@ hr{
   margin-top: 15px;
 }
 
+.content-item_personal-data__right-side ul li{
+  margin-bottom: 15px;
+}
+
+.my_works{
+  margin: 20px 0;
+}
+
+/* .title_task::not(:first-child){
+  margin: 55px 0 3px 0;
+} */
+
+.title_task{
+  margin: 5px 0 3px 0;
+}
+
 .btn{
-    display: block;
+  display: block;
 /*   position: relative; */
-  width: 130px;
-  height: 40px;
-  border:2px solid blue;
-  text-align: center;
-  color:white;
-  text-decoration:none;
-  line-height: 40px;
-  background: blue;
-  transition:all .3s ease;
+width: 130px;
+height: 40px;
+border:2px solid #3f6592;
+text-align: center;
+color:white;
+text-decoration:none;
+line-height: 40px;
+background: #3f6592;
+transition:all .3s ease;
 }
 
 .btn:hover{
-  background: white;
-  color:black;
-  transition:all .3s ease;
+background: white;
+color:black;
+transition:all .3s ease;
 }
-
 .content-item_personal-data__right-side ul li{
   margin-bottom: 15px;
 }
