@@ -16,8 +16,8 @@
 
 /* Footer */
 
-@import url(<linkhref="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap"rel="stylesheet">);
-@import url(<linkhref="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"rel="stylesheet">);
+@import url(https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap );
+@import url(https://fonts.googleapis.com/css2?family=Metal+Mania&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap);
 
 /* @font-face{
   src: url("fonts/MetalMania-Regular.ttf")
@@ -56,8 +56,8 @@ header {
   background-size: contain;
   background-size: 1290px 500px;
   background-position: 425px;
-  /* background-attachment:scroll; */
 }
+
 li {
   display: inline-block;
   padding: 20px 30px;
@@ -66,6 +66,7 @@ li {
   background-color: black;
   opacity: 0.7;
 }
+
 li:hover {
   /*   display : inline-block; */
   padding: 20px 30px;
@@ -73,10 +74,10 @@ li:hover {
   background-color: red;
   opacity: 0.8;
 }
+
 h1 {
   display: block;
   padding: 93px 0 65px;
-  /* background-color: rgb(77, 76, 76); */
   text-align: center;
   font-family: "Metal Mania", serif;
   font-weight: 400;
@@ -85,20 +86,9 @@ h1 {
   /*   font-family:MetalMania-Regular; */
 }
 
-/* header> .container> .button {
-  display: inline-block;
-  padding: 20px 40px;
-  background-color: red;
- margin-left: 825px;
-margin-bottom: 100px;
-                                  margin:0 auto;
-text-transform:uppercase;
-} */
-
 header > .container > a {
   padding: 20px 40px;
   background-color: red;
-
   margin: 0px auto 50px;
   text-transform: uppercase;
 }
@@ -222,12 +212,11 @@ h2 {
   background-color: #383838;
   text-align: center;
 }
+
 #gallery > .container > {
   position: relative;
-  /* display: block; */
-  /* margin-left: 225px; */
-  /* padding-left: 225px; */
 }
+
 #gallery > .container > .photo {
   display: inline-block;
   margin: 9px;
@@ -264,15 +253,6 @@ h2 {
   left: 484px;
 }
 
-/* #subscribe>.container{
-  background-image: url(/img/bg-02.jpg);
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-size: contain;
-  background-size: 1290px 600px;
-  background-position:  25px
-} */
-
 #subscribe {
   width: 100vw;
   height: 290px;
@@ -286,18 +266,21 @@ h2 {
   background-size: 1290px 600px;
   background-position:  25px
 }
+
 #subscribe > .container > .pitch > h2 {
   display: block;
   padding: 75px 0 45px;
   background-color: rgb(77, 76, 76);
   text-align: center;
 }
+
 #subscribe > .container > .pitch > p {
   display: block;
   padding: 0 0 25px 0;
   background-color: rgb(77, 76, 76);
   text-align: center;
 }
+
 [type="submit"] {
   font-family: "Open Sans", sans-serif;
   font-optical-sizing: auto;
@@ -306,6 +289,7 @@ h2 {
   font-variation-settings: "wdth" 300;
   text-transform: uppercase;
 }
+
 #subscribe > .container > form > button {
   display: inline-block;
   padding: 12px 20px;
@@ -316,8 +300,6 @@ h2 {
 #subscribe > .container > form > input {
   display: inline-block;
   padding: 12px 20px;
-  /* background-color: red; */
-  /* margin-left: 40px; */
 }
 
 #subscribe > .container > form {
