@@ -1,0 +1,349 @@
+/*
+* Background Images - Practice
+* CSS Styles
+*
+*/
+
+/* General */
+
+/* Header */
+
+/* Tour */
+
+/* Gallery */
+
+/* Subscribe */
+
+/* Footer */
+
+@import url(<linkhref="https://fonts.googleapis.com/css2?family=Metal+Mania&display=swap"rel="stylesheet">);
+@import url(<linkhref="https://fonts.googleapis.com/css2?family=Metal+Mania&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap"rel="stylesheet">);
+
+/* @font-face{
+  src: url("fonts/MetalMania-Regular.ttf")
+    font-family:MetalMania-Regular;
+} */
+body {
+  width: 100vw;
+  background-color: #383838;
+  color: white;
+}
+a {
+  text-decoration: none;
+  color: white;
+  opacity: 1;
+}
+
+.menu {
+  /* margin-left:525px; */
+  /*   display:block;
+  margin: 0 auto; */
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-left: -28rem;
+}
+
+header {
+  width: 100vw;
+  margin-bottom: 150px;
+  background-color: #383838;
+  display: block;
+  margin: 0 auto;
+
+  background-image: url(/img/bg-01.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-size: 1290px 500px;
+  background-position: 425px;
+  /* background-attachment:scroll; */
+}
+li {
+  display: inline-block;
+  padding: 20px 30px;
+  margin-left: 3px;
+  /*   margin-top:10px; */
+  background-color: black;
+  opacity: 0.7;
+}
+li:hover {
+  /*   display : inline-block; */
+  padding: 20px 30px;
+  /*   margin-top:10px; */
+  background-color: red;
+  opacity: 0.8;
+}
+h1 {
+  display: block;
+  padding: 93px 0 65px;
+  /* background-color: rgb(77, 76, 76); */
+  text-align: center;
+  font-family: "Metal Mania", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 96px;
+  /*   font-family:MetalMania-Regular; */
+}
+
+/* header> .container> .button {
+  display: inline-block;
+  padding: 20px 40px;
+  background-color: red;
+ margin-left: 825px;
+margin-bottom: 100px;
+                                  margin:0 auto;
+text-transform:uppercase;
+} */
+
+header > .container > a {
+  padding: 20px 40px;
+  background-color: red;
+
+  margin: 0px auto 50px;
+  text-transform: uppercase;
+}
+
+header > .container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+#tour {
+  width: 1295px;
+  background-color: #383838;
+  display: block;
+  margin: 0 auto;
+  position: relative;
+  left: 210px;
+}
+.tour-card {
+  width: 195px;
+  height: 200px;
+  display: inline-block;
+  margin: 0 5px;
+  background-color: black;
+  padding-top: 20px;
+  padding-left: 10px;
+}
+.tour-town {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings: "wdth" 300;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+}
+
+.tour-place {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings: "wdth" 300;
+  margin-bottom: 10px;
+}
+
+.tour-date {
+  font-style: italic;
+  margin-bottom: 10px;
+}
+
+#tour > .container > .tour-card > .button {
+  display: inline-block;
+  padding: 12px 24px;
+  background-color: red;
+  margin-left: 19px;
+  margin-top: 10px;
+  text-transform: uppercase;
+}
+#tour > .container:not(:first-child) {
+  display: flex;
+  flex-direction: row;
+  /*   justify-content: center; */
+  /*   display: block; */
+  /*   align-items: center; */
+  /* padding: 0 30px; */
+  /*   position:relative;
+  left:30px; */
+}
+
+#tour > .container > h2 {
+  display: block;
+  padding: 37px 0 37px;
+  background-color: #383838;
+  text-align: center;
+  position: relative;
+  right: 210px;
+}
+.madrid{
+  background-image: url(/img/tour/madrid.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+  /* background-size: 1290px 500px;
+  background-position: 425px; */
+}
+.turin{
+  background-image: url(/img/tour/turin.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.hamburg{
+  background-image: url(/img/tour/hamburg.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+.krakow{
+  background-image: url(/img/tour/krakow.jpg);
+  background-repeat: no-repeat;
+  background-size: contain;
+}
+
+h2 {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings: "wdth" 300;
+  text-transform: uppercase;
+  font-size: 24px;
+}
+
+#gallery {
+  width: 1295px;
+  background-color: #383838;
+  display: block;
+  margin: 0 auto;
+}
+#gallery > .container > h2 {
+  display: block;
+  padding: 55px 0 48px;
+  background-color: #383838;
+  text-align: center;
+}
+#gallery > .container > {
+  position: relative;
+  /* display: block; */
+  /* margin-left: 225px; */
+  /* padding-left: 225px; */
+}
+#gallery > .container > .photo {
+  display: inline-block;
+  margin: 9px;
+}
+
+[href*="gallery-01"] {
+  position: relative;
+  top: -10px;
+  left: 160px;
+}
+[href*="gallery-02"] {
+  position: relative;
+  top: -10px;
+  left: 160px;
+}
+[href*="gallery-03"] {
+  position: relative;
+  top: -10px;
+  left: 160px;
+}
+[href*="gallery-04"] {
+  position: relative;
+  top: 310px;
+  left: -806px;
+}
+[href*="gallery-05"] {
+  position: relative;
+  top: -10px;
+  left: 482px;
+}
+[href*="gallery-06"] {
+  position: relative;
+  top: -10px;
+  left: 484px;
+}
+
+/* #subscribe>.container{
+  background-image: url(/img/bg-02.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-size: 1290px 600px;
+  background-position:  25px
+} */
+
+#subscribe {
+  width: 100vw;
+  height: 290px;
+  background-color: rgb(205, 50, 146);
+  display: block;
+  margin: 0 auto;
+  background-image: url(/img/bg-02.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-size: 1290px 600px;
+  background-position:  25px
+}
+#subscribe > .container > .pitch > h2 {
+  display: block;
+  padding: 75px 0 45px;
+  background-color: rgb(77, 76, 76);
+  text-align: center;
+}
+#subscribe > .container > .pitch > p {
+  display: block;
+  padding: 0 0 25px 0;
+  background-color: rgb(77, 76, 76);
+  text-align: center;
+}
+[type="submit"] {
+  font-family: "Open Sans", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: weight;
+  font-style: normal;
+  font-variation-settings: "wdth" 300;
+  text-transform: uppercase;
+}
+#subscribe > .container > form > button {
+  display: inline-block;
+  padding: 12px 20px;
+  background-color: red;
+  /* margin-left: 40px; */
+}
+
+#subscribe > .container > form > input {
+  display: inline-block;
+  padding: 12px 20px;
+  /* background-color: red; */
+  /* margin-left: 40px; */
+}
+
+#subscribe > .container > form {
+  display: block;
+  padding: 0 0 70px 0;
+  background-color: rgb(77, 76, 76);
+  text-align: center;
+}
+
+footer {
+  width: 100vw;
+  height: 95px;
+  background-color: #383838;
+  display: block;
+  margin: 0 auto;
+}
+
+footer > .container > .social {
+  display: block;
+  padding: 25px 0 0 0;
+  background-color: #383838;
+  text-align: center;
+}
+footer > .container > .copyright {
+  display: block;
+  padding: 20px 0 0 0;
+  background-color: #383838;
+  text-align: center;
+}
