@@ -1,0 +1,218 @@
+* {
+  box-sizing: content-box;
+  text-transform: uppercase;
+  font-family: sans-serif;
+}
+body {
+  margin: 207px;
+  display: flex;
+  justify-content: center;
+}
+a{
+  text-decoration: none;
+}
+
+.wraper {
+  width: 1106px;
+  height: 710px;
+  padding-left: 70px;
+  padding-right: 70px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: rgb(255, 255, 255);
+}
+
+h1 {
+  margin-top: 10px;
+  font-size: 28px;
+  text-transform: uppercase;
+}
+
+.conteiner-items {
+  position: relative;
+  width: 1073px;
+  height: 510px;
+  margin-bottom: 26px;
+  display: flex;
+  justify-content: center;
+  align-items: stretch;
+  border: 1px solid #d3d3d3;
+  /* vertical-align: text-top; */
+  background-color: red;
+}
+
+.swiper {
+  width: 33px;
+  height: 33px;
+  border: 1px solid #d3d3d3;
+  border-radius: 50%;
+  line-height: 33px; /* центруємо текст*/
+  text-align: center; /* центруємо текст*/
+  cursor: pointer;
+  color: #d3d3d3;
+}
+
+.swiper_right {
+  position: relative;
+  top: 127px;
+  left: 540px;
+  z-index: 1;
+  background-color: rgb(255, 255, 255);
+}
+
+.swiper_right:hover{
+  position: relative;
+  top: 127px;
+  left: 540px;
+  z-index: 1;
+  background-color: #d3d3d3;
+  color: white;
+}
+
+.swiper_left {
+  position: relative;
+  top: 160px;
+  left: -540px;
+  z-index: 1;
+  background-color: rgb(255, 255, 255);
+}
+
+.swiper_left:hover{
+  position: relative;
+  top: 160px;
+  left: -540px;
+  z-index: 1;
+  background-color: #d3d3d3;
+  color: white;
+}
+
+.content-item {
+  width: 25%;
+  padding: 0 18px;
+  border: 1px solid #d3d3d3;
+  display: flex;
+  flex-direction: column;
+  align-self: stretch;
+  align-items: center;
+  position: relative;
+  background-color: rgb(255, 255, 255);
+}
+
+.deal {
+}
+
+.deal_novelty {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  text-align: center;
+  position: absolute;
+  right: 10px;
+  top: -40px;
+  line-height: 70px;
+  font-size: 12px;
+  border: 4px solid rgb(255, 255, 255);
+  color: white;
+  background-color: #86b022;
+}
+
+.deal_hit-sales {
+  width: 70px;
+  height: 70px;
+  border-radius: 50%;
+  text-align: center;
+  display: flex;
+  align-items: center;
+  position: absolute;
+  right: 10px;
+  top: -40px;
+  font-size: 12px;
+  border: 4px solid rgb(255, 255, 255);
+  color: white;
+  background-color: #009de1;
+}
+
+.subject {
+  margin-top: 43px;
+  margin-bottom: 22px;
+  font-size: 18px;
+  text-align: center;
+  color: #998782;
+}
+
+.subject::after {
+  content: "";
+  display: block;
+  width: 230px;
+  margin: 43px auto 0;
+  border: 1px solid #d3d3d3;
+
+}
+
+.image {
+  margin-bottom: 24px;
+}
+
+.product_name {
+  margin-bottom: 36px;
+  font-size: 18px;
+  font-weight: bold;
+  color: #009be3;
+}
+
+.prise {
+  margin-bottom: 26px;
+}
+
+.old_price {
+  font-size: 14px;
+  text-decoration: line-through;
+
+}
+
+.actual_prise {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.currency_actual-prise {
+  font-size: 16px;
+}
+
+.the-price-is-formed {
+}
+
+.button_on-sale-soon {
+  display: flex;
+  width: 140px;
+  height: 40px;
+  text-align: center;
+  line-height: 20px; /* задаємо значення в 20px, яке в 2 рази (адже маємо 2 рядки) менше за висоту height:20; */
+  margin-bottom: 40px;
+  background-color: #cc3399;
+  color: #ffffff;
+  font-size: 14px;
+  /* padding: 5px 10px; */
+}
+
+.button_basket {
+  display: flex;
+  justify-content: center;
+  width: 140px;
+  height: 40px;
+  text-align: center;
+  line-height: 40px;
+  margin-bottom: 40px;
+  background-color: #f0e524;
+}
+
+.deal {
+}
+
+.deal_novelty {
+}
+
+.deal_hit-sales {
+}
