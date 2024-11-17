@@ -180,15 +180,12 @@ figure{
   background-size: cover;
 }
 
-#subscribe > .container > .pitch > h2{
-  margin-top: 75px;
-}
-
 #subscribe > .container{
   display: flex;
   flex-direction: row;
   justify-content:space-between;
   flex-wrap:wrap;
+  justify-content: center;
 }
 
 #subscribe > .container > .pitch{
@@ -197,10 +194,8 @@ figure{
   align-items: center;
 }
 
-#subscribe > .container {
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+#subscribe > .container > .pitch > h2{
+  margin-top: 75px;
 }
 
 input {
