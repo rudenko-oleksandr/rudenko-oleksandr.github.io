@@ -176,11 +176,22 @@ height: 303px;
 #subscribe{
   height: 310px;
   margin-top: 40px;
-  /*background-image: url(../img/bg.png), url(../img/bg-02.jpg);*/
+  position: relative;
+}
+
+#subscribe::before {
+  content: "";
   background-image:url(../img/bg-02.jpg);
   background-position: center;
   background-size: cover;
-opacity: 0.4;
+  height: 310px;
+  opacity: 0.5;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: absolute;
+  z-index: -1;   
 }
 
 #subscribe > .container{
