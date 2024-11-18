@@ -166,18 +166,21 @@ h2 {
 }
 
 figure{
-  width: 400px;
-  margin: 5px;
+  width: 303px;
+height: 303px;
   display: block;
-  margin: 0 auto;
+/*margin: 0 auto;*/
+  margin: 10px 10px;
 }
 
 #subscribe{
   height: 310px;
   margin-top: 40px;
-  background-image: url(../img/bg-02.jpg), url(../img/bg.png);
+  /*background-image: url(../img/bg.png), url(../img/bg-02.jpg);*/
+  background-image:url(../img/bg-02.jpg);
   background-position: center;
   background-size: cover;
+opacity: 0.4;
 }
 
 #subscribe > .container{
@@ -227,4 +230,9 @@ footer > .container > .copyright{
   display: flex;
   flex-direction: row;
   justify-content:center;
+}
+
+footer > .container{
+max-width: 100vw;
+background-color: #202020;
 }
