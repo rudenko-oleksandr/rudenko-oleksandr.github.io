@@ -4,93 +4,71 @@
     <title>Картки замовлень</title>
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta charset="utf-8" />
+    <title>Карточки товарів</title>
     <link href="css/reset.css" rel="stylesheet" />
     <link href="css/style.css" rel="stylesheet" />
   </head>
 
-  <body>
-    <div class="wraper">
-      <h1>Обов`язково додайте своє замовлення</h1>
-
-      <div class="swiper swiper_left"><</div>
-      <div class="swiper swiper_right">></div>
-      <div class="conteiner-items">
-        <div class="content-item">
-          <div class="deal_novelty">НОВИНКА</div>
-          <div class="subject">Математика</div>
-          <!-- <hr> -->
-          <div class="gorisont_line"></div>
-          <div class="image">
-            <img src="img/math.png" alt="котосови" />
-          </div>
-          <div class="product_name">Котосови</div>
-          <div class="prise">
-            <span class="old_price"></span>
-            <span class="actual_prise"></span>
-            <span class="the-price-is-formed">&nbsp</span>
-          </div>
-          <!-- <div class="button_on-sale-soon">Незабаром у продажу</div> -->
-          <div>
-            <a href="#" class="button_on-sale-soon">Незабаром у продажі</a>
-          </div>
-        </div>
-
-        <div class="content-item">
-          <!-- <div class="deal"></div> -->
-          <div class="subject">подарунок</div>
-          <div class="gorisont_line"></div>
-          <div class="image">
-            <img src="img/g1.png" alt="набір розумника" />
-          </div>
-          <div class="product_name">Набір розумника</div>
-          <div class="prise">
-            <span class="old_price">210 грн</span>
-            <span class="actual_prise">190 </span
-            ><span class="currency_actual-prise">грн</span>
-            <span class="the-price-is-formed">&nbsp</span>
-          </div>
-          <!-- <div class="button_basket">У корзину</div> -->
-          <div>
-            <a href="#" class="button_basket">У корзину</a>
-          </div>
-        </div>
-
-        <div class="content-item">
-          <div class="deal_hit-sales">хіт продажів</div>
-          <div class="subject">Усний рахунок</div>
-          <div class="gorisont_line"></div>
-          <div class="image">
-            <img src="img/turbo.png" alt="турборахунок" />
-          </div>
-          <div class="product_name">Турборахунок</div>
-          <div class="prise">
-            <span class="old_price"></span>
-            <span class="actual_prise">320 </span
-            ><span class="currency_actual-prise">грн</span>
-            <span class="the-price-is-formed">&nbsp</span>
-          </div>
-          <!-- <div class="button_basket">У корзину</div> -->
-          <a href="#" class="button_basket">У корзину</a>
-        </div>
-
-        <div class="content-item">
-          <div class="deal_hit-sales">хіт продажів</div>
-          <div class="subject">Букви та читання</div>
-          <div class="gorisont_line"></div>
-          <div class="image">
-            <img src="img/zb.png" alt="тваринобукви" />
-          </div>
-          <div class="product_name">Тваринобукви</div>
-          <div class="prise">
-            <span class="old_price"></span>
-            <span class="actual_prise">450 </span
-            ><span class="currency_actual-prise">грн</span>
-            <span class="the-price-is-formed">&nbsp</span>
-          </div>
-          <!-- <div class="button_basket">У корзину</div> -->
-          <a href="#" class="button_basket">У корзину</a>
-        </div>
+  <h1>Обов`язково додайте своє замовлення</h1>
+  <div class="container">
+    <div class="card">
+      <div class="stick stick__new">новинка</div>
+      <div class="category">математика</div>
+      <div class="card-img">
+        <img src="img/math.png" alt="котосови" />
       </div>
+      <div class="card-title">котосови</div>
+      <div class="card-price">
+        <div class="card-price__old"></div>
+        <div class="card-price__actual"></div>
+      </div>
+      <div class="card-btn card-btn__before-the-sale">незабаром у продажі</div>
     </div>
-  </body>
+
+    <div class="card">
+      <!-- <div class="stick"></div> -->
+      <div class="category">подарунок</div>
+      <div class="card-img">
+        <img src="img/g1.png" alt="набір розумника" />
+      </div>
+      <div class="card-title">Набір розумника</div>
+      <div class="card-price">
+        <div class="card-price__old">210 грн </div>
+        <div class="card-price__actual"> 190 грн</div>
+      </div>
+      <div class="card-btn card-btn__in-basket">У корзину</div>
+    </div>
+
+    <div class="card">
+      <div class="stick stick__hit">хіт продажів</div>
+      <div class="category">Усний рахунок</div>
+      <div class="card-img">
+        <img src="img/turbo.png" alt="турборахунок" />
+      </div>
+      <div class="card-title">Турборахунок</div>
+      <div class="card-price">
+        <div class="card-price__old"></div>
+        <div class="card-price__actual">320 грн</div>
+      </div>
+      <div class="card-btn card-btn__in-basket">У корзину</div>
+    </div>
+
+    <div class="card">
+      <div class="stick stick__hit">хіт продажів</div>
+      <div class="category">Букви та читання</div>
+      <div class="card-img">
+        <img src="img/zb.png" alt="тваринобукви" />
+      </div>
+      <div class="card-title">Тваринобукви</div>
+      <div class="card-price">
+        <div class="card-price__old"></div>
+        <div class="card-price__actual">450 грн</div>
+      </div>
+      <div class="card-btn card-btn__in-basket">У корзину</div>
+    </div>
+    <div class="swipe swipe__left"><</div>
+    <div class="swipe swipe__right">></div>
+  </div>
+
+  <body></body>
 </html>
