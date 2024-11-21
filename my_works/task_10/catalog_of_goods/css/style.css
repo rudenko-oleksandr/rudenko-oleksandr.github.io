@@ -8,7 +8,6 @@
 img {
   display: block;
   width: 100%;
-  /* margin-bottom: 20px; */
 }
 h1 {
   /* display: block;
@@ -39,13 +38,13 @@ h1 {
   border-right: 1px solid grey ;
 } */
 
-.card:not(:last-child) {
-  border-right: 1px solid grey;
+.card:not(:first-child) {
+  border-left: 1px solid grey;
 }
 
 .category {
   height: 100px;
-  margin-bottom: 20px;
+  margin-bottom: 10px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -80,7 +79,6 @@ h1 {
 
 .card-img{
   cursor: pointer;
-  min-height: 300px;
 }
 
 .card-title {
@@ -89,8 +87,6 @@ h1 {
   align-items: center;
   cursor: pointer;
   color: #009be3;
-  min-height: 20px;
-  margin-bottom: 20px;
 }
 
 .card-price {
@@ -98,15 +94,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
-  min-height: 20px;
-  margin-bottom: 20px;
 }
-
-.card-price__old{
-  font-weight: normal;
-  text-decoration: line-through;
-}
-
 
 .card-btn {
   width: 150px;
@@ -120,8 +108,6 @@ h1 {
   display: flex; /*вирівнювання тексту*/
   justify-content: center; /*вирівнювання тексту*/
   align-items: center;
-  min-height: 20px;
-  margin-bottom: 40px;
 }
 
 .card-btn__before-the-sale {
