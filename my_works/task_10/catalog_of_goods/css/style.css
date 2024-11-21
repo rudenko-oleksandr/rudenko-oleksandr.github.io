@@ -12,10 +12,11 @@ img {
 h1 {
   /* display: block;
   margin: 0 auto; */
-  margin: 20px 0;
+  margin: 20px 0 40px;
+font-size:24px;
   text-align: center;
   text-transform: uppercase;
-  font-weight: bold;
+  font-weight: normal;
 }
 
 .container {
