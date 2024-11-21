@@ -8,12 +8,13 @@
 img {
   display: block;
   width: 100%;
+  /* margin-bottom: 20px; */
 }
 h1 {
   /* display: block;
   margin: 0 auto; */
   margin: 20px 0 40px;
-font-size:24px;
+  font-size:24px;
   text-align: center;
   text-transform: uppercase;
   font-weight: normal;
@@ -46,7 +47,7 @@ font-size:24px;
 
 .category {
   height: 100px;
-  margin-bottom: 10px;
+  margin-bottom: 20px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -81,6 +82,7 @@ font-size:24px;
 
 .card-img{
   cursor: pointer;
+  min-height: 300px;
 }
 
 .card-title {
@@ -89,6 +91,8 @@ font-size:24px;
   align-items: center;
   cursor: pointer;
   color: #009be3;
+  min-height: 20px;
+  margin-bottom: 20px;
 }
 
 .card-price {
@@ -96,7 +100,15 @@ font-size:24px;
   display: flex;
   justify-content: center;
   align-items: center;
+  min-height: 20px;
+  margin-bottom: 20px;
 }
+
+.card-price__old{
+  font-weight: normal;
+  text-decoration: line-through;
+}
+
 
 .card-btn {
   width: 150px;
@@ -110,6 +122,8 @@ font-size:24px;
   display: flex; /*вирівнювання тексту*/
   justify-content: center; /*вирівнювання тексту*/
   align-items: center;
+  min-height: 20px;
+  margin-bottom: 40px;
 }
 
 .card-btn__before-the-sale {
@@ -145,7 +159,7 @@ font-size:24px;
 
 .swipe:hover {
   position: absolute;
-  top: 83px;
+  top: 100px;
   background-color: #d3d3d3;
   color: white;
 }
