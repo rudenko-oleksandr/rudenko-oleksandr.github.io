@@ -211,6 +211,7 @@ input {
   margin-top: 25px;
   padding: 12px 20px;
   font-size: 20px;
+  text-transform: none;
 }
 
 button{
