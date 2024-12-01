@@ -584,7 +584,7 @@ footer {
 /* end _footer */
 
 /* start _modal */
-.modal {
+/*.modal {
 	width: 80vw;
 	height: 50vh;
 	display: flex;
@@ -601,5 +601,5 @@ footer {
 	right: 20px;
 	top: 20px;
 	cursor: pointer;
-}
+}*/
 /* end _modal */
