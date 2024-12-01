@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:ital,wght@0,100;0,300;0,400;0,700;0,900;1,100;1,300;1,400;1,700;1,900&display=swap');
+@import url('_variables.css');
+@import url('_hero-section.css');
+@import url('_main.css');
+@import url('_footer.css');
+@import url('_modal.css');
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+body {
+	font-family: var(--main-font);
+	color: var(--dark-color);
+}
+img,
+video {
+	display: block;
+	width: 100%;
+}
+a {
+	text-decoration: none;
+	color: inherit;
+}
+ul {
+	list-style: none;
+}
+.content-wrap {
+	width: 100%;
+	max-width: 1100px;
+	padding: 0 20px;
+	margin: 0 auto;
+}
+.d-flex {
+	display: flex;
+}
+.space-between {
+	justify-content: space-between;
+}
+.item-center {
+	align-items: center;
+	justify-content: center;
+}
+.uppercase {
+	text-transform: uppercase;
+}
+.relative {
+	position: relative;
+}
+.absolute {
+	position: absolute;
+}
+.mb-24 {
+	margin-bottom: 24px;
+}
+.hide-mobile {
+	display: none;
+}
+.hide {
+	display: none;
+}
+.show-menu {
+	left: 0;
+	transition: all .7s ease;
+}
+.cover-bg {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+
+/*----- Media Queries ------*/
+@media (min-width: 1100px) {
+	.content-wrap {
+		padding: 0;
+	}
+	header {
+		height: 100px;
+	}
+	.hide-mobile {
+		display: block;
+	}
+	.hide-desktop {
+		display: none;
+	}
+	.main-menu {
+		gap: 20px;
+		font-weight: 700;
+		font-size: .875rem;
+	}
+	.header-content {
+		height: calc(100vh - 100px);
+		margin-top: -100px;
+	}
+	.header-content-title {
+		font-size: 4.5rem;
+	}
+	.header-content-subtitle {
+		font-size: 1.5rem;
+	}
+	section.two-columns {
+		padding: 94px 0;
+	}
+}
+/*----- End of Media Queries ------*/
