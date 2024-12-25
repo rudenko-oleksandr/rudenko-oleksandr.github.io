@@ -1,28 +1,19 @@
 .first-screen {
-	max-height: 100vh;
+	height: 100vh;
 	background-color: var(--dark-color_08);
-	/* background-color: #141414; */
 }
 
 /* header{
 } */
-
-.top-banner__background {
-	margin: 0 -16px;
-	background-color: var(--dark-color_08);
-	/* background-color: #141414;
-	background-color: #a2e03e; */
-	/* ! ПЕРЕВІРОЧНИЙ КОЛІР	*/
-}
-
 .top-banner {
 	min-height: 74px;
 	/** min- для того, щоб при маштабуванні контент в top-banner__content не виходив за межі даного блоку*/
-	padding: 41px 24px 15px;
+	padding: 41px 8px 15px;
 	/**внутрішній відступ по відношенню до content-wrap*/
 	gap: 10px;
-
-
+	border-bottom: 1px solid var(--dark-color_15);
+	/* border-bottom: 1px solid #fa0000; */
+	background-color: var(--dark-color_08);
 }
 
 .top-banner__content {
@@ -31,7 +22,7 @@
 	/* padding: 0 8px ; */
 	/* letter-spacing: -3%; */
 	color: var(--grey-color_60);
-	/* color: #98989A; */
+
 }
 
 .btn__arrow {
@@ -44,9 +35,6 @@
 	/* border: 1px solid #141414; */
 }
 
-/* .content-wrap>.nav-bar {
-	background-color: bisque;
-} */
 
 .nav-bar {
 	height: 75px;
@@ -86,25 +74,20 @@
 
 
 .mobile-menu {
-	width: calc(100vw - 32px);
-	height: calc(100vh - 180px);
+	width: 100vw;
+	height: calc(100vh - 185px - 70px);
 	left: -10000px;
-	top: 79px;
+	top: 185px;
 	flex-direction: column;
 	gap: 20px;
 	font-size: 3rem;
 	color: var(--grey-color_50);
 	transition: all 1.2s ease;
-	background-color: var(--dark-color_08);
-	/* background-color: #e01818; */
 }
 
 .btn__header-mobile {
 	left: -10000px;
-	/* background-color: var(--dark-color_08); */
 }
-
-
 
 #btnMobileHeader>.btn {
 	width: 103px;
@@ -129,141 +112,154 @@
 	margin-left: 4px;
 }
 
-/* .first-screen__content{ */
-/* height: 805px; */
-/* background-color: brown; */
-/* } */
-
+/*! start - first-screen__wiht-out-header*/
 
 .title-banner {
-	/* height: 440px; */
-	/* background-color: rgb(188, 190, 51); */
+	padding: 40px 0 30px;
 }
 
-.indicators-items {
-	min-height: 128px;
-	/* background-color: rgb(93, 42, 165); */
-}
-
-.first-screen__content_solar-corona {
-	/* height: 568px; */
-	/* background-color: rgb(42, 106, 165); */
-}
-
-.first-screen__information-board {
-	/* height: 237px; */
-	/* background-color: rgb(74, 72, 73); */
-}
-
-.first-screen__content_main_under-title {
-	padding-top: 40px;
+.title-container__under-title {
 	font-size: 18px;
-	font-weight: 500;
 	font-family: var(--help-font);
+	color: var(--dark-color_40);
+	margin-bottom: 14px;
 }
 
-.first-screen__content_main_title {
-	padding-top: 14px;
+.title-container__title {
 	font-size: 30px;
-	font-weight: 500;
 	font-family: var(--help-font);
+	color: var(--light_color_absolute);
+	font-weight: 500;
+	margin-bottom: 10px;
 }
 
-.first-screen__content_main_title-banner_content {
-	padding-top: 10px;
-	padding-bottom: 30px;
+.title-container__content {
+	font-size: 14px;
+	font-family: var(--main-font);
+	color: var(--grey-color_50);
 }
 
 .indicators-item {
-	flex: 1 1 33.333333%;
+	max-height: 118px;
+	/* flex: 1 1 33.333333%; */
+	border-top: 1px solid red;
+	/* border-bottom: 1px solid red;    !на видалення */
+	padding: 20px 0;
+	/* border-left: 1px solid red; */
+
+
 }
 
-.vertical-line {
-	border-left: 1px solid #141414;
-	border-right: 1px solid #141414;
-}
-
-.item-1 {
-	padding: 20px 20px 20px 0;
+.indicators-item+.item-2 {
+	border-left: 1px solid red;
+	border-right: 1px solid red;
 }
 
 .item-2,
 .item-3 {
-	padding: 20px;
+	padding-left: 20px;
+	padding-right: 20px;
+}
+
+.item-1 {
+	padding-right: 20px;
 }
 
 .indicators-item_number {
 	font-size: 24px;
 	font-weight: 600;
-	/* padding-top: 20px; */
+	color: var(--light_color_absolute);
 }
-
-
 
 .indicators-item_number>span {
 	color: var(--corporate-color);
 }
 
-.first-screen__content_solar-corona_background {
-	min-height: 358px;
-	margin: 0 -16px;
-	/* padding-top: 100px;
-	padding-left: 40px;
-	padding-right: 40px;
-	padding-bottom: 40px; */
-	padding: 100px 40px 40px;
-	/* border-left: 1px solid red; */
-	background-image: url(../sourse/img/solar-corona.svg);
-	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url(../sourse/img/solar-corona.svg);
-	background-size: cover;
-	background-position: top right;
-	background-repeat: no-repeat;
-}
-
-.users-img {
-	width: 134px;
-	min-height: 56px;
-	border-radius: 100px;
-	background-color: var(--dark-color_10);
-	/* background-color: #1A1A1A;
-	background-color: #787171; */
-	/* ! ПЕРЕВІРОЧНИЙ КОЛІР	*/
-	border: 1px solid var(--dark-color_15);
-	/* border: 1px solid #262626;
-	border: 1px solid #ff0000; */
-	/* ! ПЕРЕВІРОЧНИЙ КОЛІР	*/
-}
-
-.first-screen__content_solar-corona_title {
-	margin: 20px 0 4px;
-	size: 18px;
-	font-weight: 500;
-}
-.first-screen__content_solar-corona_subscribe{
+.indicators-item_subscribe {
 	font-size: 14px;
 	font-weight: 400;
 }
 
-.btn-main-indicators {
-	margin-top: 20px;
-	border-radius: 8px;
-	font-size: 14px;
-	/* margin: 20px 40px 40px; */
-	background-color: var(--dark-color_08);
-	/* background-color: #141414;
-	background-color: #6769d5; */
-	/* min-width: 310px; */
-	height: 49px;
-	display: flex;
-	/* Використовуємо Flexbox */
-	justify-content: center;
-	/* Центрування по горизонталі */
-	align-items: center;
-	/* Центрування по вертикалі */
+/* .wrapper__content_solar-corona{
+	padding-bottom: 40px;
+	padding-left: 40px;
+	padding-right: 40px;
+} */
+
+.content_solar-corona {
+	display: grid;
+	grid-template-rows: 1fr auto;
+	background-image: url(../sourse/img/solar-corona.svg);
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.7)), url(../sourse/img/solar-corona.svg);
+	background-size: cover;
+	background-position: top right;
+	background-repeat: no-repeat;
+	/* padding-bottom: 0 40px 40px; */
+}
+
+.users-img {
+	width: 134px;
+	height: 56px;
+	border-radius: 100px;
+	background-color: var(--dark-color_10);
+	border: 1px solid var(--dark-color_15);
+	border: 1px solid red;
+	margin: 120px 40px 20px;
 }
 
 
+.user-img {
+	width: 40px;
+	height: 40px;
+	border-radius: 50%;
+	border: 1px solid var(--dark-color_40);
+	border: 1px solid red;
+	background-size: cover;
+	background-position: top right;
+	background-repeat: no-repeat;
+	top: 7px;
+}
 
-.information-board__item {
-	flex: 1 1 33.333333%;
+.user-img-1 {
+	background-image: url(../sourse/img/image/image-1.jpg);
+	left: 6px;
+}
+
+.user-img-2 {
+	background-image: url(../sourse/img/image/image-2.jpg);
+	left: 33px;
+}
+
+.user-img-3 {
+	background-image: url(../sourse/img/image/image-3.jpg);
+	left: 61px;
+}
+
+.user-img-4 {
+	background-image: url(../sourse/img/image/image-4.jpg);
+	left: 86px;
+}
+
+.first-screen__content_solar-corona_title {
+	font-size: 18px;
+	font-weight: 500;
+	color: var(--light_color_absolute);
+	margin: 0 40px 4px;
+}
+
+.first-screen__content_solar-corona_subscribe {
+	font-size: 14px;
+	font-weight: 400;
+	margin: 4px 40px 20px;
+}
+
+.btn-main-indicators {
+	margin: 20px 40px 40px;
+	background-color: var(--dark-color_08);
+	border-radius: 8px;
+	border: 1px solid var(--dark-color_15);
+	padding: 14px 85px;
+	justify-content: center;
+	align-items: center;
+	gap: 4px;
 }
