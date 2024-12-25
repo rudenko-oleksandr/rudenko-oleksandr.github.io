@@ -1,0 +1,269 @@
+.first-screen {
+	max-height: 100vh;
+	background-color: var(--dark-color_08);
+	/* background-color: #141414; */
+}
+
+/* header{
+} */
+
+.top-banner__background {
+	margin: 0 -16px;
+	background-color: var(--dark-color_08);
+	/* background-color: #141414;
+	background-color: #a2e03e; */
+	/* ! ПЕРЕВІРОЧНИЙ КОЛІР	*/
+}
+
+.top-banner {
+	min-height: 74px;
+	/** min- для того, щоб при маштабуванні контент в top-banner__content не виходив за межі даного блоку*/
+	padding: 41px 24px 15px;
+	/**внутрішній відступ по відношенню до content-wrap*/
+	gap: 10px;
+
+
+}
+
+.top-banner__content {
+	size: 12px;
+	line-height: 18px;
+	/* padding: 0 8px ; */
+	/* letter-spacing: -3%; */
+	color: var(--grey-color_60);
+	/* color: #98989A; */
+}
+
+.btn__arrow {
+	min-width: 20px;
+	height: 20px;
+	background-image: url("../sourse/img/arrow.svg");
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-position: center;
+	/* border: 1px solid #141414; */
+}
+
+/* .content-wrap>.nav-bar {
+	background-color: bisque;
+} */
+
+.nav-bar {
+	height: 75px;
+
+}
+
+.logo-header {
+	width: 125.23px;
+	height: 35px;
+	/* background-color: aqua; */
+	margin: 20px 0 20px;
+}
+
+.logo-header__img {
+	width: 35px;
+	height: 35px;
+}
+
+.logo-header__title {
+	font-size: 12.01px;
+	font-weight: 700;
+	color: var(--light_color_absolute);
+	margin: auto 0;
+	padding-left: 8.97px;
+}
+
+.burger-icons {
+	/* background-color: brown; */
+	width: 500px;
+	height: 50px;
+}
+
+.main-menu .burger-menu {
+	color: var(--grey-color_50);
+	/* color: #fff; */
+}
+
+
+.mobile-menu {
+	width: calc(100vw - 32px);
+	height: calc(100vh - 180px);
+	left: -10000px;
+	top: 79px;
+	flex-direction: column;
+	gap: 20px;
+	font-size: 3rem;
+	color: var(--grey-color_50);
+	transition: all 1.2s ease;
+	background-color: var(--dark-color_08);
+	/* background-color: #e01818; */
+}
+
+.btn__header-mobile {
+	left: -10000px;
+	/* background-color: var(--dark-color_08); */
+}
+
+
+
+#btnMobileHeader>.btn {
+	width: 103px;
+	height: 41px;
+	border-radius: 6px;
+	size: 14px;
+	font-weight: 500;
+	background-color: var(--corporate-color);
+}
+
+.burger-menu {
+	min-width: 25.5px;
+	height: 17px;
+	color: var(--light_color_absolute);
+	cursor: pointer;
+	margin-right: 0;
+}
+
+#closeIcon {
+	font-size: 25.5px;
+	margin-top: -4px;
+	margin-left: 4px;
+}
+
+/* .first-screen__content{ */
+/* height: 805px; */
+/* background-color: brown; */
+/* } */
+
+
+.title-banner {
+	/* height: 440px; */
+	/* background-color: rgb(188, 190, 51); */
+}
+
+.indicators-items {
+	min-height: 128px;
+	/* background-color: rgb(93, 42, 165); */
+}
+
+.first-screen__content_solar-corona {
+	/* height: 568px; */
+	/* background-color: rgb(42, 106, 165); */
+}
+
+.first-screen__information-board {
+	/* height: 237px; */
+	/* background-color: rgb(74, 72, 73); */
+}
+
+.first-screen__content_main_under-title {
+	padding-top: 40px;
+	font-size: 18px;
+	font-weight: 500;
+	font-family: var(--help-font);
+}
+
+.first-screen__content_main_title {
+	padding-top: 14px;
+	font-size: 30px;
+	font-weight: 500;
+	font-family: var(--help-font);
+}
+
+.first-screen__content_main_title-banner_content {
+	padding-top: 10px;
+	padding-bottom: 30px;
+}
+
+.indicators-item {
+	flex: 1 1 33.333333%;
+}
+
+.vertical-line {
+	border-left: 1px solid #141414;
+	border-right: 1px solid #141414;
+}
+
+.item-1 {
+	padding: 20px 20px 20px 0;
+}
+
+.item-2,
+.item-3 {
+	padding: 20px;
+}
+
+.indicators-item_number {
+	font-size: 24px;
+	font-weight: 600;
+	/* padding-top: 20px; */
+}
+
+
+
+.indicators-item_number>span {
+	color: var(--corporate-color);
+}
+
+.first-screen__content_solar-corona_background {
+	min-height: 358px;
+	margin: 0 -16px;
+	/* padding-top: 100px;
+	padding-left: 40px;
+	padding-right: 40px;
+	padding-bottom: 40px; */
+	padding: 100px 40px 40px;
+	/* border-left: 1px solid red; */
+	background-image: url(../sourse/img/solar-corona.svg);
+	background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.9)), url(../sourse/img/solar-corona.svg);
+	background-size: cover;
+	background-position: top right;
+	background-repeat: no-repeat;
+}
+
+.users-img {
+	width: 134px;
+	min-height: 56px;
+	border-radius: 100px;
+	background-color: var(--dark-color_10);
+	/* background-color: #1A1A1A;
+	background-color: #787171; */
+	/* ! ПЕРЕВІРОЧНИЙ КОЛІР	*/
+	border: 1px solid var(--dark-color_15);
+	/* border: 1px solid #262626;
+	border: 1px solid #ff0000; */
+	/* ! ПЕРЕВІРОЧНИЙ КОЛІР	*/
+}
+
+.first-screen__content_solar-corona_title {
+	margin: 20px 0 4px;
+	size: 18px;
+	font-weight: 500;
+}
+.first-screen__content_solar-corona_subscribe{
+	font-size: 14px;
+	font-weight: 400;
+}
+
+.btn-main-indicators {
+	margin-top: 20px;
+	border-radius: 8px;
+	font-size: 14px;
+	/* margin: 20px 40px 40px; */
+	background-color: var(--dark-color_08);
+	/* background-color: #141414;
+	background-color: #6769d5; */
+	/* min-width: 310px; */
+	height: 49px;
+	display: flex;
+	/* Використовуємо Flexbox */
+	justify-content: center;
+	/* Центрування по горизонталі */
+	align-items: center;
+	/* Центрування по вертикалі */
+}
+
+
+
+.information-board__item {
+	flex: 1 1 33.333333%;
+}

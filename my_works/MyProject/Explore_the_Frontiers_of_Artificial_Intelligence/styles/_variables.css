@@ -1,0 +1,16 @@
+:root {
+	--main-font: "Inter", sans-serif;
+	--help-font: "Kumbh Sans", sans-serif;
+	--dark-color_absolute: #000;
+	--dark-color_08: #141414;
+	--dark-color_10:#1A1A1A;
+	--dark-color_12:#191919;
+	--dark-color_15: #262626;
+
+	--grey-color_50:#7E7E81;
+	--grey-color_60: #98989A;
+	
+
+	--light_color_absolute: #fff;
+	--corporate-color: #FFD11A;
+}
