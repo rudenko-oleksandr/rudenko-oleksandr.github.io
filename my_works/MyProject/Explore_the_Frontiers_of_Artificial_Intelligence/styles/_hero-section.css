@@ -204,7 +204,7 @@
 	background-color: var(--dark-color_10);
 	border: 1px solid var(--dark-color_15);
 	border: 1px solid red;
-	margin: 230px 40px 20px;
+	margin: 230px 24px 20px;
 }
 
 
@@ -244,13 +244,13 @@
 	font-size: 18px;
 	font-weight: 500;
 	color: var(--light_color_absolute);
-	margin: 0 40px 4px;
+	margin: 0 24px 4px;
 }
 
 .first-screen__content_solar-corona_subscribe {
 	font-size: 14px;
 	font-weight: 400;
-	margin: 4px 40px 20px;
+	margin: 4px 24px 20px;
 }
 
 .btn-main-indicators {
