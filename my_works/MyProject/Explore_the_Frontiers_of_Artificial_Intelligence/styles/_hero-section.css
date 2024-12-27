@@ -1,5 +1,5 @@
 .first-screen {
-	height: 100vh;
+	/* height: 100vh; */
 	background-color: var(--dark-color_08);
 }
 
@@ -126,7 +126,7 @@
 }
 
 .title-container__title {
-	font-size: 30px;
+	font-size: 20px; /* 30px*/
 	font-family: var(--help-font);
 	color: var(--light_color_absolute);
 	font-weight: 500;
@@ -255,11 +255,11 @@
 
 .btn-main-indicators {
 	
-	margin: 20px 40px 40px;
+	margin: 20px 24px 40px;
 	background-color: var(--dark-color_08);
 	border-radius: 8px;
 	border: 1px solid var(--dark-color_15);
-	padding: 14px 85px;
+	padding: 14px 0;
 	justify-content: center;
 	align-items: center;
 	gap: 4px;
@@ -324,6 +324,7 @@ height: 30px; */
 
 .information-board__item > .comment{
 	margin-top: 10px;
+	margin-bottom: 30px;
 }
 
 .arrow_yellow-round {
