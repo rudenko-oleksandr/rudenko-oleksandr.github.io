@@ -1,0 +1,18 @@
+.explore-futureTech__head-container>.content-wrap>.title-container {
+	margin: 40px 0 30px;
+
+}
+
+.explore-futureTech__head-container_btn {
+	max-width: 720px;
+	max-height: 49px;
+	padding: 14px 20px;
+	gap: 4px;
+	background-color: var(--dark-color_08);
+	border: 1px solid var(--dark-color_15);
+	margin-bottom: 40px;
+}
+
+.unlock-valuable-knowledge__users-img {
+	margin: 0;
+}
