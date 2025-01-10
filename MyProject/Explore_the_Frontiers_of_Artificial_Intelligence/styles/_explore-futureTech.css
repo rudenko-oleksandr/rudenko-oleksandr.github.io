@@ -1,0 +1,52 @@
+.explore-futureTech__head-container>.content-wrap>.title-container {
+	margin: 40px 0 30px;
+}
+
+.explore-futureTech__head-container_btn {
+	max-width: 720px;
+	max-height: 49px;
+	padding: 14px 20px;
+	gap: 4px;
+	background-color: var(--dark-color_08);
+	border: 1px solid var(--dark-color_15);
+	margin-bottom: 40px;
+}
+
+
+/* TODO   swiper*/
+.swiper-container {
+	overflow-x: auto;
+	display: flex;
+	scrollbar-width: none;
+	cursor: grab;
+	position: relative;
+}
+
+.swiper-container:active {
+	cursor: grabbing;
+}
+
+.swiper-container::-webkit-scrollbar {
+	display: none;
+}
+
+.button {
+	flex: 0 0 auto;
+	min-width: 160px;
+	height: 57px;
+	margin: 20px 7px;
+	padding: 0 11px;
+	text-align: center;
+	line-height: 57px;
+	background-color: var(--dark-color_08);
+	border: 1px solid var(--dark-color_15);
+	color: var(--grey-color_60);
+	border-radius: 8px;
+	cursor: pointer;
+}
+
+.button:hover {
+	background-color: var(--dark-color_15);
+	color: var(--light_color_absolute);
+	border: 1px solid var(--dark-color_20);
+}
