@@ -1,0 +1,25 @@
+.be-part-of-the-future-tech-revolution__body-container_item{
+	/* border: 1px solid red; */
+	background-color: var(--dark-color_12);
+		border-radius: 10px;
+			/* gap: 100px; */
+			padding: 24px;
+}
+.be-part-of-the-future-tech-revolution__body-container{
+
+	border: 1px solid var(--dark-color_15);
+	background-color: var(--dark-color_08);
+			/* border: 1px solid rgb(0, 255, 26); */
+	border-radius: 10px;
+	display: flex;
+	flex-direction: column;
+	padding: 10px;
+	/* flex-direction: row; */
+	gap: 10px;
+	/* align-items: stretch; */
+	margin-bottom: 40px;
+}
+
+.be-part-of-the-future-tech-revolution__body-container-helper{
+	margin-bottom: 10px;
+}
