@@ -1,0 +1,104 @@
+/* .footer-menu {
+	border: 1px solid red;
+} */
+
+.footer-menu {
+	/* text-align: left; */
+	color: var(--light_color_absolute);
+	flex: 1 1 50%;
+	/* 50% ширини мінус відступ */
+	max-width: 50%;
+	margin-bottom: 20px;
+}
+
+.footer-menu>li {
+	/* margin-bottom: 10px; */
+	/* margin-left: 0; */
+	/* Відступ між елементами списку */
+	color: var(--dark-color_40);
+		/* margin-bottom: 20px; */
+}
+
+.footer-menu {
+	list-style: none;
+	/* Прибирає маркери списку */
+	padding: 0;
+	/* Вирівнює список без додаткового відступу зліва */
+	margin: 0;
+	/* Прибирає зовнішній відступ */
+	text-align: left;
+	/* Вирівнює текст по лівому краю */
+}
+
+/* .container-footer>ul>li {
+	padding: 0;
+} */
+.container-footer {
+	flex-wrap: wrap;
+	padding: 40px 0;
+}
+
+.footer-menu>li:first-child {
+	margin-top: 16px;
+}
+
+.container-footer>.footer-menu-btn>li {
+	margin-bottom: 8px;
+	padding-left: 0;
+		display: inline-flex;
+}
+
+.container-footer>.footer-menu>li {
+	/* margin-bottom: 8px; */
+	padding-left: 0;
+	/* display: inline-flex; */
+}
+.container-footer>.footer-menu-btn{
+	margin-bottom: 20px;
+
+}
+.footer-menu-resources>div{
+	margin-bottom: 18px;
+} 
+
+.new {
+	background-color: var(--dark-color_10);
+	color: var(--light_color_absolute);
+	border: 1px solid var(--dark-color_15);
+	margin-left: 8px;
+	cursor: pointer;
+}
+
+.footer-menu-btn {
+	flex: 1 1 100%;
+	/* Займає всю ширину */
+	max-width: 100%;
+	flex-wrap: wrap;
+}
+
+
+
+.footer-menu-btn_item{
+	display: inline-flex;
+		/* Використовується inline-flex для динамічного розміру */
+		align-items: center;
+		/* Вирівнювання по вертикалі */
+		justify-content: center;
+		/* Вирівнювання тексту і маленької кнопки */
+		padding: 8px 14px;
+		/* Відступи всередині кнопки */
+	background-color: var(--dark-color_10);
+		/* color: white; */
+		border: none;
+		border-radius: 6px;
+		cursor: pointer;
+		gap: 10px;
+		/* Відстань між текстом і маленькою кнопкою */
+		box-sizing: border-box;
+		/* Включає відступи в ширину/висоту */
+		white-space: nowrap;
+		/* Забороняє перенесення тексту */
+		flex: 1 1 auto;
+			/* Забезпечує гнучкість елементів */
+}
+

@@ -27,36 +27,26 @@ const closeModalIcon = document.getElementById('closeModalIcon')
 
 
 
-const swiper = document.querySelector('.swiper-container');
-
-let isDragging = false;
-let startX;
-let scrollLeft;
-
-swiper.addEventListener('wheel', (e) => {
-	e.preventDefault();
-	swiper.scrollBy({ left: e.deltaY > 0 ? 100 : -100, behavior: 'smooth' });
-});
-
-swiper.addEventListener('mousedown', (e) => {
-	isDragging = true;
-	startX = e.pageX - swiper.offsetLeft;
-	scrollLeft = swiper.scrollLeft;
-	swiper.classList.add('active');
-});
-
-swiper.addEventListener('mouseleave', () => {
-	isDragging = false;
-});
-
-swiper.addEventListener('mouseup', () => {
-	isDragging = false;
-});
-
-swiper.addEventListener('mousemove', (e) => {
-	if (!isDragging) return;
-	e.preventDefault();
-	const x = e.pageX - swiper.offsetLeft;
-	const walk = (x - startX) * 2; // Adjust scrolling speed
-	swiper.scrollLeft = scrollLeft - walk;
+const swiper = new Swiper('.swiper-container2', {
+	slidesPerView: 1, // Видимий один слайд за замовчуванням
+	slidesPerGroup: 1, // Переміщення на один слайд
+	spaceBetween: 1, // Відстань між слайдами
+	loop: true, // Відсутня циклічність
+	watchSlidesVisibility: true, // Відстеження видимості слайдів
+	watchSlidesProgress: true, // Відстеження прогресу слайдів
+	navigation: {
+		nextEl: '.swiper-button-next',
+		prevEl: '.swiper-button-prev',
+	},
+	pagination: {
+		el: '.swiper-pagination',
+		clickable: true,
+	},
+	breakpoints: {
+		768: {
+			slidesPerView: 3, // Видно три слайди на великих екранах
+			slidesPerGroup: 1, // Переміщення на три слайди
+			spaceBetween: 1,
+		},
+	},
 });

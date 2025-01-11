@@ -1,5 +1,6 @@
 .explore-futureTech__head-container>.content-wrap>.title-container {
 	margin: 40px 0 30px;
+
 }
 
 .explore-futureTech__head-container_btn {
@@ -18,6 +19,7 @@
 	overflow-x: auto;
 	display: flex;
 	scrollbar-width: none;
+	/* Firefox */
 	cursor: grab;
 	position: relative;
 }
