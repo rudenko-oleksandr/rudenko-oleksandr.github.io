@@ -1,42 +1,43 @@
 {
 	"reviews": [
 		{
-			"avatar": "https://github.com/rudenko-oleksandr/rudenko-oleksandr.github.io/blob/main/my_works/MyProject/Explore_the_Frontiers_of_Artificial_Intelligence/sourse/img/Profile/profile-6.jpg",
+			
+			"avatar": "https://github.com/rudenko-oleksandr/rudenko-oleksandr.github.io/blob/main/my_works/MyProject/Explore_the_Frontiers_of_Artificial_Intelligence/data/Profile/profile-6.jpg",
 			"name": "Sarah Thompson",
 			"location": "San Francisco, USA",
 			"rating": 5,
 			"content": "The ebooks on AI in education have been a game-changer for my research. They provide in-depth insights and case studies that are invaluable for staying updated."
 		},
 		{
-			"avatar": "https://github.com/rudenko-oleksandr/rudenko-oleksandr.github.io/blob/main/my_works/MyProject/Explore_the_Frontiers_of_Artificial_Intelligence/sourse/img/Profile/profile-1.jpg",
+			"avatar": "https://github.com/rudenko-oleksandr/rudenko-oleksandr.github.io/blob/main/my_works/MyProject/Explore_the_Frontiers_of_Artificial_Intelligence/data/Profile/profile-1.jpg",
 			"name": "Raj Patel",
 			"location": "Mumbai, India",
 			"rating": 4,
 			"content": "The whitepapers on renewable energy strategies have greatly influenced my work. They offer detailed data and analysis, helping me make informed decisions."
 		},
 		{
-			"avatar": "https://github.com/rudenko-oleksandr/rudenko-oleksandr.github.io/blob/main/my_works/MyProject/Explore_the_Frontiers_of_Artificial_Intelligence/sourse/img/Profile/profile-2.jpg",
+			"avatar": "https://github.com/rudenko-oleksandr/rudenko-oleksandr.github.io/blob/main/my_works/MyProject/Explore_the_Frontiers_of_Artificial_Intelligence/data/Profile/profile-2.jpg",
 			"name": "Emily Adams",
 			"location": "London, UK",
 			"rating": 5,
 			"content": "The AI in healthcare reports have been an essential resource for our hospital. They highlight the latest innovations and best practices, improving patient care."
 		},
 		{
-			"avatar": "https://github.com/rudenko-oleksandr/rudenko-oleksandr.github.io/blob/main/my_works/MyProject/Explore_the_Frontiers_of_Artificial_Intelligence/sourse/img/Profile/profile-3.jpg",
+			"avatar": "https://github.com/rudenko-oleksandr/rudenko-oleksandr.github.io/blob/main/my_works/MyProject/Explore_the_Frontiers_of_Artificial_Intelligence/data/Profile/profile-3.jpg",
 			"name": "Alan Jackson",
 			"location": "Houston, USA",
 			"rating": 3,
 			"content": "The reports on space mining prospects have fueled my passion for space exploration. They provide a comprehensive view of what lies beyond Earth."
 		},
 		{
-			"avatar": "https://github.com/rudenko-oleksandr/rudenko-oleksandr.github.io/blob/main/my_works/MyProject/Explore_the_Frontiers_of_Artificial_Intelligence/sourse/img/Profile/profile-4.jpg",
+			"avatar": "https://github.com/rudenko-oleksandr/rudenko-oleksandr.github.io/blob/main/my_works/MyProject/Explore_the_Frontiers_of_Artificial_Intelligence/data/Profile/profile-4.jpg",
 			"name": "Jessica Miller",
 			"location": "Boston, USA",
 			"rating": 4,
 			"content": "The research papers on genomic breakthroughs have been a goldmine of information. They've shaped the direction of my research in genomics."
 		},
 		{
-			"avatar": "https://github.com/rudenko-oleksandr/rudenko-oleksandr.github.io/blob/main/my_works/MyProject/Explore_the_Frontiers_of_Artificial_Intelligence/sourse/img/Profile/profile-5.jpg",
+			"avatar": "https://github.com/rudenko-oleksandr/rudenko-oleksandr.github.io/blob/main/my_works/MyProject/Explore_the_Frontiers_of_Artificial_Intelligence/data/Profile/profile-5.jpg",
 			"name": "Diego Lopez",
 			"location": "Barcelona, Spain",
 			"rating": 4,
