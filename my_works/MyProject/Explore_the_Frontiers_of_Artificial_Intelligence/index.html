@@ -14,6 +14,7 @@
 	<link rel="stylesheet" href="styles/styles.css">
 	<link rel="stylesheet" href="https://unpkg.com/swiper/swiper-bundle.min.css" />
 	<script src="https://unpkg.com/swiper/swiper-bundle.min.js"></script>
+	<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
 </head>
 
 <body>
@@ -301,9 +302,8 @@
 				</div>
 			</div>
 			<div class="content-wrap">
-				<!-- <div class="explore-futureTech__body-container "> -->
-				<!-- <h2 style="color: red;"> block under development</h2> -->
-				<div class="swiper-container">
+
+				<div class="swiper-container swiper-container-2">
 					<div class="button">All</div>
 					<div class="button">Quantum Computing</div>
 					<div class="button">AI Ethics</div>
@@ -311,7 +311,7 @@
 					<div class="button">Biotechnology</div>
 					<div class="button">Renewable Energy</div>
 				</div>
-				<!-- </div> -->
+
 			</div>
 		</div>
 	</div>
@@ -547,8 +547,11 @@
 			</div>
 		</div>
 		<div class="content-wrap">
-			<div class="real-words-from-real-readers__body-container">
-				<!-- Блок 1 -->
+
+			<div id="reviews-container" class="real-words-from-real-readers__body-container"></div>
+
+
+			<!-- <div class="real-words-from-real-readers__body-container">
 				<div class="real-words-from-real-readers__card">
 					<div class="real-words-from-real-readers__header d-flex justify-center align-center">
 						<img src="avatar1.jpg" alt="Avatar" class="real-words-from-real-readers__avatar avatar1">
@@ -654,15 +657,17 @@
 							sustainability.</p>
 					</div>
 				</div>
+			</div> -->
 
-			</div>
 		</div>
 	</div>
 
 
 
 	<div class="be-part-of-the-future-tech-revolution__general-container">
-		<div class="content-wrap gray-background swiper-container2 ">
+		<div class="content-wrap gray-background ">
+
+
 			<div class="be-part-of-the-future-tech-revolution__head-container desktop-block d-flex">
 				<div class="be-part-of-the-future-tech-revolution__head-container_helper d-flex">
 					<div class="big-logo d-flex">
@@ -685,85 +690,90 @@
 				</div>
 			</div>
 
-			<div class="be-part-of-the-future-tech-revolution__body-container swiper-wrapper">
-				<div class="be-part-of-the-future-tech-revolution__body-container_item swiper-slide">
-					<div
-						class="be-part-of-the-future-tech-revolution__body-container-helper d-flex space-between align-center">
-						<div class="be-part-of-the-future-tech-revolution__body-container_item-title">
-							<h5>Resource Access</h5>
+			<!-- <div class="content-wrap gray-background"> -->
+
+			<div class="swiper-container swiper-container-1 be-part-of-the-future-tech-revolution__body-container">
+				<div class="swiper-wrapper d-flex">
+					<div class="swiper-slide">
+						<div class="be-part-of-the-future-tech-revolution__body-container_title d-flex space-between">
+							<div>
+								<h5>Resource Access</h5>
+							</div>
+							<button class="btn btn__arrow-in-yellow-round"></button>
 						</div>
-						<button class="btn btn__arrow-in-yellow-round"></button>
+						<div class="be-part-of-the-future-tech-revolution__body-container_content">Visitors can access
+							a
+							wide range of resources, including ebooks, whitepapers, reports.</div>
 					</div>
-					<div class="be-part-of-the-future-tech-revolution__body-container_item-content">Visitors can access a
-						wide range of resources, including ebooks, whitepapers, reports.</div>
+					<div class="swiper-slide">
+						<div class="be-part-of-the-future-tech-revolution__body-container_title d-flex space-between">
+							<div>
+								<h5>Community Forum</h5>
+							</div>
+							<button class="btn btn__arrow-in-yellow-round"></button>
+						</div>
+						<div class="be-part-of-the-future-tech-revolution__body-container_content">Join our active
+							community
+							forum to discuss industry trends and collaborate with peers.</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="be-part-of-the-future-tech-revolution__body-container_title d-flex space-between">
+							<div>
+								<h5>Tech Events</h5>
+							</div>
+							<button class="btn btn__arrow-in-yellow-round"></button>
+						</div>
+						<div class="be-part-of-the-future-tech-revolution__body-container_content">Stay updated on upcoming
+							tech events, webinars and conferences to enhance your knowledge.
+						</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="be-part-of-the-future-tech-revolution__body-container_title d-flex space-between">
+							<div>
+								<h5>Resource Access</h5>
+							</div>
+							<button class="btn btn__arrow-in-yellow-round"></button>
+						</div>
+						<div class="be-part-of-the-future-tech-revolution__body-container_content">Visitors can access
+							a
+							wide range of resources, including ebooks, whitepapers, reports.</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="be-part-of-the-future-tech-revolution__body-container_title d-flex space-between">
+							<div>
+								<h5>Community Forum</h5>
+							</div>
+							<button class="btn btn__arrow-in-yellow-round"></button>
+						</div>
+						<div class="be-part-of-the-future-tech-revolution__body-container_content">Join our active
+							community
+							forum to discuss industry trends and collaborate with peers.</div>
+					</div>
+					<div class="swiper-slide">
+						<div class="be-part-of-the-future-tech-revolution__body-container_title d-flex space-between">
+							<div>
+								<h5>Tech Events</h5>
+							</div>
+							<button class="btn btn__arrow-in-yellow-round"></button>
+						</div>
+						<div class="be-part-of-the-future-tech-revolution__body-container_content">Stay updated on upcoming
+							tech events, webinars and conferences to enhance your knowledge.
+						</div>
+					</div>
+
 				</div>
-				<div class="be-part-of-the-future-tech-revolution__body-container_item swiper-slide">
-					<div
-						class="be-part-of-the-future-tech-revolution__body-container-helper d-flex space-between align-center">
-						<div class="be-part-of-the-future-tech-revolution__body-container_item-title">
-							<h5>Community Forum</h5>
-						</div>
-						<button class="btn btn__arrow-in-yellow-round"></button>
-					</div>
-					<div class="be-part-of-the-future-tech-revolution__body-container_item-content">Join our active community
-						forum to discuss industry trends and collaborate with peers.</div>
+				<div class="swiper-navigation">
+					<!-- Кнопки навігації -->
+					<div class="swiper-button-prev"></div>
+					<div class="swiper-button-next"></div>
+					<!-- Індикатор -->
+					<!-- Індикатор -->
+					<div class="swiper-pagination">Індикатор</div>
 				</div>
 
-				<div class="be-part-of-the-future-tech-revolution__body-container_item swiper-slide">
-					<div
-						class="be-part-of-the-future-tech-revolution__body-container-helper d-flex space-between align-center">
-						<div class="be-part-of-the-future-tech-revolution__body-container_item-title">
-							<h5>Tech Events</h5>
-						</div>
-						<button class="btn btn__arrow-in-yellow-round"></button>
-					</div>
-					<div class="be-part-of-the-future-tech-revolution__body-container_item-content">Stay updated on upcoming
-						tech events, webinars and conferences to enhance your knowledge.</div>
-				</div>
-
-				<div class="be-part-of-the-future-tech-revolution__body-container_item swiper-slide">
-					<div
-						class="be-part-of-the-future-tech-revolution__body-container-helper d-flex space-between align-center">
-						<div class="be-part-of-the-future-tech-revolution__body-container_item-title">
-							<h5>Resource Access</h5>
-						</div>
-						<button class="btn btn__arrow-in-yellow-round"></button>
-					</div>
-					<div class="be-part-of-the-future-tech-revolution__body-container_item-content">Visitors can access a
-						wide range of resources, including ebooks, whitepapers, reports.</div>
-				</div>
-
-				<div class="be-part-of-the-future-tech-revolution__body-container_item swiper-slide">
-					<div
-						class="be-part-of-the-future-tech-revolution__body-container-helper d-flex space-between align-center">
-						<div class="be-part-of-the-future-tech-revolution__body-container_item-title">
-							<h5>Community Forum</h5>
-						</div>
-						<button class="btn btn__arrow-in-yellow-round"></button>
-					</div>
-					<div class="be-part-of-the-future-tech-revolution__body-container_item-content">Join our active community
-						forum to discuss industry trends and collaborate with peers.</div>
-				</div>
-
-				<div class="be-part-of-the-future-tech-revolution__body-container_item swiper-slide">
-					<div
-						class="be-part-of-the-future-tech-revolution__body-container-helper d-flex space-between align-center">
-						<div class="be-part-of-the-future-tech-revolution__body-container_item-title">
-							<h5>Tech Events</h5>
-						</div>
-						<button class="btn btn__arrow-in-yellow-round"></button>
-					</div>
-					<div class="be-part-of-the-future-tech-revolution__body-container_item-content">Stay updated on upcoming
-						tech events, webinars and conferences to enhance your knowledge.</div>
-				</div>
 			</div>
-			<div class="swiper-navigation">
-				<!-- Кнопки навігації -->
-				<div class="swiper-button-prev"></div>
-				<div class="swiper-button-next"></div>
-				<!-- Індикатор -->
-				<div class="swiper-pagination"></div>
-			</div>
+
+
 		</div>
 	</div>
 

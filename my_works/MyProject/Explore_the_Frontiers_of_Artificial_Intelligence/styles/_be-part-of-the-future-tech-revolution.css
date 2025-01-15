@@ -1,25 +1,57 @@
 .be-part-of-the-future-tech-revolution__body-container_item{
-	/* border: 1px solid red; */
-	background-color: var(--dark-color_12);
+
+	/* background-color: var(--dark-color_12);
 		border-radius: 10px;
-			/* gap: 100px; */
-			padding: 24px;
+
+			padding: 24px; */
 }
 .be-part-of-the-future-tech-revolution__body-container{
-
-	border: 1px solid var(--dark-color_15);
+border: 1px solid var(--dark-color_15);
 	background-color: var(--dark-color_08);
-			/* border: 1px solid rgb(0, 255, 26); */
+	padding: 10px 10px 20px 10px;
+	/* position: relative; */
+
+	/* border: 1px solid var(--dark-color_15);
+	background-color: var(--dark-color_08);
+
 	border-radius: 10px;
 	display: flex;
 	flex-direction: column;
 	padding: 10px;
-	/* flex-direction: row; */
+
 	gap: 10px;
-	/* align-items: stretch; */
-	margin-bottom: 40px;
+
+	margin-bottom: 40px; */
 }
 
 .be-part-of-the-future-tech-revolution__body-container-helper{
+	/* margin-bottom: 10px; */
+}
+
+.be-part-of-the-future-tech-revolution__general-container{
+	/* position: relative; */
+}
+
+.be-part-of-the-future-tech-revolution__body-container_item {
+	/* flex: 0 0 calc(100% / 3); */
+	box-sizing: border-box;
+	background-color: var(--dark-color_12);
+	border-radius: 10px;
+	padding: 24px;
+	display: flex;
+	/* flex-direction: column; */
+	/* Розташування елементів по вертикалі */
+	/* justify-content: space-between; */
+	/* Вирівнювання контенту по висоті */
+	/* min-height: 200px; */
+	/* Задайте мінімальну висоту */
+	/* height: 100%; */
+	/* Висота буде однаковою для всіх */
+}
+
+.be-part-of-the-future-tech-revolution__body-container_title{
 	margin-bottom: 10px;
+}
+.be-part-of-the-future-tech-revolution__body-container_content{
+	
 }

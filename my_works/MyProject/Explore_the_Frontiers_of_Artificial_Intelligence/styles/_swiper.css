@@ -1,92 +1,140 @@
-.swiper-container2 {
+/* .inner {
+	border: 1px solid red;
+	margin: 150px;
+} */
+
+.swiper-container {
 	width: 100%;
+	/* Ширина контейнера */
 	overflow: hidden;
+	/* Приховує все, що виходить за межі контейнера */
 }
 
 .swiper-wrapper {
-	display: flex;
+	/* display: flex; */
+	/* Додає горизонтальне розташування слайдів */
 	transition: transform 0.3s ease;
+	/* Плавне прокручування */
+			/* gap: 10px; */
+	align-items: stretch;
+	/* height: 100%; */
 }
 
 .swiper-slide {
-	flex-shrink: 0;
+		background-color: var(--dark-color_12);
+			border: 1px solid var(--dark-color_15);
+
+	/* flex-shrink: 0; */
+	/* Слайди не стискаються */
 	width: 100%;
-	max-width: calc((100% - 40px) / 3);
+	/* Базова ширина слайдів */
+	/* max-width: calc((100% - 40px) / 3); */
+	/* Ширина для трьох слайдів на великих екранах */
 	/* height: 200px; */
-	/* background: #f5f5f5; */
+	/* Фіксована висота слайдів */
+	/* background: #414141; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	text-align: center;
-	/* border: 1px solid #ccc; */
-	box-sizing: border-box;
-	opacity: 1;
+	/* justify-content: center;
+	align-items: center;
+	text-align: center; */
+
+	/* box-sizing: border-box; */
+	/* opacity: 1; */
+	/* Початкова видимість */
 	transition: opacity 0.3s ease;
+	/* Плавний перехід видимості */
+	/* align-items: stretch; */
+/* height: 100%; */
+/* justify-content: space-between; */
+
+/* flex: 0 0 calc(100% / 3); */
+	/* box-sizing: border-box; */
+
+	border-radius: 10px;
+	padding: 24px;
+	display: flex;
+	flex-direction: column;
+	/* Розташування елементів по вертикалі */
+	/* justify-content: space-between; */
+	/* Вирівнювання контенту по висоті */
+	min-height: 200px;
+	/* Задайте мінімальну висоту */
+	/* height: 100%; */
+	/* Висота буде однаковою для всіх */
+
 }
 
 .swiper-slide.swiper-slide-hidden {
-	opacity: 0;
+	/* opacity: 0; */
+	/* Приховані слайди невидимі */
 }
 
-/* Стилі для навігаційного блоку */
 .swiper-navigation {
-	display: flex;
-	justify-content: space-between;
-	/* Розташовує елементи з відступами між ними */
-	align-items: center;
-	/* Вирівнює елементи по вертикалі */
-	width: 100%;
-	/* Встановлює ширину контейнера для навігації */
-	border: 2px solid blue;
-	/* Синій бордер для виділення */
-	margin-top: 10px;
-	/* Відступ зверху від слайдів */
-	padding: 10px 0;
-	/* Внутрішні відступи для навігації */
-	position: relative;
-	/* Для коректної роботи відносно позицій */
-}
-
-.swiper-button-prev,
-.swiper-button-next {
-	width: 30px;
-	height: 30px;
-	background-color: #ccc;
-	display: inline-block;
-	border-radius: 50%;
-	cursor: pointer;
-	position: absolute;
-	/* Розміщує кнопки абсолютно всередині контейнера */
-	top: 50%;
-	/* Вирівнює кнопки по вертикалі */
-	transform: translateY(-50%);
-	/* Центрує кнопки по вертикалі */
+	/* position: relative;
+	border: 3px solid green;
+	padding: 20px 0; */
+	height: 20px;
+		/* border: 3px solid green; */
+		/* position: absolute; */
+		/* bottom: -110px; */
+			/* Відступ від нижнього краю */
+			/* width: 100%;
+			display: flex;
+			justify-content: space-between !important; */
+			/* position: relative!important; */
+			/* position: absolute; */
+			/* position: static; */
 }
 
 .swiper-button-prev {
-	left: 10px !important;
-	top: 10px !important;
-	/* Розташовує кнопку на лівій стороні */
+	position: absolute;
+			/* border: 3px solid rgb(105, 253, 6); */
+			color: var(--light_color_absolute) !important;
 }
 
 .swiper-button-next {
-	right: 10px !important;
-	top: 10px !important;
-	/* Розташовує кнопку на правій стороні */
+	position: absolute;
+			/* border: 3px solid rgb(6, 112, 187); */
+						color: var(--light_color_absolute) !important;
 }
 
-/* Індикатор пагінації */
 .swiper-pagination {
+	/* position: absolute; */
+		/* border: 3px solid rgb(253, 23, 6); */
+		/* top: 90px !important; */
+	/* margin-bottom: 120px; */
+position: absolute;
+	bottom: -5px !important;
+							color: var(--light_color_absolute) !important;
+							--swiper-theme-color: #f6f6f7;
+	/* Відступ під swiper-wrapper */
+	/* left: 50%;
+	transform: translateX(-50%);
 	display: flex;
-	justify-content: center;
-	/* Вирівнює пагінацію по центру */
-	width: 100%;
-	margin-top: 10px;
-	/* Відступ між кнопками і пагінацією */
+	gap: 5px;
+	justify-content: center; */
 }
+
+.swiper-pagination-bullet{
+	background-color: var(--dark-color_40)!important;
+}
+
+
 
 @media (max-width: 768px) {
 	.swiper-slide {
 		max-width: 100%;
+		/* Слайди займають всю ширину на малих екранах */
+			padding: 30px;
+	}
+}
+
+@media (min-width: 1920px) {
+	.swiper-slide {
+		max-width: 100%;
+		/* Слайди займають всю ширину на малих екранах */
+		padding: 40px;
 	}
 }

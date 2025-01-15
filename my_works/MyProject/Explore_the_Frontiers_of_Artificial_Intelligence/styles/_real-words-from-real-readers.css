@@ -29,7 +29,7 @@
 	background-repeat: no-repeat;
 }
 
-.avatar1 {
+/* .avatar1 {
 	background-image: url(../sourse/img/Profile/profile-1.jpg);
 }
 
@@ -51,7 +51,7 @@
 
 .avatar6 {
 	background-image: url(../sourse/img/Profile/profile-6.jpg);
-}
+} */
 
 .real-words-from-real-readers__info {
 	display: flex;
@@ -86,3 +86,4 @@
 	border-radius: 10px;
 	color: var(--light_color_absolute);
 }
+
