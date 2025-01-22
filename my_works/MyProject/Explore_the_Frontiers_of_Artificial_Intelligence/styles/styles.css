@@ -2360,9 +2360,10 @@ p,
 
 	.content_solar-corona__users-img,
 	.unlock-valuable-knowledge__users-img {
-		/* width: 9rem; */
+		/* border: 1px solid red !important; */
+		width: 9rem;
 		/* 144px = 9rem */
-		/* height: 4.125rem; */
+		height: 4.125rem;
 		/* 66px = 4.125rem */
 	}
 
