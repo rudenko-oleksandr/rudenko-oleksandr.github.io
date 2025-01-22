@@ -18,9 +18,9 @@
 </head>
 
 <body>
-	<div class="first-screen">
+	<section class="first-screen">
 		<header>
-			<div class="content-wrap ">
+			<div class="content-wrap">
 				<div class="top-banner__background">
 					<div class="top-banner d-flex justify-center align-center">
 						<div class="top-banner__content">
@@ -33,7 +33,7 @@
 
 			<div class="content-wrap gray-background">
 				<div class="nav-bar d-flex space-between align-center relative">
-					<div class="logo-header d-flex ">
+					<div class="logo-header d-flex">
 						<div class="logo-header__img">
 							<img src="sourse/img/logo.svg" alt="logo">
 						</div>
@@ -42,66 +42,61 @@
 						</div>
 					</div>
 
-					<nav class="hide-desktop ">
-						<div id='burgerIcons' class="burger-menu">
-							<img id='openIcon' class="fa-solid fa-bars" src="sourse/img/burger-icons.svg"
-								alt="open burger-menu"></img>
-							<i id='closeIcon' class="fa-solid fa-xmark hide"></i>
+					<!-- Мобільна версія меню -->
+					<nav class="hide-desktop">
+						<div id="burgerIcons" class="burger-menu">
+							<img id="openIcon" class="fa-solid fa-bars" src="sourse/img/burger-icons.svg"
+								alt="open burger-menu">
+							<i id="closeIcon" class="fa-solid fa-xmark hide"></i>
 						</div>
-						<ul id='menuList' class="mobile-menu absolute d-flex justify-center align-center">
-							<li>
-								<a href="#">Home</a>
-							</li>
-							<li>
-								<a href="#">News</a>
-							</li>
-							<li>
-								<a href="#">Podcasts</a>
-							</li>
-							<li>
-								<a href="#">Resources</a>
-							</li>
+						<ul id="menuList" class="mobile-menu absolute d-flex justify-center align-center">
+							<li><a href="#">Home</a></li>
+							<li><a href="#">News</a></li>
+							<li><a href="#">Podcasts</a></li>
+							<li><a href="#">Resources</a></li>
 						</ul>
 					</nav>
 
+					<!-- Кнопка Contact Us для мобільних -->
 					<nav id="btnMobileHeader" class="btn__header-mobile absolute d-flex justify-center hide-desktop">
-						<button class="btn btn__header hide-desktop ">
-							Contact Us
-						</button>
+						<button class="btn btn__header">Contact Us</button>
 					</nav>
 
+					<!-- Основне меню для десктопа -->
 					<nav class="hide-mobile">
-						<ul class="main-menu d-flex ">
-							<li>
-								<a href="#">Home</a>
-							</li>
-							<li>
-								<a href="#">News</a>
-							</li>
-							<li>
-								<a href="#">Podcasts</a>
-							</li>
-							<li>
-								<a href="#">Resources</a>
-							</li>
+						<ul class="main-menu d-flex">
+							<li><a href="#">Home</a></li>
+							<li><a href="#">News</a></li>
+							<li><a href="#">Podcasts</a></li>
+							<li><a href="#">Resources</a></li>
 						</ul>
 					</nav>
 
+					<!-- Кнопка Contact Us для десктопа -->
 					<nav class="btn__header-desktop hide">
-						<button class="btn btn__header hide-mobile ">
-							Contact Us
-						</button>
+						<button class="btn btn__header">Contact Us</button>
 					</nav>
+
+					<!-- Модальне вікно -->
+					<div id="modal" class="hide">
+						<div class="modal-overlay" id="modalOverlay"></div>
+						<div class="modal">
+							<button class="close-btn" id="closeModal">&times;</button>
+							<div>
+								<h3>Here is the contact information</h3>
+							</div>
+						</div>
+					</div>
 				</div>
 			</div>
 		</header>
 
-		<div class="first-screen__wiht-out-header">
+		<div class="first-screen__wiht-out-header ">
 			<div class="content-wrap">
 				<div class="parent__first-screen__wiht-out-header_grid first-screen__wiht-out-header_grid">
 					<div class="div1__first-screen__wiht-out-header_grid title-container">
 						<div class="title-banner">
-							<div class="title-container__under-title">Your Journey to Tomorrow Begins Here</div>
+							<div class="title-container__under-title ">Your Journey to Tomorrow Begins Here</div>
 							<div class="title-container__title">
 								<h1>Explore the Frontiers of Artificial Intelligence</h1>
 							</div>
@@ -191,9 +186,9 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
-	<div class="future-tech-features__general-container general-container">
+	<section class="future-tech-features__general-container general-container">
 		<div class="future-tech-features__head-container head-container">
 			<div class="content-wrap gray-background">
 				<div class="future-tech-features__title-container title-container">
@@ -287,9 +282,9 @@
 				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
-	<div class="explore-futureTech__general-container general-container">
+	<section class="explore-futureTech__general-container general-container">
 		<div class="explore-futureTech__head-container head-container">
 			<div class="content-wrap gray-background ">
 				<div class="explore-futureTech__title-container title-container">
@@ -301,22 +296,147 @@
 					<button class="btn btn__yellow-arrow"></button>
 				</div>
 			</div>
+
 			<div class="content-wrap">
-
 				<div class="swiper-container swiper-container-2">
-					<div class="button">All</div>
-					<div class="button">Quantum Computing</div>
-					<div class="button">AI Ethics</div>
-					<div class="button">Space Exploration</div>
-					<div class="button">Biotechnology</div>
-					<div class="button">Renewable Energy</div>
+					<div class="button" data-filter="all">All</div>
+					<div class="button" data-filter="Quantum Computing">Quantum Computing</div>
+					<div class="button" data-filter="AI Ethics">AI Ethics</div>
+					<div class="button" data-filter="Space Exploration">Space Exploration</div>
+					<div class="button" data-filter="Biotechnology">Biotechnology</div>
+					<div class="button" data-filter="Renewable Energy">Renewable Energy</div>
 				</div>
+			</div>
 
+
+			<div class="content-wrap">
+				<div class="explore-futureTech__body-container ">
+
+					<div class="blog-item d-flex space-between">
+						<div class="block block-1 d-flex align-top">
+							<div class="d-flex">
+								<div src="" alt="Avatar" class="explore-futureTech__blog-item_avatar avatar1 "></div>
+								<div class="explore-futureTech__blog-item_info d-flex column-flex justify-center">
+									<h4>John Techson</h4>
+									<p>Quantum Computing</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="block block-2 d-flex align-center">
+							<div class="btn explore-futureTech__blog-item_btn d-flex justify-center">
+								View Blogs
+								<button class="btn btn__yellow-arrow"></button>
+							</div>
+						</div>
+
+						<div class="block block-3">
+							<div class="">
+								<time class="event__date" datetime="2023-10-15">October 15, 2023</time>
+								<div>
+									<div class="explore-futureTech__blog-item_blog-title">
+										<h4>The Quantum Leap in Computing</h4>
+									</div>
+									<div class="explore-futureTech__blog-item_blog-content">
+										<p>Explore the revolution in quantum computing, its applications, and its potential impact
+											on
+											various
+											industries.</p>
+									</div>
+								</div>
+								<div class="blog-stats">
+									<span class="like">&#x2764; 24.5k</span>
+									<span>&#x1F4AC; 50</span>
+									<span>&#x2709; 20</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="blog-item d-flex space-between">
+						<div class="block block-1 d-flex align-top">
+							<div class="d-flex">
+								<div src="" alt="Avatar" class="explore-futureTech__blog-item_avatar avatar2 "></div>
+								<div class="explore-futureTech__blog-item_info d-flex column-flex justify-center">
+									<h4>Sarah Ethicist</h4>
+									<p>AI Ethics</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="block block-2 d-flex align-center">
+							<div class="btn explore-futureTech__blog-item_btn d-flex justify-center">
+								View Blogs
+								<button class="btn btn__yellow-arrow"></button>
+							</div>
+						</div>
+
+						<div class="block block-3">
+							<div class="">
+								<time class="event__date" datetime="2023-11-05">November 5, 2023</time>
+								<div>
+									<div class="explore-futureTech__blog-item_blog-title">
+										<h4>The Ethical Dilemmas of AI</h4>
+									</div>
+									<div class="explore-futureTech__blog-item_blog-content">
+										<p>A deep dive into ethical challenges posed by AI, including bias, privacy, and
+											transparency.</p>
+									</div>
+								</div>
+								<div class="blog-stats">
+									<span class="like">&#x2764; 32k</span>
+									<span>&#x1F4AC; 72</span>
+									<span>&#x2709; 18</span>
+								</div>
+							</div>
+						</div>
+					</div>
+
+
+					<div class="blog-item d-flex space-between">
+						<div class="block block-1 d-flex align-top">
+							<div class="d-flex">
+								<div src="" alt="Avatar" class="explore-futureTech__blog-item_avatar avatar3 "></div>
+								<div class="explore-futureTech__blog-item_info d-flex column-flex justify-center">
+									<h4>Astronomer X</h4>
+									<p>Space Exploration</p>
+								</div>
+							</div>
+						</div>
+
+						<div class="block block-2 d-flex align-center">
+							<div class="btn explore-futureTech__blog-item_btn d-flex justify-center">
+								View Blogs
+								<button class="btn btn__yellow-arrow"></button>
+							</div>
+						</div>
+
+						<div class="block block-3">
+							<div class="">
+								<time class="event__date" datetime="2023-12-10">December 10, 2023</time>
+								<div>
+									<div class="explore-futureTech__blog-item_blog-title">
+										<h4>The Mars Colonization Challenge</h4>
+									</div>
+									<div class="explore-futureTech__blog-item_blog-content">
+										<p>Exploring the technical and logistical challenges of human colonization on Mars.</p>
+									</div>
+								</div>
+								<div class="blog-stats">
+									<span class="like">&#x2764; 20k</span>
+									<span>&#x1F4AC; 31</span>
+									<span>&#x2709; 12</span>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
 			</div>
 		</div>
-	</div>
+	</section>
 
-	<div class="unlock-valuable-knowledge__general-container general-container">
+	<section class="unlock-valuable-knowledge__general-container general-container">
 		<div class="unlock-valuable-knowledge__head-container head-container">
 			<div class="content-wrap gray-background ">
 				<div class="unlock-valuable-knowledge__title-container title-container">
@@ -329,12 +449,12 @@
 					<button class="btn btn__yellow-arrow"></button>
 				</div>
 			</div>
-
+	
 			<div class="content-wrap">
 				<div class="unlock-valuable-knowledge__body-container ">
 					<div class="unlock-valuable-knowledge__body-container_first-floor unlock-valuable-knowledge__item ">
 						<div class="body-container_first-floor d-flex  align-center">
-
+	
 							<div class="unlock-valuable-knowledge__item-inner-container ">
 								<!-- <div class="d-flex align-center column-flex" style="border: 1px solid red;"> -->
 								<div class="unlock-valuable-knowledge__icon icon"></div>
@@ -372,18 +492,18 @@
 								</div>
 							</div>
 						</div>
-
+	
 						<div class="unlock-valuable-knowledge__content ">
 							<div class="unlock-valuable-knowledge_top-banner">
-
+	
 								<h4>Variety of Topics</h4>
 								<p>Topics include AI in education (25%), renewable energy (20%), healthcare (15%), space
 									exploration (25%), and
 									biotechnology (15%).</p>
 							</div>
-
+	
 							<div class="unlock-valuable-knowledge__img1"></div>
-
+	
 							<div class="unlock-valuable-knowledge__img-under-general-content">
 								<div class="unlock-valuable-knowledge__img-under-general-content_top-mobile-or-descktop">
 									<div
@@ -398,9 +518,9 @@
 									</div>
 									<div
 										class="unlock-valuable-knowledge__img-under-general-content_medium-mobile-or-top-right-descktop d-flex space-between align-center " ">
-										<div>
-											<div
-												class=" unlock-valuable-knowledge__img-under-general-content_medium-mobile-or-top-right-descktop-key">
+													<div>
+														<div
+															class=" unlock-valuable-knowledge__img-under-general-content_medium-mobile-or-top-right-descktop-key">
 										Download Formats
 									</div>
 									<div
@@ -414,7 +534,7 @@
 									<button class="btn btn__yellow-eye"></button>
 								</div>
 							</div>
-
+	
 						</div>
 						<div class="unlock-valuable-knowledge__img-under-general-content_bottom">
 							<div class="unlock-valuable-knowledge__img-under-general-content_bottom-key">Average Author
@@ -429,8 +549,8 @@
 					</div>
 				</div>
 			</div>
-
-
+	
+	
 			<div class="unlock-valuable-knowledge__body-container_second-floor unlock-valuable-knowledge__item ">
 				<div class="body-container_second-floor d-flex align-center">
 					<div class="unlock-valuable-knowledge__item-inner-container">
@@ -469,7 +589,7 @@
 						</div>
 					</div>
 				</div>
-
+	
 				<div class="unlock-valuable-knowledge__content ">
 					<div class="unlock-valuable-knowledge_top-banner">
 						<!-- <div class=""></div> -->
@@ -478,9 +598,9 @@
 							in healthcare (15%), and
 							renewable energy strategies (30%).</p>
 					</div>
-
+	
 					<div class="unlock-valuable-knowledge__img2"></div>
-
+	
 					<div class="unlock-valuable-knowledge__img-under-general-content">
 						<div class="unlock-valuable-knowledge__img-under-general-content_top-mobile-or-descktop">
 							<div class="unlock-valuable-knowledge__img-under-general-content_top-mobile-or-top-left-descktop">
@@ -511,10 +631,10 @@
 									<button class="btn btn__yellow-eye"></button>
 								</div>
 							</div>
-
+	
 							<!-- <div class="unlock-valuable-knowledge__img-under-content_top-right">
-							
-																</div> -->
+										
+																			</div> -->
 						</div>
 						<div class="unlock-valuable-knowledge__img-under-general-content_bottom">
 							<div class="unlock-valuable-knowledge__img-under-general-content_bottom-key">Average Author
@@ -529,11 +649,11 @@
 				</div>
 			</div>
 		</div>
-	</div>
-	</div>
-	</div>
+		</div>
+		</div>
+	</section>
 
-	<div class="real-words-from-real-readers__general-container general-container">
+	<section class="real-words-from-real-readers__general-container general-container">
 		<div class="unlock-valuable-knowledge__head-container head-container">
 			<div class="content-wrap gray-background ">
 				<div class="real-words-from-real-readers__title-container title-container">
@@ -549,146 +669,56 @@
 		<div class="content-wrap">
 
 			<div id="reviews-container" class="real-words-from-real-readers__body-container"></div>
-
-
-			<!-- <div class="real-words-from-real-readers__body-container">
-				<div class="real-words-from-real-readers__card">
-					<div class="real-words-from-real-readers__header d-flex justify-center align-center">
-						<img src="avatar1.jpg" alt="Avatar" class="real-words-from-real-readers__avatar avatar1">
-						<div class="real-words-from-real-readers__info">
-							<h4>Sarah Thompson</h4>
-							<p>San Francisco, USA</p>
-						</div>
-						<div class="stars">
-							★★★★★
-						</div>
-					</div>
-					<div class="real-words-from-real-readers__content">
-						<p>The ebooks on AI in education have been a game-changer for my research. They provide in-depth
-							insights and case studies
-							that are invaluable for staying updated.</p>
-					</div>
-				</div>
-
-				<div class="real-words-from-real-readers__card">
-					<div class="real-words-from-real-readers__header d-flex justify-center align-center">
-						<img src="avatar1.jpg" alt="Avatar" class="real-words-from-real-readers__avatar avatar2">
-						<div class="real-words-from-real-readers__info">
-							<h4>Raj Patel</h4>
-							<p>Mumbai, India</p>
-						</div>
-						<div class="stars">
-							★★★★★
-						</div>
-					</div>
-					<div class="real-words-from-real-readers__content">
-						<p>The whitepapers on renewable energy strategies have greatly influenced my work. They offer detailed
-							data and analysis.</p>
-					</div>
-				</div>
-
-				<div class="real-words-from-real-readers__card">
-					<div class="real-words-from-real-readers__header d-flex justify-center align-center">
-						<img src="avatar1.jpg" alt="Avatar" class="real-words-from-real-readers__avatar avatar3">
-						<div class="real-words-from-real-readers__info">
-							<h4>Emily Adams</h4>
-							<p>London, UK</p>
-						</div>
-						<div class="stars">
-							★★★★★
-						</div>
-					</div>
-					<div class="real-words-from-real-readers__content">
-						<p>The AI in healthcare reports have been an essential resource for our hospital. They highlight the
-							latest innovations and
-							best practices, improving patient care.</p>
-					</div>
-				</div>
-
-				<div class="real-words-from-real-readers__card">
-					<div class="real-words-from-real-readers__header d-flex justify-center align-center">
-						<img src="avatar1.jpg" alt="Avatar" class="real-words-from-real-readers__avatar avatar4">
-						<div class="real-words-from-real-readers__info">
-							<h4>Alan Jackson</h4>
-							<p>Houston, USA</p>
-						</div>
-						<div class="stars">
-							★★★★★
-						</div>
-					</div>
-					<div class="real-words-from-real-readers__content">
-						<p>The reports on space mining prospects have fueled my passion for space exploration. They provide a
-							comprehensive view.</p>
-					</div>
-				</div>
-
-				<div class="real-words-from-real-readers__card">
-					<div class="real-words-from-real-readers__header d-flex justify-center align-center">
-						<img src="avatar1.jpg" alt="Avatar" class="real-words-from-real-readers__avatar avatar5">
-						<div class="real-words-from-real-readers__info">
-							<h4>Jessica Miller</h4>
-							<p>Boston, USA</p>
-						</div>
-						<div class="stars">
-							★★★★★
-						</div>
-					</div>
-					<div class="real-words-from-real-readers__content">
-						<p>The research papers on genomic breakthroughs have been a goldmine of information. They've shaped
-							the direction of my
-							research in genomics.</p>
-					</div>
-				</div>
-
-				<div class="real-words-from-real-readers__card">
-					<div class="real-words-from-real-readers__header d-flex justify-center align-center">
-						<img src="avatar1.jpg" alt="Avatar" class="real-words-from-real-readers__avatar avatar6">
-						<div class="real-words-from-real-readers__info">
-							<h4>Diego Lopez</h4>
-							<p>Barcelona, Spain</p>
-						</div>
-						<div class="stars">
-							★★★★★
-						</div>
-					</div>
-					<div class="real-words-from-real-readers__content">
-						<p>The ebooks on renewable energy strategies have given me the insights I needed to pivot our startup
-							toward
-							sustainability.</p>
-					</div>
-				</div>
-			</div> -->
-
 		</div>
-	</div>
+	</section>
 
 
 
-	<div class="be-part-of-the-future-tech-revolution__general-container">
+	<section class="be-part-of-the-future-tech-revolution__general-container">
 		<div class="content-wrap gray-background ">
 
 
-			<div class="be-part-of-the-future-tech-revolution__head-container desktop-block d-flex">
-				<div class="be-part-of-the-future-tech-revolution__head-container_helper d-flex">
-					<div class="big-logo d-flex">
-						<img src="sourse/img/logo.svg" alt="logo">
-					</div>
-					<div class="be-part-of-the-future-tech-revolution_nested-block">
-						<div class="be-part-of-the-future-tech-revolution__under-title under-title_h2 ">Learn, Connect, and
-							Innovate
-						</div>
-						<div class="be-part-of-the-future-tech-revolution__title ">
-							<h2>Be Part of the Future Tech Revolution</h2>
-						</div>
-						<div class="be-part-of-the-future-tech-revolution__p ">
-							<p>Immerse yourself in the world of future technology. Explore our comprehensive resources, connect
-								with fellow tech
-								enthusiasts, and drive innovation in the industry. Join a dynamic community of forward-thinkers.
-							</p>
-						</div>
-					</div>
-				</div>
+<div class="be-part-of-the-future-tech-revolution__head-container mobile-block">
+	<div class="be-part-of-the-future-tech-revolution__head-container_helper">
+		<div class="big-logo-helper d-flex ">
+			<div class=" big-logo ">
+				<img src=" sourse/img/logo.svg" alt="big-logo">
 			</div>
+			<div class="be-part-of-the-future-tech-revolution__under-title under-title_h2 d-flex">Learn, Connect,
+				and
+				Innovate
+			</div>
+		</div>
+		<div class="be-part-of-the-future-tech-revolution__title ">
+			<h2>Be Part of the Future Tech Revolution</h2>
+		</div>
+		<div class="be-part-of-the-future-tech-revolution__p ">
+			<p>Immerse yourself in the world of future technology. Explore our comprehensive resources.</p>
+		</div>
+	</div>
+</div>
+
+<div class="be-part-of-the-future-tech-revolution__head-container desktop-block d-flex">
+	<div class="be-part-of-the-future-tech-revolution__head-container_helper d-flex">
+		<div class="big-logo d-flex">
+			<img src="sourse/img/logo.svg" alt="logo">
+		</div>
+		<div class="be-part-of-the-future-tech-revolution_nested-block">
+			<div class="be-part-of-the-future-tech-revolution__under-title under-title_h2 ">Learn, Connect, and
+				Innovate
+			</div>
+			<div class="be-part-of-the-future-tech-revolution__title ">
+				<h2>Be Part of the Future Tech Revolution</h2>
+			</div>
+			<div class="be-part-of-the-future-tech-revolution__p ">
+				<p>Immerse yourself in the world of future technology. Explore our comprehensive resources, connect
+					with fellow tech
+					enthusiasts, and drive innovation in the industry. Join a dynamic community of forward-thinkers.
+				</p>
+			</div>
+		</div>
+	</div>
+</div>
 
 			<!-- <div class="content-wrap gray-background"> -->
 
@@ -775,7 +805,7 @@
 
 
 		</div>
-	</div>
+	</section>
 
 	<footer>
 		<div class="content-wrap ">
@@ -893,11 +923,30 @@
 					</li>
 				</ul>
 			</nav>
+
+			<div class="footer-container">
+				<div class="social-icons">
+					<a href="#"><img src="sourse/img/social/twitter-icon.svg" alt="Twitter"></a>
+					<a href="#"><img src="sourse/img/social/medium-icon.svg" alt="Medium"></a>
+					<a href="#"><img src="sourse/img/social/linkedin-icon.svg" alt="LinkedIn"></a>
+				</div>
+				<div class="links">
+					<a href="#">Terms & Conditions</a>
+					<span>|</span>
+					<a href="#">Privacy Policy</a>
+				</div>
+				<div class="copyright">
+					© 2024 FutureTech. All rights reserved.
+				</div>
+			</div>
 		</div>
 
 		<nav></nav>
 	</footer>
 
+	<div class="content-wrap ">
+		<button id="scrollToTop" class="scroll-to-top hide">⬆</button>
+	</div>
 
 
 

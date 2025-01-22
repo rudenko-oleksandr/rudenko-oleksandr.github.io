@@ -1,48 +1,97 @@
 {
 	"reviews": [
 		{
-			
 			"avatar": "data/Profile/profile-6.jpg",
 			"name": "Sarah Thompson",
 			"location": "San Francisco, USA",
 			"rating": 5,
-			"content": "The ebooks on AI in education have been a game-changer for my research. They provide in-depth insights and case studies that are invaluable for staying updated."
+			"content": "The ebooks on AI in education have been a game-changer for my research. They provide in-depth insights and case studies that are invaluable for staying updated.",
+			"timestamp": "2023-11-15T14:32:00Z",
+			"tags": [
+				"AI",
+				"Education",
+				"Research"
+			],
+			"language": "English",
+			"verifiedPurchase": true,
+			"category": "Ebooks"
 		},
 		{
 			"avatar": "data/Profile/profile-1.jpg",
 			"name": "Raj Patel",
 			"location": "Mumbai, India",
 			"rating": 4,
-			"content": "The whitepapers on renewable energy strategies have greatly influenced my work. They offer detailed data and analysis, helping me make informed decisions."
+			"content": "The whitepapers on renewable energy strategies have greatly influenced my work. They offer detailed data and analysis, helping me make informed decisions.",
+			"timestamp": "2023-11-10T09:20:00Z",
+			"tags": [
+				"Renewable Energy",
+				"Whitepapers"
+			],
+			"language": "English",
+			"verifiedPurchase": true,
+			"category": "Whitepapers"
 		},
 		{
 			"avatar": "data/Profile/profile-2.jpg",
 			"name": "Emily Adams",
 			"location": "London, UK",
 			"rating": 5,
-			"content": "The AI in healthcare reports have been an essential resource for our hospital. They highlight the latest innovations and best practices, improving patient care."
+			"content": "The AI in healthcare reports have been an essential resource for our hospital. They highlight the latest innovations and best practices, improving patient care.",
+			"timestamp": "2023-11-08T16:45:00Z",
+			"tags": [
+				"AI",
+				"Healthcare",
+				"Reports"
+			],
+			"language": "English",
+			"verifiedPurchase": false,
+			"category": "Reports"
 		},
 		{
 			"avatar": "data/Profile/profile-3.jpg",
 			"name": "Alan Jackson",
 			"location": "Houston, USA",
 			"rating": 3,
-			"content": "The reports on space mining prospects have fueled my passion for space exploration. They provide a comprehensive view of what lies beyond Earth."
+			"content": "The reports on space mining prospects have fueled my passion for space exploration. They provide a comprehensive view of what lies beyond Earth.",
+			"timestamp": "2023-11-05T11:10:00Z",
+			"tags": [
+				"Space Mining",
+				"Exploration"
+			],
+			"language": "English",
+			"verifiedPurchase": false,
+			"category": "Reports"
 		},
 		{
 			"avatar": "data/Profile/profile-4.jpg",
 			"name": "Jessica Miller",
 			"location": "Boston, USA",
 			"rating": 4,
-			"content": "The research papers on genomic breakthroughs have been a goldmine of information. They've shaped the direction of my research in genomics."
+			"content": "The research papers on genomic breakthroughs have been a goldmine of information. They've shaped the direction of my research in genomics.",
+			"timestamp": "2023-11-02T17:50:00Z",
+			"tags": [
+				"Genomics",
+				"Research Papers"
+			],
+			"language": "English",
+			"verifiedPurchase": true,
+			"category": "Research Papers"
 		},
 		{
 			"avatar": "data/Profile/profile-5.jpg",
 			"name": "Diego Lopez",
 			"location": "Barcelona, Spain",
 			"rating": 4,
-			"content": "The ebooks on renewable energy strategies have given me the insights I needed to pivot our startup toward sustainability."
+			"content": "The ebooks on renewable energy strategies have given me the insights I needed to pivot our startup toward sustainability.",
+			"timestamp": "2023-10-30T13:15:00Z",
+			"tags": [
+				"Renewable Energy",
+				"Ebooks",
+				"Sustainability"
+			],
+			"language": "Spanish",
+			"verifiedPurchase": true,
+			"category": "Ebooks"
 		}
-		
 	]
 }

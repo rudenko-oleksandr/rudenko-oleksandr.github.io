@@ -1,0 +1,98 @@
+/* Приховуємо модальне вікно по замовчуванню */
+.hide {
+	display: none;
+}
+
+/* Стиль для оверлея */
+.modal-overlay {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.5);
+	/* Напівпрозорий фон */
+	z-index: 10;
+	display: none;
+	/* Спочатку прихований */
+}
+
+/* Стиль для модального вікна */
+.modal {
+	position: fixed;
+	top: 1.25rem;
+	/* 20px */
+	left: 1.25rem;
+	/* 20px */
+	right: 1.25rem;
+	/* 20px */
+	bottom: 1.25rem;
+	/* 20px */
+	background-color: var(--dark-color_15);
+	padding: 1.25rem;
+	/* 20px */
+	border: 1px solid var(--corporate-color);
+	/* Жовтий бордер */
+	border-radius: 1.25rem;
+	/* 20px */
+	/* Закруглені кути */
+	z-index: 20;
+	display: none;
+	/* Спочатку приховане */
+	box-sizing: border-box;
+	/* Включає бордер та паддінг у загальні розміри */
+	color: white;
+	/* Текст у модальному вікні */
+	overflow: auto;
+	/* Додаємо прокрутку, якщо вміст не вміщується */
+
+	/* Центрування тексту */
+	display: flex;
+	justify-content: center;
+	/* Горизонтальне вирівнювання */
+	align-items: center;
+	/* Вертикальне вирівнювання */
+	text-align: center;
+	/* Центрування тексту */
+}
+
+/* Показуємо модальне вікно та оверлей при видаленні класу 'hide' */
+.modal:not(.hide),
+.modal-overlay:not(.hide) {
+	/* display: block; */
+}
+
+/* Стиль для хрестика закриття модального вікна */
+.close-btn {
+	position: absolute;
+	top: 0.625rem;
+	/* 10px */
+	right: 0.625rem;
+	/* 10px */
+	font-size: 1.5rem;
+	/* 24px */
+	background: none;
+	border: none;
+	color: white;
+	cursor: pointer;
+}
+
+
+.no-scroll {
+	overflow: hidden;
+}
+
+/* Медіазапит для екранів більше 768px */
+@media (min-width: 48rem) {
+
+	/* 768px */
+	.btn__header-desktop {
+		display: block;
+		/* Показуємо кнопку Contact Us на десктопах */
+	}
+
+	.btn__header-mobile {
+		display: none;
+		/* Приховуємо кнопку для мобільних на десктопах */
+	}
+}

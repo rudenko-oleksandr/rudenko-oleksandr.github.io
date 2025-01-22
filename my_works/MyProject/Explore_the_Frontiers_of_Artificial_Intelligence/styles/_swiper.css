@@ -1,8 +1,3 @@
-/* .inner {
-	border: 1px solid red;
-	margin: 150px;
-} */
-
 .swiper-container {
 	width: 100%;
 	/* Ширина контейнера */
@@ -11,130 +6,72 @@
 }
 
 .swiper-wrapper {
-	/* display: flex; */
 	/* Додає горизонтальне розташування слайдів */
 	transition: transform 0.3s ease;
 	/* Плавне прокручування */
-			/* gap: 10px; */
 	align-items: stretch;
-	/* height: 100%; */
 }
 
 .swiper-slide {
-		background-color: var(--dark-color_12);
-			border: 1px solid var(--dark-color_15);
-
-	/* flex-shrink: 0; */
-	/* Слайди не стискаються */
+	background-color: var(--dark-color_12);
+	border: 0.0625rem solid var(--dark-color_15);
+	/* 1px */
 	width: 100%;
-	/* Базова ширина слайдів */
-	/* max-width: calc((100% - 40px) / 3); */
-	/* Ширина для трьох слайдів на великих екранах */
-	/* height: 200px; */
-	/* Фіксована висота слайдів */
-	/* background: #414141; */
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	/* justify-content: center;
-	align-items: center;
-	text-align: center; */
-
-	/* box-sizing: border-box; */
-	/* opacity: 1; */
-	/* Початкова видимість */
 	transition: opacity 0.3s ease;
-	/* Плавний перехід видимості */
-	/* align-items: stretch; */
-/* height: 100%; */
-/* justify-content: space-between; */
-
-/* flex: 0 0 calc(100% / 3); */
-	/* box-sizing: border-box; */
-
-	border-radius: 10px;
-	padding: 24px;
+	border-radius: 0.625rem;
+	/* 10px */
+	padding: 1.5rem;
+	/* 24px */
 	display: flex;
 	flex-direction: column;
-	/* Розташування елементів по вертикалі */
-	/* justify-content: space-between; */
-	/* Вирівнювання контенту по висоті */
-	min-height: 200px;
-	/* Задайте мінімальну висоту */
-	/* height: 100%; */
-	/* Висота буде однаковою для всіх */
-
-}
-
-.swiper-slide.swiper-slide-hidden {
-	/* opacity: 0; */
-	/* Приховані слайди невидимі */
+	min-height: 12.5rem;
+	/* 200px */
 }
 
 .swiper-navigation {
-	/* position: relative;
-	border: 3px solid green;
-	padding: 20px 0; */
-	height: 20px;
-		/* border: 3px solid green; */
-		/* position: absolute; */
-		/* bottom: -110px; */
-			/* Відступ від нижнього краю */
-			/* width: 100%;
-			display: flex;
-			justify-content: space-between !important; */
-			/* position: relative!important; */
-			/* position: absolute; */
-			/* position: static; */
+	height: 1.25rem;
+	/* 20px */
 }
 
 .swiper-button-prev {
 	position: absolute;
-			/* border: 3px solid rgb(105, 253, 6); */
-			color: var(--light_color_absolute) !important;
+	color: var(--light_color_absolute) !important;
 }
 
 .swiper-button-next {
 	position: absolute;
-			/* border: 3px solid rgb(6, 112, 187); */
-						color: var(--light_color_absolute) !important;
+	color: var(--light_color_absolute) !important;
 }
 
 .swiper-pagination {
-	/* position: absolute; */
-		/* border: 3px solid rgb(253, 23, 6); */
-		/* top: 90px !important; */
-	/* margin-bottom: 120px; */
-position: absolute;
-	bottom: -5px !important;
-							color: var(--light_color_absolute) !important;
-							--swiper-theme-color: #f6f6f7;
-	/* Відступ під swiper-wrapper */
-	/* left: 50%;
-	transform: translateX(-50%);
-	display: flex;
-	gap: 5px;
-	justify-content: center; */
+	position: absolute;
+	bottom: -0.3125rem !important;
+	/* -5px */
+	color: var(--light_color_absolute) !important;
+	--swiper-theme-color: #f6f6f7;
 }
 
-.swiper-pagination-bullet{
-	background-color: var(--dark-color_40)!important;
+.swiper-pagination-bullet {
+	background-color: var(--dark-color_40) !important;
 }
-
-
 
 @media (max-width: 768px) {
 	.swiper-slide {
 		max-width: 100%;
 		/* Слайди займають всю ширину на малих екранах */
-			padding: 30px;
+		padding: 1.875rem;
+		/* 30px */
 	}
 }
 
 @media (min-width: 1920px) {
 	.swiper-slide {
 		max-width: 100%;
-		/* Слайди займають всю ширину на малих екранах */
-		padding: 40px;
+		/* Слайди займають всю ширину на великих екранах */
+		padding: 2.5rem;
+		/* 40px */
 	}
 }

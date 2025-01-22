@@ -1,25 +1,28 @@
 .explore-futureTech__head-container>.content-wrap>.title-container {
-	margin: 40px 0 30px;
-
+	margin: 2.5rem 0 1.875rem;
+	/* 40px 0 30px */
 }
 
 .explore-futureTech__head-container_btn {
-	max-width: 720px;
-	max-height: 49px;
-	padding: 14px 20px;
-	gap: 4px;
+	max-width: 45rem;
+	/* 720px */
+	max-height: 3.0625rem;
+	/* 49px */
+	padding: 0.875rem 1.25rem;
+	/* 14px 20px */
+	gap: 0.25rem;
+	/* 4px */
 	background-color: var(--dark-color_08);
 	border: 1px solid var(--dark-color_15);
-	margin-bottom: 40px;
+	margin-bottom: 2.5rem;
+	/* 40px */
 }
 
-
-/* TODO   swiper*/
+/* TODO swiper */
 .swiper-container {
 	overflow-x: auto;
 	display: flex;
 	scrollbar-width: none;
-	/* Firefox */
 	cursor: grab;
 	position: relative;
 }
@@ -34,16 +37,22 @@
 
 .button {
 	flex: 0 0 auto;
-	min-width: 160px;
-	height: 57px;
-	margin: 20px 7px;
-	padding: 0 11px;
+	min-width: 10rem;
+	/* 160px */
+	height: 3.5625rem;
+	/* 57px */
+	margin: 1.25rem 0.4375rem;
+	/* 20px 7px */
+	padding: 0 0.6875rem;
+	/* 0 11px */
 	text-align: center;
-	line-height: 57px;
+	line-height: 3.5625rem;
+	/* 57px */
 	background-color: var(--dark-color_08);
 	border: 1px solid var(--dark-color_15);
 	color: var(--grey-color_60);
-	border-radius: 8px;
+	border-radius: 0.5rem;
+	/* 8px */
 	cursor: pointer;
 }
 
@@ -51,4 +60,201 @@
 	background-color: var(--dark-color_15);
 	color: var(--light_color_absolute);
 	border: 1px solid var(--dark-color_20);
+}
+
+/*-------------------------------*/
+/* TODO section-blog */
+.blog-item {
+	flex-wrap: wrap;
+	border-top: 1px solid var(--dark-color_15);
+	padding: 2.5rem 0;
+	/* 40px 0 */
+}
+
+.block {
+	display: flex;
+}
+
+.block-2>.explore-futureTech__blog-item_btn {
+	white-space: nowrap;
+	min-width: 4.5625rem;
+	/* 73px */
+	min-height: 1.3125rem;
+	/* 21px */
+	padding: 0.875rem 1.25rem;
+	/* 14px 20px */
+	gap: 0.25rem;
+	/* 4px */
+	background-color: var(--dark-color_08);
+	border: 1px solid var(--dark-color_15);
+	border-radius: 0.5rem;
+	/* 8px */
+}
+
+.explore-futureTech__blog-item_avatar {
+	margin-right: 0.5rem;
+	/* 8px */
+}
+
+.avatar1 {
+	background-image: url(../sourse/img/img/Image1.jpg);
+}
+
+.avatar2 {
+	background-image: url(../sourse/img/img/Image2.jpg);
+}
+
+.avatar3 {
+	background-image: url(../sourse/img/img/Image3.jpg);
+}
+
+.block-1,
+.block-2 {
+	margin-bottom: 1.875rem;
+	/* 30px */
+}
+
+.explore-futureTech__blog-item_avatar {
+	width: 3.75rem;
+	/* 60px */
+	height: 3.75rem;
+	/* 60px */
+	border-radius: 50%;
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
+.event__date {
+	font-size: 1rem;
+	/* 16px */
+	font-weight: 600;
+	margin-bottom: 1.25rem;
+	/* 20px */
+}
+
+.explore-futureTech__blog-item_blog-title {
+	margin-top: 1.25rem;
+	/* 20px */
+	margin-bottom: 0.25rem;
+	/* 4px */
+}
+
+.explore-futureTech__blog-item_blog-content>p {
+	margin-bottom: 1.25rem;
+	/* 20px */
+}
+
+.blog-stats>span {
+	border: 1px solid var(--dark-color_15);
+	background-color: var(--dark-color_12);
+	border-radius: 100px;
+	padding: 0.375rem 0.75rem;
+	/* 6px 12px */
+}
+
+/* TODO додаємо лайк */
+.blog-stats>.like {
+	cursor: pointer;
+	transition: color 0.3s;
+}
+
+.like.liked {
+	color: red;
+}
+
+/* Від 768px */
+@media (min-width: 768px) {
+	.blog-item {
+		flex-wrap: nowrap;
+		gap: 2.5rem;
+		/* 40px */
+		align-items: stretch;
+		padding: 3.75rem 0;
+		/* 60px 0 */
+	}
+
+	.block-1 {
+		order: 1;
+		white-space: nowrap;
+		width: 30%;
+	}
+
+	.block-3 {
+		order: 2;
+		width: 60%;
+	}
+
+	.explore-futureTech__blog-item_blog-title {
+		margin-top: 1.5rem;
+		/* 24px */
+		margin-bottom: 0.375rem;
+		/* 6px */
+	}
+
+	.block-2 {
+		order: 3;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.event__date {
+		font-size: 1.125rem;
+		/* 18px */
+		margin-bottom: 1.5rem;
+		/* 24px */
+	}
+
+	.explore-futureTech__blog-item_blog-content>p {
+		margin-bottom: 1.5rem;
+		/* 24px */
+	}
+}
+
+@media (min-width: 1920px) {
+	.blog-item {
+		gap: 3.125rem;
+		/* 50px */
+		padding: 5rem 0;
+		/* 80px 0 */
+	}
+
+	.event__date {
+		font-size: 1.25rem;
+		/* 20px */
+		margin-bottom: 1.875rem;
+		/* 30px */
+	}
+
+	.block-2>.explore-futureTech__blog-item_btn {
+		min-width: 10.125rem;
+		/* 162px */
+		min-height: 3.9375rem;
+		/* 63px */
+		padding: 1.125rem 1.5rem;
+		/* 18px 24px */
+		border-radius: 0.75rem;
+		/* 12px */
+		font-size: 1.125rem;
+		/* 18px */
+	}
+
+	.explore-futureTech__blog-item_blog-title {
+		margin-top: 1.875rem;
+		/* 30px */
+		margin-bottom: 0.625rem;
+		/* 10px */
+	}
+
+	.blog-stats>span {
+		font-size: 1.125rem;
+		/* 18px */
+		padding: 0.5rem 1rem;
+		/* 8px 16px */
+	}
+
+	.explore-futureTech__blog-item_blog-content>p {
+		margin-bottom: 1.875rem;
+		/* 30px */
+	}
 }
