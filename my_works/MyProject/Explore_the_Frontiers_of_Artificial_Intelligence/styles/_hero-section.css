@@ -1,4 +1,4 @@
-/* .first-screen {
+.first-screen {
 	background-color: var(--dark-color_08);
 }
 
@@ -46,19 +46,9 @@
 
 .main-menu .burger-menu {
 	color: var(--grey-color_50);
-} */
+}
 
-
-
-
-
-
-
-
-
-
-
-
+/*----------------------------------------*/
 
 .mobile-menu {
 	width: 100vw;
@@ -78,14 +68,7 @@
 	left: -10000px;
 }
 
-
-
-
-
-
-
-
-/* 
+/*----------------------------------------*/
 
 #btnMobileHeader>.btn {
 	width: 6.4375rem;
@@ -250,4 +233,4 @@
 
 .information-board__content>button {
 	margin-left: 1rem;
-} */
+}
