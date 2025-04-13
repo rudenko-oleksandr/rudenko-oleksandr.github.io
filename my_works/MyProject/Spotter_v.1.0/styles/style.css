@@ -28,19 +28,19 @@ h1 {
 
 .modal-content {
   background-color: white;
-  padding: 20px;
+  padding: 20px; /* Збільшено з 10px до 20px */
   border-radius: 5px;
   text-align: center;
-  max-width: 600px;
-  width: 90%;
-  box-sizing: border-box;
+  max-width: 600px; /* Додано максимальну ширину */
+  width: 90%; /* Додано для адаптивності на малих екранах */
+  box-sizing: border-box; /* Додано для коректного врахування padding */
 }
 
 /* Стилі лише для label з чекбоксами */
 #modal .modal-content label:has(input[type="checkbox"]) {
-  display: block;
-  margin: 10px 0;
-  text-align: left;
+  display: block; /* Кожен label із чекбоксом займає окремий рядок */
+  margin: 10px 0; /* Вертикальний відступ між чекбоксами */
+  text-align: left; /* Вирівнювання тексту ліворуч */
 }
 
 .card {
@@ -49,14 +49,14 @@ h1 {
   justify-content: center;
   align-items: center;
   background: white;
-  padding: 2.5px;
-  font-size: 5px;
+  padding: 5px;
+  font-size: 10px;
   border: 1px solid #595959;
-  border-radius: 4px;
-  -webkit-box-shadow: 1.5px 1.5px 2.5px 1.5px #595959;
-  box-shadow: 1.5px 1.5px 2.5px 1.5px #595959;
-  outline: 0.5px solid #595959;
-  outline-offset: 0.5px;
+  border-radius: 8px;
+  -webkit-box-shadow: 3px 3px 20px 3px #595959;
+  box-shadow: 3px 3px 5px 3px #595959;
+  outline: 1px solid #595959;
+  outline-offset: 1px;
   position: relative;
 }
 
@@ -65,52 +65,52 @@ h1 {
   flex-wrap: wrap;
   justify-content: center;
   align-items: center;
-  border: 0.5px solid gray;
-  padding: 2.5px;
-  margin: 1.5px;
+  border: 1px solid gray;
+  padding: 5px;
+  margin: 3px;
   width: auto;
   max-width: 100%;
-  min-height: 20px;
+  min-height: 40px;
   height: auto;
   cursor: pointer;
   box-sizing: border-box;
-  -webkit-box-shadow: 1.5px 1.5px 2.5px 1.5px #595959;
-  box-shadow: 1.5px 1.5px 2.5px 1.5px #595959;
-  outline: 0.5px solid #595959;
-  outline-offset: 0.5px;
+  -webkit-box-shadow: 3px 3px 20px 3px #595959;
+  box-shadow: 3px 3px 5px 3px #595959;
+  outline: 1px solid #595959;
+  outline-offset: 1px;
 }
 
 .symbol {
-  height: 35px;
-  width: 35px;
-  margin: 2.5px;
+  height: 70px;
+  width: 70px;
+  margin: 5px;
   text-align: center;
-  line-height: 32px;
+  line-height: 64px;
   cursor: pointer;
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: auto;
-  font-size: 24px;
+  font-size: 48px;
   font-weight: 900;
-  padding: 1.5px;
+  padding: 3px;
   box-sizing: border-box;
 }
 
 .deck-symbol {
-  height: 35px;
-  width: 35px;
-  margin: 2.5px;
+  height: 70px;
+  width: 70px;
+  margin: 5px;
   text-align: center;
-  line-height: 32px;
+  line-height: 64px;
   flex-grow: 0;
   flex-shrink: 0;
   flex-basis: auto;
-  font-size: 24px;
+  font-size: 48px;
   font-weight: 900;
-  padding: 1.5px;
+  padding: 3px;
   box-sizing: border-box;
   background-image: url("../resource/buttons/gray_quad_button.png");
-  background-size: 35px 35px;
+  background-size: 70px 70px;
   background-repeat: no-repeat;
   background-position: center;
   color: #333333;
@@ -121,27 +121,27 @@ h1 {
 
 .deck-symbol.highlighted {
   background-image: url("../resource/buttons/gray_quad_button_frame.png");
-  background-size: 35px 35px;
+  background-size: 70px 70px;
   background-repeat: no-repeat;
   background-position: center;
   background-color: var(--highlight-color);
-  border-radius: 7.5px;
+  border-radius: 15px;
   overflow: hidden;
 }
 
 .deck-symbol.word {
-  min-width: 35px;
+  min-width: 70px;
   width: auto;
-  max-width: 100px;
-  height: 35px;
-  font-size: 9px;
-  line-height: 10.5px;
+  max-width: 200px;
+  height: 70px;
+  font-size: 18px;
+  line-height: 21px;
   word-break: break-word;
   background-image: url("../resource/buttons/gray_quad_button.png");
-  background-size: 100% 35px;
+  background-size: 100% 70px;
   background-repeat: no-repeat;
   background-position: center;
-  padding: 0 7.5px;
+  padding: 0 15px;
   box-sizing: border-box;
   color: #333333;
   display: flex;
@@ -152,25 +152,25 @@ h1 {
 
 .deck-symbol.word.highlighted {
   background-image: url("../resource/buttons/gray_quad_button_frame.png");
-  background-size: 100% 35px;
+  background-size: 100% 70px;
   background-repeat: no-repeat;
   background-position: center;
   background-color: var(--highlight-color);
-  padding: 0 7.5px;
-  border-radius: 7.5px;
+  padding: 0 15px;
+  border-radius: 15px;
   overflow: hidden;
 }
 
 .symbol.number,
 .symbol.hieroglyph {
-  width: 35px;
-  height: 35px;
+  width: 70px;
+  height: 70px;
   background-image: url("../resource/buttons/gray_button.png");
-  background-size: 35px 35px;
+  background-size: 70px 70px;
   background-repeat: no-repeat;
   background-position: center;
   color: #333333;
-  font-size: 12px;
+  font-size: 24px;
   font-weight: bold;
   display: flex;
   justify-content: center;
@@ -182,7 +182,7 @@ h1 {
 .symbol.number.selected,
 .symbol.hieroglyph.selected {
   background-image: url("../resource/buttons/yellow_button.png");
-  background-size: 35px 35px;
+  background-size: 70px 70px;
   background-repeat: no-repeat;
   background-position: center;
   color: #333333;
@@ -191,7 +191,7 @@ h1 {
 .symbol.number.correct,
 .symbol.hieroglyph.correct {
   background-image: url("../resource/buttons/green_button.png");
-  background-size: 35px 35px;
+  background-size: 70px 70px;
   background-repeat: no-repeat;
   background-position: center;
   color: #333333;
@@ -200,54 +200,31 @@ h1 {
 .symbol.number.incorrect,
 .symbol.hieroglyph.incorrect {
   background-image: url("../resource/buttons/red_button.png");
-  background-size: 35px 35px;
+  background-size: 70px 70px;
   background-repeat: no-repeat;
   background-position: center;
   color: #333333;
 }
 
 .deck-symbol.number {
-  font-size: 12px;
-  background-image: url("../resource/buttons/gray_button.png");
-  background-size: 35px 35px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.deck-symbol.hieroglyph {
-  font-size: 12px;
-  background-image: url("../resource/buttons/gray_button.png");
-  background-size: 35px 35px;
-  background-repeat: no-repeat;
-  background-position: center;
-}
-
-.deck-symbol.number.highlighted,
-.deck-symbol.hieroglyph.highlighted {
-  background-image: url("../resource/buttons/gray_quad_button_frame.png");
-  background-size: 35px 35px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: var(--highlight-color);
-  border-radius: 7.5px;
-  overflow: hidden;
+  font-size: 24px;
 }
 
 .symbol.word {
-  min-width: 35px;
+  min-width: 70px;
   width: auto;
-  max-width: 100px;
-  height: 35px;
+  max-width: 200px;
+  height: 70px;
   background-image: url("../resource/buttons/gray_quad_button_main_cards.png");
-  background-size: 100% 35px;
+  background-size: 100% 70px;
   background-repeat: no-repeat;
   background-position: center;
   color: #000000;
-  font-size: 9px;
+  font-size: 18px;
   font-weight: 900;
-  line-height: 10.5px;
+  line-height: 21px;
   word-break: break-word;
-  padding: 0 7.5px;
+  padding: 0 15px;
   box-sizing: border-box;
   display: flex;
   justify-content: center;
@@ -258,46 +235,46 @@ h1 {
 
 .symbol.word.selected {
   background-image: url("../resource/buttons/gray_quad_button_main_cards.png");
-  background-size: 100% 35px;
+  background-size: 100% 70px;
   background-repeat: no-repeat;
   background-position: center;
   color: #ffeb3b;
-  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
-  text-shadow: 0 0 2.5px #ffeb3b, 0 0 5px #ffeb3b, 0 0 7.5px #ffeb3b;
-  padding: 0 7.5px;
+  text-shadow: 0 0 5px #ffeb3b, 0 0 10px #ffeb3b, 0 0 15px #ffeb3b;
+  padding: 0 15px;
 }
 
 .symbol.word.correct {
   background-image: url("../resource/buttons/gray_quad_button_main_cards.png");
-  background-size: 100% 35px;
+  background-size: 100% 70px;
   background-repeat: no-repeat;
   background-position: center;
   color: #00ff00;
-  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
-  text-shadow: 0 0 2.5px #00ff00, 0 0 5px #00ff00, 0 0 7.5px #00ff00;
-  padding: 0 7.5px;
+  text-shadow: 0 0 5px #00ff00, 0 0 10px #00ff00, 0 0 15px #00ff00;
+  padding: 0 15px;
 }
 
 .symbol.word.incorrect {
   background-image: url("../resource/buttons/gray_quad_button_main_cards.png");
-  background-size: 100% 35px;
+  background-size: 100% 70px;
   background-repeat: no-repeat;
   background-position: center;
   color: #ff0000;
-  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
-  text-shadow: 0 0 2.5px #ff0000, 0 0 5px #ff0000, 0 0 7.5px #ff0000;
-  padding: 0 7.5px;
+  text-shadow: 0 0 5px #ff0000, 0 0 10px #ff0000, 0 0 15px #ff0000;
+  padding: 0 15px;
 }
 
 .symbol.image {
-  width: 35px;
-  height: 35px;
-  line-height: 35px;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
   background-image: url("../resource/buttons/gray_quad_button.png");
-  background-size: 35px 35px;
+  background-size: 70px 70px;
   background-repeat: no-repeat;
   background-position: center;
   display: flex;
@@ -313,37 +290,26 @@ h1 {
 }
 
 .deck-symbol.image {
-  width: 35px;
-  height: 35px;
-  line-height: 35px;
-  background-image: url("../resource/buttons/gray_quad_button.png");
-  background-size: 35px 35px;
-  background-repeat: no-repeat;
-  background-position: center;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 70px;
+  height: 70px;
+  line-height: 70px;
 }
 
 .deck-symbol.word {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0 7.5px;
-  min-width: 35px;
+  padding: 0 15px;
+  min-width: 70px;
   width: auto;
-  max-width: 100px;
-  height: 35px;
-  font-size: 9px;
+  max-width: 200px;
+  height: 70px;
+  font-size: 18px;
   font-weight: 900;
-  line-height: 10.5px;
+  line-height: 21px;
   word-break: break-word;
   text-align: center;
   box-sizing: border-box;
-  background-image: url("../resource/buttons/gray_quad_button.png");
-  background-size: 100% 35px;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .deck-symbol img {
@@ -385,7 +351,7 @@ h1 {
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  position: relative;
+  position: relative; /* Додано для позиціонування підказки */
 }
 
 #showHintButton:hover {
@@ -451,31 +417,31 @@ h1 {
 
 .symbol.image.selected {
   background-image: url("../resource/buttons/gray_quad_button_frame.png");
-  background-size: 35px 35px;
+  background-size: 70px 70px;
   background-repeat: no-repeat;
   background-position: center;
   background-color: #fff176;
-  border-radius: 7.5px;
+  border-radius: 15px;
   overflow: hidden;
 }
 
 .symbol.image.correct {
   background-image: url("../resource/buttons/gray_quad_button_frame.png");
-  background-size: 35px 35px;
+  background-size: 70px 70px;
   background-repeat: no-repeat;
   background-position: center;
   background-color: #a5d6a7;
-  border-radius: 7.5px;
+  border-radius: 15px;
   overflow: hidden;
 }
 
 .symbol.image.incorrect {
   background-image: url("../resource/buttons/gray_quad_button_frame.png");
-  background-size: 35px 35px;
+  background-size: 70px 70px;
   background-repeat: no-repeat;
   background-position: center;
   background-color: #ef5350;
-  border-radius: 7.5px;
+  border-radius: 15px;
   overflow: hidden;
 }
 
@@ -573,7 +539,7 @@ select {
   border: 1px solid #595959;
   border-radius: 5px;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  min-width: 80px;
+  min-width: 80px; /* Додаємо мінімальну ширину для MM:SS:MS */
   text-align: center;
 }
 
@@ -616,31 +582,31 @@ select {
 .symbol.number.highlighted-main,
 .symbol.hieroglyph.highlighted-main {
   background-image: url("../resource/buttons/orange_button.png");
-  background-size: 35px 35px;
+  background-size: 70px 70px;
   background-repeat: no-repeat;
   background-position: center;
 }
 
 .symbol.image.highlighted-main {
   background-image: url("../resource/buttons/gray_quad_button_frame.png");
-  background-size: 35px 35px;
+  background-size: 70px 70px;
   background-repeat: no-repeat;
   background-position: center;
   background-color: #ff9800;
-  border-radius: 7.5px;
+  border-radius: 15px;
   overflow: hidden;
 }
 
 .symbol.word.highlighted-main {
   background-image: url("../resource/buttons/gray_quad_button_main_cards.png");
-  background-size: 100% 35px;
+  background-size: 100% 70px;
   background-repeat: no-repeat;
   background-position: center;
   color: #ff9800;
-  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-width: 1px;
   -webkit-text-stroke-color: black;
-  text-shadow: 0 0 2.5px #ff9800, 0 0 5px #ff9800, 0 0 7.5px #ff9800;
-  padding: 0 7.5px;
+  text-shadow: 0 0 5px #ff9800, 0 0 10px #ff9800, 0 0 15px #ff9800;
+  padding: 0 15px;
 }
 
 #imageThemeContainer,
@@ -654,40 +620,42 @@ select {
 
 #hintControls {
   display: flex;
-  justify-content: center;
+  justify-content: center; /* Центруємо вміст горизонтально */
   align-items: center;
-  gap: 20px;
+  gap: 20px; /* Збільшено відступ між групами */
   margin: 20px auto;
-  max-width: 100%;
-  flex-wrap: wrap;
+  max-width: 100%; /* Обмежуємо ширину контейнера */
+  flex-wrap: wrap; /* Дозволяємо перенесення елементів */
 }
 
 .control-group {
   display: flex;
   justify-content: center;
   align-items: center;
-  gap: 15px;
-  flex-wrap: wrap;
-  min-width: 300px;
-  flex: 1;
+  gap: 15px; /* Відступ між групами кнопок і радіокнопок */
+  flex-wrap: wrap; /* Дозволяємо перенесення всередині групи */
+  min-width: 300px; /* Мінімальна ширина для кожної групи */
+  flex: 1; /* Дозволяємо групам розширюватися */
 }
 
+/* Додаємо стиль для випадку, коли активна лише одна кнопка */
 #hintControls.single-button {
-  justify-content: center;
+  justify-content: center; /* Центруємо єдину кнопку */
 }
 
 #hintControls.single-button .control-group {
-  flex: 0;
-  min-width: auto;
+  flex: 0; /* Скасовуємо розширення для однієї кнопки */
+  min-width: auto; /* Знімаємо мінімальну ширину */
 }
 
+/* Стилі для груп радіокнопок і кнопок */
 .highlight-radios,
 .hint-radios {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 7px;
-  min-width: 150px;
+  min-width: 150px; /* Мінімальна ширина для кожної підгрупи */
 }
 
 .highlight-radios label,
@@ -705,6 +673,7 @@ select {
   margin-right: 5px;
 }
 
+/* Стилі для кнопок */
 #highlightMainCardsButton,
 #showHintButton {
   padding: 10px 20px;
@@ -713,9 +682,10 @@ select {
   border-radius: 5px;
   cursor: pointer;
   box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-  white-space: nowrap;
+  white-space: nowrap; /* Запобігаємо перенесенню тексту в кнопках */
 }
 
+/* Колір кнопок */
 #highlightMainCardsButton {
   background-color: #ff9800;
   color: white;
@@ -728,7 +698,7 @@ select {
 #showHintButton {
   background-color: #2196f3;
   color: white;
-  position: relative;
+  position: relative; /* Для позиціонування підказки */
 }
 
 #showHintButton:hover {
@@ -736,11 +706,11 @@ select {
 }
 
 #logsToggleContainer {
-  display: none;
+  display: none; /* Залишаємо початкове приховування */
   justify-content: center;
-  align-items: center;
+  align-items: center; /* Додано для вертикального вирівнювання */
   margin: 10px auto;
-  flex-wrap: nowrap;
+  flex-wrap: nowrap; /* Запобігаємо перенесенню */
 }
 
 #logsToggleContainer {
@@ -755,8 +725,8 @@ select {
 }
 
 #scrollToBottomLabel {
-  display: none;
-  margin-left: 20px;
+  display: none; /* Базовий стан - прихований */
+  margin-left: 20px; /* Відступ від попереднього чек-бокса */
 }
 
 #highlightControlContainer {
@@ -813,60 +783,65 @@ select {
 
 #gameContainer {
   position: relative;
-  display: none;
+  display: none; /* Приховуємо весь контейнер гри за замовчуванням */
 }
 
+
+
+
+
+
 #difficultyLevel {
-  margin-bottom: 10px;
-  margin-top: 20px;
+  margin-bottom: 10px; /* Залишаємо для безпеки, але основний ефект від margin-top */
+margin-top: 20px;
 }
 
 #numCardsSliderContainer {
-  margin-top: 15px;
+  margin-top: 15px; /* Збільшуємо відступ зверху до 35px, щоб уникнути наповзання */
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: center; /* Центруємо вміст по горизонталі */
 }
 
 .slider-wrapper {
   display: flex;
   align-items: center;
-  gap: 15px;
-  justify-content: center;
+  gap: 15px; /* Відступ між повзунком і числом праворуч */
+  justify-content: center; /* Центруємо вміст */
   width: 100%;
 }
 
 .slider-container {
   position: relative;
-  width: 75%;
-  min-height: 50px;
+  width: 75%; /* Збігається з шириною повзунка */
+  min-height: 50px; /* Явна висота, щоб вмістити повзунок, насічки та цифри */
 }
 
 #numCardsSlider {
-  width: 100%;
-  margin: 10px 0 0 0;
+  width: 100%; /* Повзунок займає всю ширину контейнера */
+  margin: 10px 0 0 0; /* Без нижнього відступу */
   padding: 0;
   display: block;
-  height: 20px;
-  background: transparent;
+  height: 20px; /* Фіксуємо висоту повзунка */
+  background: transparent; /* Прозорий фон для видимості лінійки */
   position: relative;
-  z-index: 1;
+  z-index: 1; /* Повзунок нижче насічок */
 }
 
 .current-value {
   font-weight: bold;
-  color: #2196f3;
+  color: #2196f3; /* Синій колір */
   font-size: 16px;
 }
 
 #sliderTicks {
   position: absolute;
-  top: 23px;
+  top: 23px; /* Нижній край повзунка (20px - 1px відступ) */
   left: 0;
-  width: 99%;
-  height: 8px;
-  pointer-events: none;
-  z-index: 2;
+  width: 99%; /* Збігається з шириною повзунка */
+  height: 8px; /* Висота для насічок */
+  pointer-events: none; /* Щоб не перехоплювати кліки */
+  z-index: 2; /* Насічки вище повзунка */
 }
 
 #sliderTicks::before {
@@ -876,37 +851,37 @@ select {
   left: 1%;
   width: 100%;
   height: 1px;
-  background-color: #333;
+  background-color: #333; /* Лінія шкали */
 }
 
 #sliderTicks .tick {
   position: absolute;
   top: 0;
-  width: 1px;
+   width: 1px;
   background-color: #333;
 }
 
 #sliderTicks .highlighted-tick {
-  width: 3px;
-  height: 12px;
+  width: 3px; /* Товщина 2px */
+  height: 12px; /* Довжина 10px */
 }
 
 #sliderTicks .tick.short {
-  height: 4px;
+  height: 4px; /* Короткі насічки */
 }
 
 #sliderTicks .tick.long {
-  height: 8px;
+  height: 8px; /* Довші насічки для min, mid, max */
 }
 
 #sliderValues {
   position: absolute;
-  top: 32px;
+  top: 32px; /* 19px (лінійка) + 8px (висота довгих насічок) */
   left: 0;
-  width: 100%;
-  height: 20px;
-  pointer-events: none;
-  z-index: 2;
+  width: 100%; /* Збігається з шириною повзунка */
+  height: 20px; /* Висота для розміщення цифр */
+  pointer-events: none; /* Щоб не перехоплювати кліки */
+  z-index: 2; /* Цифри також вище повзунка */
 }
 
 #sliderValues span {
@@ -916,24 +891,26 @@ select {
 }
 
 #minCards {
-  left: 0;
+  left: 0; /* Під початком */
   transform: translateX(0);
 }
 
 #midCards {
-  left: 50%;
+  left: 50%; /* Під серединою */
   transform: translateX(-50%);
 }
 
 #maxCards {
-  right: 0;
+  right: 0; /* Під кінцем */
   transform: translateX(0);
 }
+
+
 
 .slider-wrapper {
   display: flex;
   align-items: center;
-  gap: 15px;
+  gap: 15px; /* Відновлено відступ між повзунком і свайпером */
   justify-content: center;
   width: 100%;
 }
@@ -942,7 +919,7 @@ select {
   display: flex;
   align-items: center;
   gap: 10px;
-  margin-left: 15px;
+  margin-left: 15px; /* Відступ зліва від повзунка */
 }
 
 .swiper-button {
@@ -968,3 +945,4 @@ select {
   background-color: #cccccc;
   cursor: not-allowed;
 }
+
