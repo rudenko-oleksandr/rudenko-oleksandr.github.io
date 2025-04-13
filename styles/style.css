@@ -151,6 +151,11 @@ background: #3f6592;
 transition:all .3s ease;
 }
 
+.btn_important{
+	border:2px solid #0bc239;
+background: #0bc239;
+}
+
 .btn:hover{
 background: white;
 color:black;
