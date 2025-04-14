@@ -1,0 +1,1090 @@
+/* Базові стилі (Mobile-First, 320px) */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background: #f8f8f8;
+  margin: 0;
+  padding: 10px;
+  min-width: 320px;
+}
+
+.main-container {
+  max-width: 100%;
+  margin: 0 auto;
+}
+
+h1 {
+  font-size: 24px;
+  font-weight: bold;
+  text-align: center;
+  margin: 10px 0;
+}
+
+.modal {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 15px;
+  border-radius: 5px;
+  text-align: center;
+  width: 90%;
+  max-width: 400px;
+}
+
+#modal .modal-content label:has(input[type="checkbox"]) {
+  display: block;
+  margin: 8px 0;
+  text-align: left;
+}
+
+#gameContainer {
+  display: block;
+}
+
+#timersContainer {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+#timersContainer div {
+  text-align: center;
+}
+
+#timersContainer p {
+  font-size: 12px;
+  margin: 5px 0;
+}
+
+#timersContainer span {
+  display: inline-block;
+  padding: 5px;
+  background-color: #fff;
+  border: 1px solid #595959;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  font-size: 12px;
+  min-width: 60px;
+}
+
+#gameBoard {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: repeat(6, 1fr);
+  grid-gap: 2px;
+  background: white;
+  padding: 5px;
+  border: 1px solid #595959;
+  border-radius: 8px;
+  box-shadow: 3px 3px 5px 3px #595959;
+  outline: 1px solid #595959;
+  outline-offset: 1px;
+  width: 100%;
+  max-width: 204px;
+}
+
+.symbol {
+  width: 30px;
+  height: 30px;
+  margin: 2px;
+  text-align: center;
+  line-height: 28px;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.deck-card {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  border: 1px solid gray;
+  padding: 5px;
+  margin: 3px;
+  width: auto;
+  max-width: 100%;
+  min-height: 40px;
+  height: auto;
+  cursor: pointer;
+  box-shadow: 3px 3px 5px 3px #595959;
+  outline: 1px solid #595959;
+  outline-offset: 1px;
+}
+
+.deck-symbol {
+  width: 30px;
+  height: 30px;
+  margin: 2px;
+  text-align: center;
+  line-height: 28px;
+  font-size: 16px;
+  font-weight: bold;
+  background-image: url("../resource/buttons/gray_quad_button.png");
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.deck-symbol.highlighted {
+  background-image: url("../resource/buttons/gray_quad_button_frame.png");
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--highlight-color);
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.deck-symbol.word {
+  min-width: 30px;
+  width: auto;
+  max-width: 100px;
+  height: 30px;
+  font-size: 12px;
+  line-height: 14px;
+  word-break: break-word;
+  background-image: url("../resource/buttons/gray_quad_button.png");
+  background-size: 100% 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 0 5px;
+  color: #333333;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+
+.deck-symbol.word.highlighted {
+  background-image: url("../resource/buttons/gray_quad_button_frame.png");
+  background-size: 100% 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--highlight-color);
+  padding: 0 5px;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.symbol.number,
+.symbol.hieroglyph {
+  background-image: url("../resource/buttons/gray_button.png");
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #333333;
+  font-size: 14px;
+}
+
+.symbol.number.selected,
+.symbol.hieroglyph.selected {
+  background-image: url("../resource/buttons/yellow_button.png");
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #333333;
+}
+
+.symbol.number.correct,
+.symbol.hieroglyph.correct {
+  background-image: url("../resource/buttons/green_button.png");
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #333333;
+}
+
+.symbol.number.incorrect,
+.symbol.hieroglyph.incorrect {
+  background-image: url("../resource/buttons/red_button.png");
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #333333;
+}
+
+.deck-symbol.number {
+  font-size: 14px;
+}
+
+.symbol.word {
+  min-width: 30px;
+  width: auto;
+  max-width: 100px;
+  height: 30px;
+  background-image: url("../resource/buttons/gray_quad_button_main_cards.png");
+  background-size: 100% 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #000000;
+  font-size: 12px;
+  line-height: 14px;
+  word-break: break-word;
+  padding: 0 5px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+}
+
+.symbol.word.selected {
+  background-image: url("../resource/buttons/gray_quad_button_main_cards.png");
+  background-size: 100% 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #ffeb3b;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
+  text-shadow: 0 0 3px #ffeb3b;
+  padding: 0 5px;
+}
+
+.symbol.word.correct {
+  background-image: url("../resource/buttons/gray_quad_button_main_cards.png");
+  background-size: 100% 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #00ff00;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
+  text-shadow: 0 0 3px #00ff00;
+  padding: 0 5px;
+}
+
+.symbol.word.incorrect {
+  background-image: url("../resource/buttons/gray_quad_button_main_cards.png");
+  background-size: 100% 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #ff0000;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
+  text-shadow: 0 0 3px #ff0000;
+  padding: 0 5px;
+}
+
+.symbol.image {
+  background-image: url("../resource/buttons/gray_quad_button.png");
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.symbol.image img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.deck-symbol.image {
+  width: 30px;
+  height: 30px;
+}
+
+.deck-symbol.word {
+  min-width: 30px;
+  width: auto;
+  max-width: 100px;
+  height: 30px;
+  font-size: 12px;
+  line-height: 14px;
+  word-break: break-word;
+  padding: 0 5px;
+}
+
+.deck-symbol img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+#hintControls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 10px 0;
+  flex-wrap: wrap;
+}
+
+.control-group {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  min-width: 120px;
+}
+
+.highlight-radios,
+.hint-radios {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+}
+
+.highlight-radios label,
+.hint-radios label {
+  font-size: 12px;
+  color: #333;
+  white-space: nowrap;
+}
+
+.highlight-radios input[type="radio"],
+.hint-radios input[type="radio"] {
+  margin-right: 5px;
+}
+
+#highlightMainCardsButton,
+#showHintButton {
+  padding: 8px 16px;
+  font-size: 12px;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  white-space: nowrap;
+}
+
+#highlightMainCardsButton {
+  background-color: #ff9800;
+  color: white;
+}
+
+#highlightMainCardsButton:hover {
+  background-color: #fb8c00;
+}
+
+#showHintButton {
+  background-color: #2196f3;
+  color: white;
+  position: relative;
+}
+
+#showHintButton:hover {
+  background-color: #1e88e5;
+}
+
+#hintDisplay {
+  position: absolute;
+  display: none;
+  z-index: 1000;
+  height: 30px;
+  line-height: 30px;
+  white-space: nowrap;
+  background: none;
+  border: none;
+  padding: 0;
+  pointer-events: none;
+}
+
+#hintDisplay.show {
+  display: block;
+}
+
+#hintDisplay .hint-symbol {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  margin: 0;
+  text-align: center;
+  line-height: normal;
+  font-size: 14px;
+  font-weight: bold;
+  color: #333333;
+  background: none;
+  border: none;
+  padding: 0;
+}
+
+#hintDisplay .hint-symbol.word {
+  min-width: 30px;
+  width: auto;
+  max-width: 80px;
+  font-size: 10px;
+  word-break: break-word;
+  color: #000000;
+}
+
+#hintDisplay .hint-symbol.image {
+  width: auto;
+  height: 100%;
+}
+
+#hintDisplay .hint-symbol.image img {
+  height: 100%;
+  width: auto;
+  object-fit: contain;
+}
+
+#endGameButton {
+  display: block;
+  margin: 10px auto;
+  padding: 8px 16px;
+  font-size: 12px;
+  border: 0;
+  border-radius: 5px;
+  background-color: #f44336;
+  color: white;
+  cursor: pointer;
+}
+
+#endGameButton:hover {
+  background-color: #d32f2f;
+}
+
+#logsContainer {
+  display: none;
+  text-align: left;
+  width: 90%;
+  max-width: 300px;
+  margin: 10px auto;
+  padding: 8px;
+  background-color: #fff;
+  border: 1px solid #595959;
+  border-radius: 5px;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+#logsContainer h3 {
+  font-size: 14px;
+  margin: 0 0 8px 0;
+  text-align: center;
+}
+
+#logsList {
+  font-size: 12px;
+  color: #333;
+  max-height: 150px;
+  overflow-y: auto;
+}
+
+#logsList p {
+  margin: 5px 0;
+}
+
+.log-image {
+  width: 12px;
+  height: 12px;
+  vertical-align: middle;
+  margin-left: 5px;
+}
+
+#logsToggleContainer {
+  display: none;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  margin: 10px auto;
+  flex-wrap: wrap;
+}
+
+#logsToggleContainer label {
+  font-size: 12px;
+}
+
+#logsToggleContainer input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+#scrollToBottomLabel {
+  display: none;
+}
+
+#initialDeckDisplay,
+#usedDeckDisplay {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 10px;
+  max-width: 100%;
+  margin: 10px 0;
+}
+
+.deck-explanation {
+  margin: 10px 0;
+  padding: 5px;
+  font-size: 12px;
+  color: #666;
+  text-align: center;
+}
+
+.deck-explanation label {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 12px;
+}
+
+.deck-explanation input[type="checkbox"] {
+  margin-right: 5px;
+}
+
+.deck-card.in-game {
+  background-color: #c0c0c0;
+  border: 2px solid red;
+}
+
+.deck-card.used-card {
+  background-color: #f0f0f0;
+}
+
+.symbol.number.highlighted-main,
+.symbol.hieroglyph.highlighted-main {
+  background-image: url("../resource/buttons/orange_button.png");
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.symbol.image.highlighted-main {
+  background-image: url("../resource/buttons/gray_quad_button_frame.png");
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ff9800;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.symbol.word.highlighted-main {
+  background-image: url("../resource/buttons/gray_quad_button_main_cards.png");
+  background-size: 100% 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  color: #ff9800;
+  -webkit-text-stroke-width: 0.5px;
+  -webkit-text-stroke-color: black;
+  text-shadow: 0 0 3px #ff9800;
+  padding: 0 5px;
+}
+
+.symbol.image.selected {
+  background-image: url("../resource/buttons/gray_quad_button_frame.png");
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #fff176;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.symbol.image.correct {
+  background-image: url("../resource/buttons/gray_quad_button_frame.png");
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #a5d6a7;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+.symbol.image.incorrect {
+  background-image: url("../resource/buttons/gray_quad_button_frame.png");
+  background-size: 30px 30px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ef5350;
+  border-radius: 5px;
+  overflow: hidden;
+}
+
+#imageThemeContainer,
+#numSymbolsImagesContainer,
+#numSymbolsHieroglyphsContainer,
+#numSymbolsWordsContainer,
+#endGameModal,
+#completeGameModal {
+  display: none;
+}
+
+#message {
+  font-size: 14px;
+  font-weight: bold;
+  margin: 10px 0;
+  text-align: center;
+  display: none;
+}
+
+select {
+  padding: 5px;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+#numSymbolsNumbersContainer,
+#numSymbolsImagesContainer,
+#numSymbolsHieroglyphsContainer,
+#numSymbolsWordsContainer,
+#imageThemeContainer {
+  margin-top: 8px;
+}
+
+#highlightControlContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px auto;
+}
+
+#highlightCheckboxLabel {
+  font-size: 12px;
+  color: #333;
+  margin-bottom: 8px;
+}
+
+#highlightOptions {
+  display: none;
+  margin-top: 8px;
+}
+
+#highlightOptions label {
+  margin: 0 10px;
+  font-size: 12px;
+  color: #333;
+}
+
+#highlightOptions label:first-child {
+  margin-left: 0;
+}
+
+#difficultyLevel {
+  margin-top: 10px;
+}
+
+#numCardsSliderContainer {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.slider-wrapper {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  justify-content: center;
+  width: 100%;
+}
+
+.slider-container {
+  position: relative;
+  width: 75%;
+  min-height: 40px;
+}
+
+#numCardsSlider {
+  width: 100%;
+  margin: 10px 0 0 0;
+  padding: 0;
+  display: block;
+  height: 20px;
+  background: transparent;
+  position: relative;
+  z-index: 1;
+}
+
+.current-value {
+  font-weight: bold;
+  color: #2196f3;
+  font-size: 12px;
+}
+
+#sliderTicks {
+  position: absolute;
+  top: 23px;
+  left: 0;
+  width: 99%;
+  height: 8px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+#sliderTicks::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 1%;
+  width: 100%;
+  height: 1px;
+  background-color: #333;
+}
+
+#sliderTicks .tick {
+  position: absolute;
+  top: 0;
+  width: 1px;
+  background-color: #333;
+}
+
+#sliderTicks .highlighted-tick {
+  width: 3px;
+  height: 12px;
+}
+
+#sliderTicks .tick.short {
+  height: 4px;
+}
+
+#sliderTicks .tick.long {
+  height: 8px;
+}
+
+#sliderValues {
+  position: absolute;
+  top: 32px;
+  left: 0;
+  width: 100%;
+  height: 20px;
+  pointer-events: none;
+  z-index: 2;
+}
+
+#sliderValues span {
+  position: absolute;
+  font-size: 12px;
+  color: #333;
+}
+
+#minCards {
+  left: 0;
+  transform: translateX(0);
+}
+
+#midCards {
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+#maxCards {
+  right: 0;
+  transform: translateX(0);
+}
+
+.swiper-container {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-left: 10px;
+}
+
+.swiper-button {
+  width: 24px;
+  height: 24px;
+  background-color: #2196f3;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-size: 14px;
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: background-color 0.3s;
+}
+
+.swiper-button:hover {
+  background-color: #1e88e5;
+}
+
+.swiper-button:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Медіа-запити для планшетів (768px+) */
+@media screen and (min-width: 768px) {
+  h1 {
+    font-size: 28px;
+  }
+
+  #timersContainer p {
+    font-size: 14px;
+  }
+
+  #timersContainer span {
+    font-size: 14px;
+    min-width: 80px;
+  }
+
+  #gameBoard {
+    flex-direction: row;
+    justify-content: center;
+  }
+
+  .card {
+    max-width: 238px;
+  }
+
+  .symbol,
+  .deck-symbol {
+    width: 35px;
+    height: 35px;
+    margin: 3px;
+    font-size: 18px;
+    line-height: 33px;
+    background-size: 35px 35px;
+  }
+
+  .symbol.number,
+  .symbol.hieroglyph,
+  .deck-symbol.number {
+    font-size: 16px;
+    background-size: 35px 35px;
+  }
+
+  .symbol.word,
+  .deck-symbol.word {
+    min-width: 35px;
+    max-width: 120px;
+    height: 35px;
+    font-size: 14px;
+    line-height: 16px;
+    background-size: 100% 35px;
+    padding: 0 8px;
+  }
+
+  .symbol.word.selected,
+  .symbol.word.correct,
+  .symbol.word.incorrect,
+  .symbol.word.highlighted-main {
+    -webkit-text-stroke-width: 0.8px;
+    text-shadow: 0 0 4px;
+  }
+
+  .deck-symbol.word.highlighted {
+    background-size: 100% 35px;
+    padding: 0 8px;
+  }
+
+  #hintDisplay .hint-symbol {
+    font-size: 16px;
+    height: 35px;
+    line-height: 35px;
+  }
+
+  #hintDisplay .hint-symbol.word {
+    min-width: 35px;
+    max-width: 100px;
+    font-size: 12px;
+  }
+
+  #hintDisplay .hint-symbol.image {
+    height: 35px;
+  }
+
+  #highlightMainCardsButton,
+  #showHintButton {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  .highlight-radios label,
+  .hint-radios label {
+    font-size: 14px;
+  }
+
+  #endGameButton {
+    padding: 10px 20px;
+    font-size: 14px;
+  }
+
+  #logsContainer {
+    max-width: 600px;
+  }
+
+  #logsContainer h3 {
+    font-size: 16px;
+  }
+
+  #logsList {
+    font-size: 14px;
+    max-height: 200px;
+  }
+
+  #logsToggleContainer label {
+    font-size: 14px;
+  }
+
+  select {
+    font-size: 14px;
+  }
+
+  .modal-content {
+    padding: 20px;
+    max-width: 500px;
+  }
+}
+
+/* Медіа-запити для десктопів (1024px+) */
+@media screen and (min-width: 1024px) {
+  h1 {
+    font-size: 32px;
+  }
+
+  .main-container {
+    max-width: 1280px;
+  }
+
+  #timersContainer p {
+    font-size: 16px;
+  }
+
+  #timersContainer span {
+    font-size: 16px;
+    min-width: 100px;
+    padding: 8px;
+  }
+
+  .card {
+    max-width: 272px;
+  }
+
+  .symbol,
+  .deck-symbol {
+    width: 40px;
+    height: 40px;
+    margin: 4px;
+    font-size: 20px;
+    line-height: 38px;
+    background-size: 40px 40px;
+  }
+
+  .symbol.number,
+  .symbol.hieroglyph,
+  .deck-symbol.number {
+    font-size: 18px;
+    background-size: 40px 40px;
+  }
+
+  .symbol.word,
+  .deck-symbol.word {
+    min-width: 40px;
+    max-width: 140px;
+    height: 40px;
+    font-size: 16px;
+    line-height: 18px;
+    background-size: 100% 40px;
+    padding: 0 10px;
+  }
+
+  .symbol.word.selected,
+  .symbol.word.correct,
+  .symbol.word.incorrect,
+  .symbol.word.highlighted-main {
+    -webkit-text-stroke-width: 1px;
+    text-shadow: 0 0 5px;
+  }
+
+  .deck-symbol.word.highlighted {
+    background-size: 100% 40px;
+    padding: 0 10px;
+  }
+
+  #hintDisplay .hint-symbol {
+    font-size: 18px;
+    height: 40px;
+    line-height: 40px;
+  }
+
+  #hintDisplay .hint-symbol.word {
+    min-width: 40px;
+    max-width: 120px;
+    font-size: 14px;
+  }
+
+  #hintDisplay .hint-symbol.image {
+    height: 40px;
+  }
+
+  #highlightMainCardsButton,
+  #showHintButton {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+
+  .highlight-radios label,
+  .hint-radios label {
+    font-size: 16px;
+  }
+
+  #endGameButton {
+    padding: 12px 24px;
+    font-size: 16px;
+  }
+
+  #logsContainer {
+    max-width: 800px;
+  }
+
+  #logsContainer h3 {
+    font-size: 18px;
+  }
+
+  #logsList {
+    font-size: 16px;
+    max-height: 250px;
+  }
+
+  #logsToggleContainer label {
+    font-size: 16px;
+  }
+
+  select {
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  .modal-content {
+    max-width: 600px;
+    padding: 25px;
+  }
+
+  .current-value {
+    font-size: 14px;
+  }
+
+  .swiper-button {
+    width: 30px;
+    height: 30px;
+    font-size: 16px;
+  }
+
+  #sliderValues span {
+    font-size: 14px;
+  }
+}
