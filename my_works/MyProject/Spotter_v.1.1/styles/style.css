@@ -1,4 +1,4 @@
-/* Базові стилі (Mobile-First, 320px) */
+/* Базові стилі для всіх пристроїв (Mobile-First, від 320px) */
 * {
   box-sizing: border-box;
   margin: 0;
@@ -13,11 +13,13 @@ body {
   min-width: 320px;
 }
 
+/* Основний контейнер */
 .main-container {
   max-width: 100%;
   margin: 0 auto;
 }
 
+/* Заголовок гри */
 h1 {
   font-size: 24px;
   font-weight: bold;
@@ -25,6 +27,7 @@ h1 {
   margin: 10px 0;
 }
 
+/* Модальні вікна */
 .modal {
   display: flex;
   justify-content: center;
@@ -53,10 +56,12 @@ h1 {
   text-align: left;
 }
 
+/* Контейнер гри */
 #gameContainer {
   display: block;
 }
 
+/* Таймери */
 #timersContainer {
   display: flex;
   justify-content: center;
@@ -84,6 +89,7 @@ h1 {
   min-width: 60px;
 }
 
+/* Ігрова дошка */
 #gameBoard {
   display: flex;
   flex-direction: column;
@@ -92,27 +98,39 @@ h1 {
   margin: 10px 0;
 }
 
+/* Стилі для карток */
 .card {
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-gap: 2px;
+  display: flex;
+  flex-wrap: wrap;
+  /* justify-content: flex-start; */
+  justify-content: center;
+  align-items: center;
   background: white;
   padding: 5px;
   border: 1px solid #595959;
   border-radius: 8px;
-  box-shadow: 3px 3px 5px 3px #595959;
+  box-shadow: 3px 3px 5px #595959;
   outline: 1px solid #595959;
   outline-offset: 1px;
-  width: 100%;
-  max-width: 204px;
+  width: auto;
+  max-width: 100%;
 }
 
+.card::after {
+  content: '';
+  flex-grow: 0;
+  order: 999;
+  display: block;
+  height: 0;
+}
+
+/* Стилі для символів на картках */
 .symbol {
-  width: 30px;
-  height: 30px;
-  margin: 2px;
+  width: 35px;
+  height: 35px;
+  margin: 2.5px;
   text-align: center;
-  line-height: 28px;
+  line-height: 33px;
   cursor: pointer;
   font-size: 16px;
   font-weight: bold;
@@ -121,6 +139,7 @@ h1 {
   align-items: center;
 }
 
+/* Стилі для карток у колоді */
 .deck-card {
   display: flex;
   flex-wrap: wrap;
@@ -134,21 +153,22 @@ h1 {
   min-height: 40px;
   height: auto;
   cursor: pointer;
-  box-shadow: 3px 3px 5px 3px #595959;
+  box-shadow: 3px 3px 5px #595959;
   outline: 1px solid #595959;
   outline-offset: 1px;
 }
 
+/* Стилі для символів у колоді */
 .deck-symbol {
-  width: 30px;
-  height: 30px;
-  margin: 2px;
+  width: 35px;
+  height: 35px;
+  margin: 2.5px;
   text-align: center;
-  line-height: 28px;
+  line-height: 33px;
   font-size: 16px;
   font-weight: bold;
   background-image: url("../resource/buttons/gray_quad_button.png");
-  background-size: 30px 30px;
+  background-size: 35px 35px;
   background-repeat: no-repeat;
   background-position: center;
   color: #333333;
@@ -159,7 +179,7 @@ h1 {
 
 .deck-symbol.highlighted {
   background-image: url("../resource/buttons/gray_quad_button_frame.png");
-  background-size: 30px 30px;
+  background-size: 35px 35px;
   background-repeat: no-repeat;
   background-position: center;
   background-color: var(--highlight-color);
@@ -167,16 +187,17 @@ h1 {
   overflow: hidden;
 }
 
+/* Стилі для слів у колоді */
 .deck-symbol.word {
-  min-width: 30px;
+  min-width: 35px;
   width: auto;
-  max-width: 100px;
-  height: 30px;
+  max-width: 110px;
+  height: 35px;
   font-size: 12px;
   line-height: 14px;
   word-break: break-word;
   background-image: url("../resource/buttons/gray_quad_button.png");
-  background-size: 100% 30px;
+  background-size: 100% 35px;
   background-repeat: no-repeat;
   background-position: center;
   padding: 0 5px;
@@ -189,7 +210,7 @@ h1 {
 
 .deck-symbol.word.highlighted {
   background-image: url("../resource/buttons/gray_quad_button_frame.png");
-  background-size: 100% 30px;
+  background-size: 100% 35px;
   background-repeat: no-repeat;
   background-position: center;
   background-color: var(--highlight-color);
@@ -198,20 +219,21 @@ h1 {
   overflow: hidden;
 }
 
+/* Стилі для цифр та ієрогліфів */
 .symbol.number,
 .symbol.hieroglyph {
   background-image: url("../resource/buttons/gray_button.png");
-  background-size: 30px 30px;
+  background-size: 35px 35px;
   background-repeat: no-repeat;
   background-position: center;
   color: #333333;
-  font-size: 14px;
+  font-size: 12px; /* Змінено з 14px на 12px */
 }
 
 .symbol.number.selected,
 .symbol.hieroglyph.selected {
   background-image: url("../resource/buttons/yellow_button.png");
-  background-size: 30px 30px;
+  background-size: 35px 35px;
   background-repeat: no-repeat;
   background-position: center;
   color: #333333;
@@ -220,7 +242,7 @@ h1 {
 .symbol.number.correct,
 .symbol.hieroglyph.correct {
   background-image: url("../resource/buttons/green_button.png");
-  background-size: 30px 30px;
+  background-size: 35px 35px;
   background-repeat: no-repeat;
   background-position: center;
   color: #333333;
@@ -229,23 +251,25 @@ h1 {
 .symbol.number.incorrect,
 .symbol.hieroglyph.incorrect {
   background-image: url("../resource/buttons/red_button.png");
-  background-size: 30px 30px;
+  background-size: 35px 35px;
   background-repeat: no-repeat;
   background-position: center;
   color: #333333;
 }
 
+/* Стилі для цифр у колоді */
 .deck-symbol.number {
   font-size: 14px;
 }
 
+/* Стилі для слів на картках */
 .symbol.word {
-  min-width: 30px;
+  min-width: 35px;
   width: auto;
-  max-width: 100px;
-  height: 30px;
+  max-width: 110px;
+  height: 35px;
   background-image: url("../resource/buttons/gray_quad_button_main_cards.png");
-  background-size: 100% 30px;
+  background-size: 100% 35px;
   background-repeat: no-repeat;
   background-position: center;
   color: #000000;
@@ -262,7 +286,7 @@ h1 {
 
 .symbol.word.selected {
   background-image: url("../resource/buttons/gray_quad_button_main_cards.png");
-  background-size: 100% 30px;
+  background-size: 100% 35px;
   background-repeat: no-repeat;
   background-position: center;
   color: #ffeb3b;
@@ -274,7 +298,7 @@ h1 {
 
 .symbol.word.correct {
   background-image: url("../resource/buttons/gray_quad_button_main_cards.png");
-  background-size: 100% 30px;
+  background-size: 100% 35px;
   background-repeat: no-repeat;
   background-position: center;
   color: #00ff00;
@@ -286,7 +310,7 @@ h1 {
 
 .symbol.word.incorrect {
   background-image: url("../resource/buttons/gray_quad_button_main_cards.png");
-  background-size: 100% 30px;
+  background-size: 100% 35px;
   background-repeat: no-repeat;
   background-position: center;
   color: #ff0000;
@@ -296,41 +320,110 @@ h1 {
   padding: 0 5px;
 }
 
+/* Стилі для зображень */
 .symbol.image {
   background-image: url("../resource/buttons/gray_quad_button.png");
-  background-size: 30px 30px;
+  background-size: 35px 35px;
   background-repeat: no-repeat;
   background-position: center;
+  padding: 2px;
+  margin: 3px;
 }
 
 .symbol.image img {
-  width: 100%;
-  height: 100%;
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
   object-fit: contain;
 }
 
 .deck-symbol.image {
-  width: 30px;
-  height: 30px;
+  background-image: url("../resource/buttons/gray_quad_button.png");
+  background-size: 35px 35px;
+  background-repeat: no-repeat;
+  background-position: center;
+  padding: 2px;
+  margin: 3px;
+}
+
+.deck-symbol.image img {
+  width: calc(100% - 4px);
+  height: calc(100% - 4px);
+  object-fit: contain;
 }
 
 .deck-symbol.word {
-  min-width: 30px;
+  min-width: 35px;
   width: auto;
-  max-width: 100px;
-  height: 30px;
+  max-width: 110px;
+  height: 35px;
   font-size: 12px;
   line-height: 14px;
   word-break: break-word;
   padding: 0 5px;
 }
 
-.deck-symbol img {
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
+/* Підсвічені стани для зображень */
+.symbol.image.selected {
+  background-image: url("../resource/buttons/gray_quad_button_frame.png");
+  background-size: 35px 35px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #fff176;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 2px;
+  margin: 3px;
 }
 
+.symbol.image.correct {
+  background-image: url("../resource/buttons/gray_quad_button_frame.png");
+  background-size: 35px 35px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #a5d6a7;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 2px;
+  margin: 3px;
+}
+
+.symbol.image.incorrect {
+  background-image: url("../resource/buttons/gray_quad_button_frame.png");
+  background-size: 35px 35px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ef5350;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 2px;
+  margin: 3px;
+}
+
+.symbol.image.highlighted-main {
+  background-image: url("../resource/buttons/gray_quad_button_frame.png");
+  background-size: 35px 35px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: #ff9800;
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 2px;
+  margin: 3px;
+}
+
+.deck-symbol.image.highlighted {
+  background-image: url("../resource/buttons/gray_quad_button_frame.png");
+  background-size: 35px 35px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-color: var(--highlight-color);
+  border-radius: 5px;
+  overflow: hidden;
+  padding: 2px;
+  margin: 3px;
+}
+
+/* Елементи керування підказками */
 #hintControls {
   display: flex;
   justify-content: center;
@@ -368,6 +461,7 @@ h1 {
   margin-right: 5px;
 }
 
+/* Кнопки керування */
 #highlightMainCardsButton,
 #showHintButton {
   padding: 8px 16px;
@@ -398,12 +492,13 @@ h1 {
   background-color: #1e88e5;
 }
 
+/* Відображення підказки */
 #hintDisplay {
   position: absolute;
   display: none;
   z-index: 1000;
-  height: 30px;
-  line-height: 30px;
+  height: 35px;
+  line-height: 35px;
   white-space: nowrap;
   background: none;
   border: none;
@@ -432,9 +527,9 @@ h1 {
 }
 
 #hintDisplay .hint-symbol.word {
-  min-width: 30px;
+  min-width: 35px;
   width: auto;
-  max-width: 80px;
+  max-width: 90px;
   font-size: 10px;
   word-break: break-word;
   color: #000000;
@@ -451,6 +546,7 @@ h1 {
   object-fit: contain;
 }
 
+/* Кнопка завершення гри */
 #endGameButton {
   display: block;
   margin: 10px auto;
@@ -467,6 +563,7 @@ h1 {
   background-color: #d32f2f;
 }
 
+/* Логи гри */
 #logsContainer {
   display: none;
   text-align: left;
@@ -504,6 +601,7 @@ h1 {
   margin-left: 5px;
 }
 
+/* Перемикач логів */
 #logsToggleContainer {
   display: none;
   justify-content: center;
@@ -525,6 +623,7 @@ h1 {
   display: none;
 }
 
+/* Відображення колоди */
 #initialDeckDisplay,
 #usedDeckDisplay {
   display: flex;
@@ -563,27 +662,18 @@ h1 {
   background-color: #f0f0f0;
 }
 
+/* Підсвічування символів */
 .symbol.number.highlighted-main,
 .symbol.hieroglyph.highlighted-main {
   background-image: url("../resource/buttons/orange_button.png");
-  background-size: 30px 30px;
+  background-size: 35px 35px;
   background-repeat: no-repeat;
   background-position: center;
-}
-
-.symbol.image.highlighted-main {
-  background-image: url("../resource/buttons/gray_quad_button_frame.png");
-  background-size: 30px 30px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #ff9800;
-  border-radius: 5px;
-  overflow: hidden;
 }
 
 .symbol.word.highlighted-main {
   background-image: url("../resource/buttons/gray_quad_button_main_cards.png");
-  background-size: 100% 30px;
+  background-size: 100% 35px;
   background-repeat: no-repeat;
   background-position: center;
   color: #ff9800;
@@ -593,36 +683,7 @@ h1 {
   padding: 0 5px;
 }
 
-.symbol.image.selected {
-  background-image: url("../resource/buttons/gray_quad_button_frame.png");
-  background-size: 30px 30px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #fff176;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.symbol.image.correct {
-  background-image: url("../resource/buttons/gray_quad_button_frame.png");
-  background-size: 30px 30px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #a5d6a7;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
-.symbol.image.incorrect {
-  background-image: url("../resource/buttons/gray_quad_button_frame.png");
-  background-size: 30px 30px;
-  background-repeat: no-repeat;
-  background-position: center;
-  background-color: #ef5350;
-  border-radius: 5px;
-  overflow: hidden;
-}
-
+/* Приховані елементи за замовчуванням */
 #imageThemeContainer,
 #numSymbolsImagesContainer,
 #numSymbolsHieroglyphsContainer,
@@ -632,6 +693,7 @@ h1 {
   display: none;
 }
 
+/* Повідомлення */
 #message {
   font-size: 14px;
   font-weight: bold;
@@ -640,6 +702,7 @@ h1 {
   display: none;
 }
 
+/* Вибір елементів */
 select {
   padding: 5px;
   font-size: 12px;
@@ -654,6 +717,7 @@ select {
   margin-top: 8px;
 }
 
+/* Керування підсвічуванням */
 #highlightControlContainer {
   display: flex;
   flex-direction: column;
@@ -686,6 +750,7 @@ select {
   margin-top: 10px;
 }
 
+/* Повзунок кількості карток */
 #numCardsSliderContainer {
   margin-top: 10px;
   display: flex;
@@ -826,7 +891,7 @@ select {
   cursor: not-allowed;
 }
 
-/* Медіа-запити для планшетів (768px+) */
+/* Медіа-запити для планшетів (768px і більше) */
 @media screen and (min-width: 768px) {
   h1 {
     font-size: 28px;
@@ -847,35 +912,31 @@ select {
   }
 
   .card {
-    max-width: 238px;
+    padding: 6px;
   }
 
-  .symbol,
-  .deck-symbol {
-    width: 35px;
-    height: 35px;
-    margin: 3px;
+  .symbol {
+    width: 40px;
+    height: 40px;
+    margin: 2.5px;
     font-size: 18px;
-    line-height: 33px;
-    background-size: 35px 35px;
+    line-height: 38px;
   }
 
   .symbol.number,
-  .symbol.hieroglyph,
-  .deck-symbol.number {
-    font-size: 16px;
-    background-size: 35px 35px;
+  .symbol.hieroglyph {
+    font-size: 15px; /* Змінено з 16px на 15px */
+    background-size: 40px 40px;
   }
 
-  .symbol.word,
-  .deck-symbol.word {
-    min-width: 35px;
-    max-width: 120px;
-    height: 35px;
+  .symbol.word {
+    min-width: 40px;
+    max-width: 130px;
+    height: 40px;
     font-size: 14px;
     line-height: 16px;
-    background-size: 100% 35px;
     padding: 0 8px;
+    background-size: 100% 40px;
   }
 
   .symbol.word.selected,
@@ -886,25 +947,92 @@ select {
     text-shadow: 0 0 4px;
   }
 
-  .deck-symbol.word.highlighted {
-    background-size: 100% 35px;
+  .deck-symbol {
+    width: 40px;
+    height: 40px;
+    margin: 2.5px;
+    font-size: 18px;
+    line-height: 38px;
+    background-size: 40px 40px;
+  }
+
+  .deck-symbol.number,
+  .deck-symbol.hieroglyph {
+    font-size: 16px;
+    background-size: 40px 40px;
+  }
+
+  .deck-symbol.word {
+    min-width: 40px;
+    max-width: 130px;
+    height: 40px;
+    font-size: 14px;
+    line-height: 16px;
+    background-size: 100% 40px;
     padding: 0 8px;
+  }
+
+  .deck-symbol.word.highlighted {
+    background-size: 100% 40px;
+    padding: 0 8px;
+  }
+
+  .symbol.image {
+    background-size: 40px 40px;
+    padding: 2px;
+    margin: 3px;
+  }
+
+  .symbol.image img {
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+  }
+
+  .deck-symbol.image {
+    background-size: 40px 40px;
+    padding: 2px;
+    margin: 3px;
+  }
+
+  .deck-symbol.image img {
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+  }
+
+  .symbol.image.selected,
+  .symbol.image.correct,
+  .symbol.image.incorrect,
+  .symbol.image.highlighted-main {
+    background-size: 40px 40px;
+    padding: 2px;
+    margin: 3px;
+  }
+
+  .deck-symbol.image.highlighted {
+    background-size: 40px 40px;
+    padding: 2px;
+    margin: 3px;
+  }
+
+  #hintDisplay {
+    height: 40px;
+    line-height: 40px;
   }
 
   #hintDisplay .hint-symbol {
     font-size: 16px;
-    height: 35px;
-    line-height: 35px;
+    height: 40px;
+    line-height: 40px;
   }
 
   #hintDisplay .hint-symbol.word {
-    min-width: 35px;
-    max-width: 100px;
+    min-width: 40px;
+    max-width: 110px;
     font-size: 12px;
   }
 
   #hintDisplay .hint-symbol.image {
-    height: 35px;
+    height: 40px;
   }
 
   #highlightMainCardsButton,
@@ -950,7 +1078,7 @@ select {
   }
 }
 
-/* Медіа-запити для десктопів (1024px+) */
+/* Медіа-запити для десктопів (1024px і більше) */
 @media screen and (min-width: 1024px) {
   h1 {
     font-size: 32px;
@@ -971,35 +1099,31 @@ select {
   }
 
   .card {
-    max-width: 272px;
+    padding: 8px;
   }
 
-  .symbol,
-  .deck-symbol {
-    width: 40px;
-    height: 40px;
-    margin: 4px;
+  .symbol {
+    width: 45px;
+    height: 45px;
+    margin: 2.5px;
     font-size: 20px;
-    line-height: 38px;
-    background-size: 40px 40px;
+    line-height: 43px;
   }
 
   .symbol.number,
-  .symbol.hieroglyph,
-  .deck-symbol.number {
-    font-size: 18px;
-    background-size: 40px 40px;
+  .symbol.hieroglyph {
+    font-size: 17px; /* Змінено з 18px на 17px */
+    background-size: 45px 45px;
   }
 
-  .symbol.word,
-  .deck-symbol.word {
-    min-width: 40px;
-    max-width: 140px;
-    height: 40px;
+  .symbol.word {
+    min-width: 45px;
+    max-width: 150px;
+    height: 45px;
     font-size: 16px;
     line-height: 18px;
-    background-size: 100% 40px;
     padding: 0 10px;
+    background-size: 100% 45px;
   }
 
   .symbol.word.selected,
@@ -1010,25 +1134,92 @@ select {
     text-shadow: 0 0 5px;
   }
 
-  .deck-symbol.word.highlighted {
-    background-size: 100% 40px;
+  .deck-symbol {
+    width: 45px;
+    height: 45px;
+    margin: 2.5px;
+    font-size: 20px;
+    line-height: 43px;
+    background-size: 45px 45px;
+  }
+
+  .deck-symbol.number,
+  .deck-symbol.hieroglyph {
+    font-size: 18px;
+    background-size: 45px 45px;
+  }
+
+  .deck-symbol.word {
+    min-width: 45px;
+    max-width: 150px;
+    height: 45px;
+    font-size: 16px;
+    line-height: 18px;
+    background-size: 100% 45px;
     padding: 0 10px;
+  }
+
+  .deck-symbol.word.highlighted {
+    background-size: 100% 45px;
+    padding: 0 10px;
+  }
+
+  .symbol.image {
+    background-size: 45px 45px;
+    padding: 2px;
+    margin: 3px;
+  }
+
+  .symbol.image img {
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+  }
+
+  .deck-symbol.image {
+    background-size: 45px 45px;
+    padding: 2px;
+    margin: 3px;
+  }
+
+  .deck-symbol.image img {
+    width: calc(100% - 4px);
+    height: calc(100% - 4px);
+  }
+
+  .symbol.image.selected,
+  .symbol.image.correct,
+  .symbol.image.incorrect,
+  .symbol.image.highlighted-main {
+    background-size: 45px 45px;
+    padding: 2px;
+    margin: 3px;
+  }
+
+  .deck-symbol.image.highlighted {
+    background-size: 45px 45px;
+    padding: 2px;
+    margin: 3px;
+  }
+
+  #hintDisplay {
+    height: 45px;
+    line-height: 45px;
   }
 
   #hintDisplay .hint-symbol {
     font-size: 18px;
-    height: 40px;
-    line-height: 40px;
+    height: 45px;
+    line-height: 45px;
   }
 
   #hintDisplay .hint-symbol.word {
-    min-width: 40px;
-    max-width: 120px;
+    min-width: 45px;
+    max-width: 130px;
     font-size: 14px;
   }
 
   #hintDisplay .hint-symbol.image {
-    height: 40px;
+    height: 45px;
   }
 
   #highlightMainCardsButton,

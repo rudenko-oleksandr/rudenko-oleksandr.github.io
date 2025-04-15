@@ -783,7 +783,6 @@ const CardsSliderModule = (function () {
 })();
 
 // Модуль "Складність" через IIFE
-
 const DifficultyModule = (function () {
   const hieroglyphsList = [
     "一",
@@ -1383,10 +1382,12 @@ const HintsCoreModule = (function () {
     let lastHighlightedUsedCardIndex = null;
 
     // Визначаємо розміри символів залежно від ширини екрана
-    function getSymbolSize() {
-      if (window.innerWidth >= 1280) return 35;
-      if (window.innerWidth >= 768) return 32;
-      return 28; // 320px
+
+	  
+	  function getSymbolSize() {
+      if (window.innerWidth >= 1024) return 45;
+      if (window.innerWidth >= 768) return 40;
+      return 35;
     }
 
     // IIFE для Логіки 1: Підсвічування всіх карток
@@ -1907,41 +1908,49 @@ const HintsCoreModule = (function () {
       }
     }
 
-    function createSymbolDiv(symbol, category, theme) {
-      const symbolDiv = document.createElement("div");
-      symbolDiv.classList.add("deck-symbol");
-      if (category === "numbers") symbolDiv.classList.add("number");
-      else if (category === "hieroglyphs")
-        symbolDiv.classList.add("hieroglyph");
-      else if (category === "words") symbolDiv.classList.add("word");
-      else if (category === "images") symbolDiv.classList.add("image");
+function createSymbolDiv(symbol, category, theme) {
+  const symbolDiv = document.createElement("div");
+  symbolDiv.classList.add("deck-symbol");
+  if (category === "numbers") symbolDiv.classList.add("number");
+  else if (category === "hieroglyphs") symbolDiv.classList.add("hieroglyph");
+  else if (category === "words") symbolDiv.classList.add("word");
+  else if (category === "images") symbolDiv.classList.add("image");
 
-      const size = getSymbolSize();
-      symbolDiv.style.width = `${size}px`;
-      symbolDiv.style.height = `${size}px`;
-      symbolDiv.style.lineHeight = `${size}px`;
-      symbolDiv.style.fontSize = category === "words" ? "12px" : "16px";
+  const size = getSymbolSize();
+  symbolDiv.style.width = category === "words" ? "auto" : `${size}px`;
+  symbolDiv.style.height = `${size}px`;
+  symbolDiv.style.lineHeight = `${size}px`;
+  symbolDiv.style.fontSize = category === "words" ? "12px" : "14px";
+  if (category === "words") {
+    symbolDiv.style.minWidth = `${size}px`;
+    symbolDiv.style.maxWidth = `${size + 75}px`;
+    symbolDiv.style.padding = "0 5px";
+  }
+  if (category === "images") {
+    symbolDiv.style.padding = "2px";
+    symbolDiv.style.margin = "3px";
+  }
 
-      if (
-        category === "numbers" ||
-        category === "hieroglyphs" ||
-        category === "words"
-      ) {
-        symbolDiv.textContent = symbol;
-      } else if (category === "images") {
-        const img = document.createElement("img");
-        img.src = `resource/images/${theme}/${symbol}`;
-        img.style.width = "100%";
-        img.style.height = "100%";
-        img.onerror = () => {
-          img.alt = "Зображення не знайдено";
-          img.src = "resource/images/default.png";
-          console.warn(`Не вдалося завантажити зображення: ${img.src}`);
-        };
-        symbolDiv.appendChild(img);
-      }
-      return symbolDiv;
-    }
+  if (
+    category === "numbers" ||
+    category === "hieroglyphs" ||
+    category === "words"
+  ) {
+    symbolDiv.textContent = symbol;
+  } else if (category === "images") {
+    const img = document.createElement("img");
+    img.src = `resource/images/${theme}/${symbol}`;
+    img.style.width = "calc(100% - 4px)";
+    img.style.height = "calc(100% - 4px)";
+    img.onerror = () => {
+      img.alt = "Зображення не знайдено";
+      img.src = "resource/images/default.png";
+      console.warn(`Не вдалося завантажити зображення: ${img.src}`);
+    };
+    symbolDiv.appendChild(img);
+  }
+  return symbolDiv;
+}
 
     function getSymbolValue(symbolElement, category) {
       if (!symbolElement) return null;
