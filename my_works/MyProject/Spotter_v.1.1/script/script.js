@@ -114,10 +114,16 @@ const GameCoreModule = (function () {
       .slice(0, selectedCardsCount)
       .map((index) => fullDeck[index]);
 
-    console.log(`Вибрано ${StateModule.getGameState().deck.length} карток для гри`);
+    console.log(
+      `Вибрано ${StateModule.getGameState().deck.length} карток для гри`
+    );
 
     if (MainModalModule.getShowLogs()) {
-      LogsModule.updateLogsDisplay(StateModule.getGameState().gameLogs, category, theme);
+      LogsModule.updateLogsDisplay(
+        StateModule.getGameState().gameLogs,
+        category,
+        theme
+      );
     }
 
     TimerWindowModule.showEndGameButton();
@@ -127,9 +133,8 @@ const GameCoreModule = (function () {
     const toggleLogsRadio = document.getElementById("toggleLogsRadio");
     const scrollToBottomLabel = document.getElementById("scrollToBottomLabel");
     toggleLogsRadio.checked = MainModalModule.getShowLogs();
-    StateModule.getDOMCache().logsList.parentElement.style.display = MainModalModule.getShowLogs()
-      ? "block"
-      : "none";
+    StateModule.getDOMCache().logsList.parentElement.style.display =
+      MainModalModule.getShowLogs() ? "block" : "none";
     logsToggleContainer.style.display = MainModalModule.getShowLogs()
       ? "flex"
       : "none";
@@ -140,9 +145,8 @@ const GameCoreModule = (function () {
 
     document.getElementById("highlightMainCardsButton").style.display =
       MainModalModule.getShowHighlightButton() ? "inline-block" : "none";
-    document.getElementById("showHintButton").style.display = MainModalModule.getShowHintButton()
-      ? "inline-block"
-      : "none";
+    document.getElementById("showHintButton").style.display =
+      MainModalModule.getShowHintButton() ? "inline-block" : "none";
     const hintRadios = document.querySelector(".hint-radios");
     hintRadios.style.display = MainModalModule.getShowHintButton()
       ? "flex"
@@ -164,15 +168,16 @@ const GameCoreModule = (function () {
     initialDeckExplanation.style.display = MainModalModule.getShowDeck()
       ? "block"
       : "none";
-    document.getElementById("deckExplanation").style.display = MainModalModule.getShowDeck()
-      ? "block"
-      : "none";
+    document.getElementById("deckExplanation").style.display =
+      MainModalModule.getShowDeck() ? "block" : "none";
     StateModule.getDOMCache().initialDeckDisplay.style.display =
-      MainModalModule.getShowDeck() && document.getElementById("showInitialDeckCheckbox").checked
+      MainModalModule.getShowDeck() &&
+      document.getElementById("showInitialDeckCheckbox").checked
         ? "flex"
         : "none";
     StateModule.getDOMCache().usedDeckDisplay.style.display =
-      MainModalModule.getShowDeck() && document.getElementById("showUsedDeckCheckbox").checked
+      MainModalModule.getShowDeck() &&
+      document.getElementById("showUsedDeckCheckbox").checked
         ? "flex"
         : "none";
 
@@ -206,14 +211,19 @@ const GameCoreModule = (function () {
         (index) => index !== StateModule.getGameState().leftCardIndex
       );
       StateModule.getGameState().rightCardIndex =
-        tempAvailableCards[Math.floor(Math.random() * tempAvailableCards.length)];
+        tempAvailableCards[
+          Math.floor(Math.random() * tempAvailableCards.length)
+        ];
     } else {
-      StateModule.getGameState().leftCardIndex = StateModule.getGameState().rightCardIndex;
+      StateModule.getGameState().leftCardIndex =
+        StateModule.getGameState().rightCardIndex;
       const tempAvailableCards = availableCards.filter(
         (index) => index !== StateModule.getGameState().leftCardIndex
       );
       StateModule.getGameState().rightCardIndex =
-        tempAvailableCards[Math.floor(Math.random() * tempAvailableCards.length)];
+        tempAvailableCards[
+          Math.floor(Math.random() * tempAvailableCards.length)
+        ];
     }
 
     displayCardPair(
@@ -241,7 +251,9 @@ const GameCoreModule = (function () {
     let leftCardData =
       StateModule.getGameState().deck[StateModule.getGameState().leftCardIndex];
     let rightCardData =
-      StateModule.getGameState().deck[StateModule.getGameState().rightCardIndex];
+      StateModule.getGameState().deck[
+        StateModule.getGameState().rightCardIndex
+      ];
 
     // Застосовуємо логіку вирівнювання для ієрогліфів, зображень або слів
     if (MainModalModule.getDifficulty() === "beginner") {
@@ -269,13 +281,12 @@ const GameCoreModule = (function () {
           rightCardData = preparedCards.rightCard;
         }
       } else if (category === "words") {
-        const preparedCards =
-          DifficultyModule.WordsBeginnerLogic.prepareCards(
-            StateModule.getGameState().leftCardIndex,
-            StateModule.getGameState().rightCardIndex,
-            StateModule.getGameState().deck,
-            isFirstPair
-          );
+        const preparedCards = DifficultyModule.WordsBeginnerLogic.prepareCards(
+          StateModule.getGameState().leftCardIndex,
+          StateModule.getGameState().rightCardIndex,
+          StateModule.getGameState().deck,
+          isFirstPair
+        );
         if (preparedCards) {
           leftCardData = preparedCards.leftCard;
           rightCardData = preparedCards.rightCard;
@@ -295,7 +306,8 @@ const GameCoreModule = (function () {
       symbolDiv.classList.add("symbol");
       symbolDiv.dataset.symbol = symbol;
       if (category === "numbers") symbolDiv.classList.add("number");
-      else if (category === "hieroglyphs") symbolDiv.classList.add("hieroglyph");
+      else if (category === "hieroglyphs")
+        symbolDiv.classList.add("hieroglyph");
       else if (category === "words") symbolDiv.classList.add("word");
       else if (category === "images") symbolDiv.classList.add("image");
 
@@ -323,7 +335,8 @@ const GameCoreModule = (function () {
       symbolDiv.classList.add("symbol");
       symbolDiv.dataset.symbol = symbol;
       if (category === "numbers") symbolDiv.classList.add("number");
-      else if (category === "hieroglyphs") symbolDiv.classList.add("hieroglyph");
+      else if (category === "hieroglyphs")
+        symbolDiv.classList.add("hieroglyph");
       else if (category === "words") symbolDiv.classList.add("word");
       else if (category === "images") symbolDiv.classList.add("image");
 
@@ -401,13 +414,17 @@ const GameCoreModule = (function () {
 
     if (position === "left") {
       if (StateModule.getGameState().selectedLeftSymbol) {
-        StateModule.getGameState().selectedLeftSymbol.classList.remove("selected");
+        StateModule.getGameState().selectedLeftSymbol.classList.remove(
+          "selected"
+        );
       }
       StateModule.getGameState().selectedLeftSymbol = symbol;
       symbol.classList.add("selected");
     } else if (position === "right") {
       if (StateModule.getGameState().selectedRightSymbol) {
-        StateModule.getGameState().selectedRightSymbol.classList.remove("selected");
+        StateModule.getGameState().selectedRightSymbol.classList.remove(
+          "selected"
+        );
       }
       StateModule.getGameState().selectedRightSymbol = symbol;
       symbol.classList.add("selected");
@@ -499,6 +516,84 @@ const GameCoreModule = (function () {
       StateModule.getGameState().isProcessingMatch = false;
     }, 500);
   }
+
+
+  // ... (Решта коду без змін, включаючи ініціалізацію подій)
+  (function () {
+    function debounce(func, wait) {
+      let timeout;
+      return function executedFunction(...args) {
+        const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+      };
+    }
+
+    window.addEventListener(
+      "resize",
+      debounce(() => {
+        positionTimers();
+      }, 100)
+    );
+
+    const numSymbolsSelects = [
+      document.getElementById("numSymbolsNumbers"),
+      document.getElementById("numSymbolsImages"),
+      document.getElementById("numSymbolsHieroglyphs"),
+      document.getElementById("numSymbolsWords"),
+    ];
+    numSymbolsSelects.forEach((select) => {
+      select.addEventListener("change", () => {
+        setTimeout(positionTimers, 0);
+      });
+    });
+
+    document.getElementById("startGameButton").addEventListener("click", () => {
+      setTimeout(positionTimers, 0);
+    });
+  })();
+
+  // Оновлена анонімна функція ініціалізації подій
+  (function () {
+    // Додаємо debounce для події resize
+    function debounce(func, wait) {
+      let timeout;
+      return function executedFunction(...args) {
+        const later = () => {
+          clearTimeout(timeout);
+          func(...args);
+        };
+        clearTimeout(timeout);
+        timeout = setTimeout(later, wait);
+      };
+    }
+
+    window.addEventListener(
+      "resize",
+      debounce(() => {
+        positionTimers();
+      }, 100)
+    );
+
+    const numSymbolsSelects = [
+      document.getElementById("numSymbolsNumbers"),
+      document.getElementById("numSymbolsImages"),
+      document.getElementById("numSymbolsHieroglyphs"),
+      document.getElementById("numSymbolsWords"),
+    ];
+    numSymbolsSelects.forEach((select) => {
+      select.addEventListener("change", () => {
+        setTimeout(positionTimers, 0);
+      });
+    });
+
+    document.getElementById("startGameButton").addEventListener("click", () => {
+      setTimeout(positionTimers, 0);
+    });
+  })();
 
   return {
     startGame,

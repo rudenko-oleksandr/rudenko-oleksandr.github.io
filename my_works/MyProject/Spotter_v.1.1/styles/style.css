@@ -67,10 +67,13 @@ h1 {
   justify-content: center;
   gap: 10px;
   margin: 10px 0;
+  width: 100%;
+  flex-wrap: wrap; /* Дозволяє таймерам переноситися, якщо замало місця */
 }
 
 #timersContainer div {
   text-align: center;
+  flex: 0 1 auto; /* Таймери не розтягуються, але можуть зменшуватися */
 }
 
 #timersContainer p {
@@ -98,6 +101,14 @@ h1 {
   margin: 10px 0;
 }
 
+#gameBoard.row-layout {
+  flex-direction: row;
+}
+
+#gameBoard.column-layout {
+  flex-direction: column;
+}
+
 /* Стилі для карток */
 .card {
   display: flex;
@@ -116,6 +127,7 @@ h1 {
   max-width: 100%;
 }
 
+/* Можна повністю закоментувати(поки залишу, вирішу після повного розбору кду за допомогою ШІ) */
 .card::after {
   content: '';
   flex-grow: 0;
@@ -897,6 +909,10 @@ select {
     font-size: 28px;
   }
 
+ #timersContainer {
+    margin-bottom: 10px; /* Відступ від карток */
+  }
+
   #timersContainer p {
     font-size: 14px;
   }
@@ -904,6 +920,34 @@ select {
   #timersContainer span {
     font-size: 14px;
     min-width: 80px;
+  }
+
+  #gameBoard.row-layout #timersContainer {
+    justify-content: space-between; /* Таймери над центрами карток */
+  }
+
+  #gameBoard.row-layout #totalTimeTimer {
+    margin-left: auto; /* Центрування над лівою карткою */
+    margin-right: 10px; /* Відступ від правого таймера */
+  }
+
+  #gameBoard.row-layout #pairTimeTimer {
+    margin-right: auto; /* Центрування над правою карткою */
+  }
+
+  #gameBoard.column-layout #timersContainer {
+    justify-content: center; /* Центрування над половинами картки */
+    gap: 10px;
+  }
+
+  #gameBoard.column-layout #totalTimeTimer {
+    margin-right: 5px;
+    transform: none; /* Скидаємо transform для випадку, коли таймери поруч */
+  }
+
+  #gameBoard.column-layout #pairTimeTimer {
+    margin-left: 5px;
+    transform: none; /* Скидаємо transform для випадку, коли таймери поруч */
   }
 
   #gameBoard {
@@ -1088,7 +1132,7 @@ select {
     max-width: 1280px;
   }
 
-  #timersContainer p {
+#timersContainer p {
     font-size: 16px;
   }
 
@@ -1277,5 +1321,24 @@ select {
 
   #sliderValues span {
     font-size: 14px;
+  }
+}
+
+/* Медіа-запити для мобільних (<768px) */
+@media screen and (max-width: 767px) {
+  #timersContainer {
+    justify-content: center; /* Центрування над половинами картки */
+    gap: 10px;
+    margin-bottom: 10px; /* Відступ від картки */
+  }
+
+  #totalTimeTimer {
+    margin-right: 5px;
+    transform: none; /* Скидаємо transform для випадку, коли таймери поруч */
+  }
+
+  #pairTimeTimer {
+    margin-left: 5px;
+    transform: none; /* Скидаємо transform для випадку, коли таймери поруч */
   }
 }
