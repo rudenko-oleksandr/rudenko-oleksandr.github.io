@@ -114,16 +114,10 @@ const GameCoreModule = (function () {
       .slice(0, selectedCardsCount)
       .map((index) => fullDeck[index]);
 
-    console.log(
-      `Вибрано ${StateModule.getGameState().deck.length} карток для гри`
-    );
+    console.log(`Вибрано ${StateModule.getGameState().deck.length} карток для гри`);
 
     if (MainModalModule.getShowLogs()) {
-      LogsModule.updateLogsDisplay(
-        StateModule.getGameState().gameLogs,
-        category,
-        theme
-      );
+      LogsModule.updateLogsDisplay(StateModule.getGameState().gameLogs, category, theme);
     }
 
     TimerWindowModule.showEndGameButton();
@@ -133,8 +127,9 @@ const GameCoreModule = (function () {
     const toggleLogsRadio = document.getElementById("toggleLogsRadio");
     const scrollToBottomLabel = document.getElementById("scrollToBottomLabel");
     toggleLogsRadio.checked = MainModalModule.getShowLogs();
-    StateModule.getDOMCache().logsList.parentElement.style.display =
-      MainModalModule.getShowLogs() ? "block" : "none";
+    StateModule.getDOMCache().logsList.parentElement.style.display = MainModalModule.getShowLogs()
+      ? "block"
+      : "none";
     logsToggleContainer.style.display = MainModalModule.getShowLogs()
       ? "flex"
       : "none";
@@ -145,8 +140,9 @@ const GameCoreModule = (function () {
 
     document.getElementById("highlightMainCardsButton").style.display =
       MainModalModule.getShowHighlightButton() ? "inline-block" : "none";
-    document.getElementById("showHintButton").style.display =
-      MainModalModule.getShowHintButton() ? "inline-block" : "none";
+    document.getElementById("showHintButton").style.display = MainModalModule.getShowHintButton()
+      ? "inline-block"
+      : "none";
     const hintRadios = document.querySelector(".hint-radios");
     hintRadios.style.display = MainModalModule.getShowHintButton()
       ? "flex"
@@ -168,16 +164,15 @@ const GameCoreModule = (function () {
     initialDeckExplanation.style.display = MainModalModule.getShowDeck()
       ? "block"
       : "none";
-    document.getElementById("deckExplanation").style.display =
-      MainModalModule.getShowDeck() ? "block" : "none";
+    document.getElementById("deckExplanation").style.display = MainModalModule.getShowDeck()
+      ? "block"
+      : "none";
     StateModule.getDOMCache().initialDeckDisplay.style.display =
-      MainModalModule.getShowDeck() &&
-      document.getElementById("showInitialDeckCheckbox").checked
+      MainModalModule.getShowDeck() && document.getElementById("showInitialDeckCheckbox").checked
         ? "flex"
         : "none";
     StateModule.getDOMCache().usedDeckDisplay.style.display =
-      MainModalModule.getShowDeck() &&
-      document.getElementById("showUsedDeckCheckbox").checked
+      MainModalModule.getShowDeck() && document.getElementById("showUsedDeckCheckbox").checked
         ? "flex"
         : "none";
 
@@ -211,19 +206,14 @@ const GameCoreModule = (function () {
         (index) => index !== StateModule.getGameState().leftCardIndex
       );
       StateModule.getGameState().rightCardIndex =
-        tempAvailableCards[
-          Math.floor(Math.random() * tempAvailableCards.length)
-        ];
+        tempAvailableCards[Math.floor(Math.random() * tempAvailableCards.length)];
     } else {
-      StateModule.getGameState().leftCardIndex =
-        StateModule.getGameState().rightCardIndex;
+      StateModule.getGameState().leftCardIndex = StateModule.getGameState().rightCardIndex;
       const tempAvailableCards = availableCards.filter(
         (index) => index !== StateModule.getGameState().leftCardIndex
       );
       StateModule.getGameState().rightCardIndex =
-        tempAvailableCards[
-          Math.floor(Math.random() * tempAvailableCards.length)
-        ];
+        tempAvailableCards[Math.floor(Math.random() * tempAvailableCards.length)];
     }
 
     displayCardPair(
@@ -251,9 +241,7 @@ const GameCoreModule = (function () {
     let leftCardData =
       StateModule.getGameState().deck[StateModule.getGameState().leftCardIndex];
     let rightCardData =
-      StateModule.getGameState().deck[
-        StateModule.getGameState().rightCardIndex
-      ];
+      StateModule.getGameState().deck[StateModule.getGameState().rightCardIndex];
 
     // Застосовуємо логіку вирівнювання для ієрогліфів, зображень або слів
     if (MainModalModule.getDifficulty() === "beginner") {
@@ -281,12 +269,13 @@ const GameCoreModule = (function () {
           rightCardData = preparedCards.rightCard;
         }
       } else if (category === "words") {
-        const preparedCards = DifficultyModule.WordsBeginnerLogic.prepareCards(
-          StateModule.getGameState().leftCardIndex,
-          StateModule.getGameState().rightCardIndex,
-          StateModule.getGameState().deck,
-          isFirstPair
-        );
+        const preparedCards =
+          DifficultyModule.WordsBeginnerLogic.prepareCards(
+            StateModule.getGameState().leftCardIndex,
+            StateModule.getGameState().rightCardIndex,
+            StateModule.getGameState().deck,
+            isFirstPair
+          );
         if (preparedCards) {
           leftCardData = preparedCards.leftCard;
           rightCardData = preparedCards.rightCard;
@@ -306,8 +295,7 @@ const GameCoreModule = (function () {
       symbolDiv.classList.add("symbol");
       symbolDiv.dataset.symbol = symbol;
       if (category === "numbers") symbolDiv.classList.add("number");
-      else if (category === "hieroglyphs")
-        symbolDiv.classList.add("hieroglyph");
+      else if (category === "hieroglyphs") symbolDiv.classList.add("hieroglyph");
       else if (category === "words") symbolDiv.classList.add("word");
       else if (category === "images") symbolDiv.classList.add("image");
 
@@ -335,8 +323,7 @@ const GameCoreModule = (function () {
       symbolDiv.classList.add("symbol");
       symbolDiv.dataset.symbol = symbol;
       if (category === "numbers") symbolDiv.classList.add("number");
-      else if (category === "hieroglyphs")
-        symbolDiv.classList.add("hieroglyph");
+      else if (category === "hieroglyphs") symbolDiv.classList.add("hieroglyph");
       else if (category === "words") symbolDiv.classList.add("word");
       else if (category === "images") symbolDiv.classList.add("image");
 
@@ -414,17 +401,13 @@ const GameCoreModule = (function () {
 
     if (position === "left") {
       if (StateModule.getGameState().selectedLeftSymbol) {
-        StateModule.getGameState().selectedLeftSymbol.classList.remove(
-          "selected"
-        );
+        StateModule.getGameState().selectedLeftSymbol.classList.remove("selected");
       }
       StateModule.getGameState().selectedLeftSymbol = symbol;
       symbol.classList.add("selected");
     } else if (position === "right") {
       if (StateModule.getGameState().selectedRightSymbol) {
-        StateModule.getGameState().selectedRightSymbol.classList.remove(
-          "selected"
-        );
+        StateModule.getGameState().selectedRightSymbol.classList.remove("selected");
       }
       StateModule.getGameState().selectedRightSymbol = symbol;
       symbol.classList.add("selected");
@@ -516,84 +499,6 @@ const GameCoreModule = (function () {
       StateModule.getGameState().isProcessingMatch = false;
     }, 500);
   }
-
-
-  // ... (Решта коду без змін, включаючи ініціалізацію подій)
-  (function () {
-    function debounce(func, wait) {
-      let timeout;
-      return function executedFunction(...args) {
-        const later = () => {
-          clearTimeout(timeout);
-          func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-      };
-    }
-
-    window.addEventListener(
-      "resize",
-      debounce(() => {
-        positionTimers();
-      }, 100)
-    );
-
-    const numSymbolsSelects = [
-      document.getElementById("numSymbolsNumbers"),
-      document.getElementById("numSymbolsImages"),
-      document.getElementById("numSymbolsHieroglyphs"),
-      document.getElementById("numSymbolsWords"),
-    ];
-    numSymbolsSelects.forEach((select) => {
-      select.addEventListener("change", () => {
-        setTimeout(positionTimers, 0);
-      });
-    });
-
-    document.getElementById("startGameButton").addEventListener("click", () => {
-      setTimeout(positionTimers, 0);
-    });
-  })();
-
-  // Оновлена анонімна функція ініціалізації подій
-  (function () {
-    // Додаємо debounce для події resize
-    function debounce(func, wait) {
-      let timeout;
-      return function executedFunction(...args) {
-        const later = () => {
-          clearTimeout(timeout);
-          func(...args);
-        };
-        clearTimeout(timeout);
-        timeout = setTimeout(later, wait);
-      };
-    }
-
-    window.addEventListener(
-      "resize",
-      debounce(() => {
-        positionTimers();
-      }, 100)
-    );
-
-    const numSymbolsSelects = [
-      document.getElementById("numSymbolsNumbers"),
-      document.getElementById("numSymbolsImages"),
-      document.getElementById("numSymbolsHieroglyphs"),
-      document.getElementById("numSymbolsWords"),
-    ];
-    numSymbolsSelects.forEach((select) => {
-      select.addEventListener("change", () => {
-        setTimeout(positionTimers, 0);
-      });
-    });
-
-    document.getElementById("startGameButton").addEventListener("click", () => {
-      setTimeout(positionTimers, 0);
-    });
-  })();
 
   return {
     startGame,
@@ -878,6 +783,7 @@ const CardsSliderModule = (function () {
 })();
 
 // Модуль "Складність" через IIFE
+
 const DifficultyModule = (function () {
   const hieroglyphsList = [
     "一",
@@ -1476,31 +1382,19 @@ const HintsCoreModule = (function () {
     let lastHighlightedInitialCardIndex = null;
     let lastHighlightedUsedCardIndex = null;
 
-    // Визначаємо розміри символів залежно від ширини екрана
-
-	  
-	  function getSymbolSize() {
-      if (window.innerWidth >= 1024) return 45;
-      if (window.innerWidth >= 768) return 40;
-      return 35;
-    }
-
     // IIFE для Логіки 1: Підсвічування всіх карток
     const HighlightMode1 = (function () {
       function highlight(selectedCardIndex, dobbleDeck, category) {
-        const initialDeckDisplay = StateModule.getDOMCache().initialDeckDisplay;
-        const usedDeckDisplay = StateModule.getDOMCache().usedDeckDisplay;
-        if (!initialDeckDisplay || !usedDeckDisplay) {
-          console.warn("Deck displays not found");
-          return;
-        }
-
         const selectedCardSymbols = dobbleDeck[selectedCardIndex];
         const allDeckCards = [
-          ...initialDeckDisplay.querySelectorAll(".deck-card"),
-          ...usedDeckDisplay.querySelectorAll(".deck-card"),
+          ...StateModule.getDOMCache().initialDeckDisplay.querySelectorAll(
+            ".deck-card"
+          ),
+          ...StateModule.getDOMCache().usedDeckDisplay.querySelectorAll(
+            ".deck-card"
+          ),
         ];
-        const symbolColors = {};
+        const symbolColors = {}; // Виправлено: прибрано "prog"
         DeckModule.clearDeckHighlighting();
 
         const availableColors = [
@@ -1594,13 +1488,6 @@ const HintsCoreModule = (function () {
     // IIFE для Логіки 2: Роздільне підсвічування
     const HighlightMode2 = (function () {
       function highlight(selectedCardIndex, dobbleDeck, category) {
-        const initialDeckDisplay = StateModule.getDOMCache().initialDeckDisplay;
-        const usedDeckDisplay = StateModule.getDOMCache().usedDeckDisplay;
-        if (!initialDeckDisplay || !usedDeckDisplay) {
-          console.warn("Deck displays not found");
-          return;
-        }
-
         const selectedCardSymbols = dobbleDeck[selectedCardIndex];
         const availableColors = [
           "lightblue",
@@ -1658,12 +1545,14 @@ const HintsCoreModule = (function () {
           "sienna",
         ];
 
-        const isInitialDeck = initialDeckDisplay.querySelector(
-          `.deck-card[data-index="${selectedCardIndex}"]`
-        );
+        const isInitialDeck =
+          StateModule.getDOMCache().initialDeckDisplay.querySelector(
+            `.deck-card[data-index="${selectedCardIndex}"]`
+          );
         if (isInitialDeck) {
-          const initialDeckCards =
-            initialDeckDisplay.querySelectorAll(".deck-card");
+          const initialDeckCards = document.querySelectorAll(
+            "#initialDeckDisplay .deck-card"
+          );
           const symbolColors = {};
 
           initialDeckCards.forEach((card) => {
@@ -1704,7 +1593,9 @@ const HintsCoreModule = (function () {
             }
           });
         } else {
-          const usedDeckCards = usedDeckDisplay.querySelectorAll(".deck-card");
+          const usedDeckCards = document.querySelectorAll(
+            "#usedDeckDisplay .deck-card"
+          );
           const card = Array.from(usedDeckCards).find(
             (c) => parseInt(c.dataset.index) === selectedCardIndex
           );
@@ -1735,7 +1626,7 @@ const HintsCoreModule = (function () {
                     usedDeckCards[cardPosition - 1].dataset.index
                   );
                   const prevCardSymbols = dobbleDeck[prevCardIndex];
-                  isCommonWithPrev = prevCardSymbols.includes(symbolValue);
+                  isCommonWithPrev = prevCardSymbols.includes(symbolValue); // Виправлено: "Sturdy" на "Prev"
                   if (isCommonWithPrev) {
                     const prevSymbolElement = Array.from(
                       usedDeckCards[cardPosition - 1].querySelectorAll(
@@ -1884,14 +1775,11 @@ const HintsCoreModule = (function () {
     ) {
       const initialDeckDisplay = StateModule.getDOMCache().initialDeckDisplay;
       const usedDeckDisplay = StateModule.getDOMCache().usedDeckDisplay;
-      if (!initialDeckDisplay || !usedDeckDisplay) {
-        console.warn("Deck displays not found");
-        return;
-      }
 
+      // Зберігаємо стан підсвічування перед оновленням
       const highlightedSymbolsInitial = new Map();
       const highlightedSymbolsUsed = new Map();
-      if (document.getElementById("highlightCheckbox")?.checked) {
+      if (document.getElementById("highlightCheckbox").checked) {
         initialDeckDisplay
           .querySelectorAll(".deck-symbol.highlighted")
           .forEach((symbol) => {
@@ -1912,8 +1800,10 @@ const HintsCoreModule = (function () {
           });
       }
 
+      // Очищаємо initialDeckDisplay, але залишаємо usedDeckDisplay без повного очищення
       initialDeckDisplay.innerHTML = "";
 
+      // Відображаємо картки в initialDeckDisplay
       deckData.forEach((cardSymbols, cardIndex) => {
         if (!usedCardsData.includes(cardIndex)) {
           const card = document.createElement("div");
@@ -1940,6 +1830,7 @@ const HintsCoreModule = (function () {
         }
       });
 
+      // Відображаємо картки в usedDeckDisplay у порядку додавання
       const existingUsedCards = new Set(
         Array.from(usedDeckDisplay.querySelectorAll(".deck-card")).map((card) =>
           parseInt(card.dataset.index)
@@ -1964,12 +1855,13 @@ const HintsCoreModule = (function () {
             }
           });
 
-          usedDeckDisplay.appendChild(card);
+          usedDeckDisplay.appendChild(card); // Додаємо в кінець
         }
       });
 
-      if (document.getElementById("highlightCheckbox")?.checked) {
-        const mode = document.getElementById("highlightMode1")?.checked
+      // Відновлюємо підсвічування
+      if (document.getElementById("highlightCheckbox").checked) {
+        const mode = document.getElementById("highlightMode1").checked
           ? "mode1"
           : "mode2";
         if (
@@ -2003,52 +1895,35 @@ const HintsCoreModule = (function () {
       }
     }
 
-function createSymbolDiv(symbol, category, theme) {
-  const symbolDiv = document.createElement("div");
-  symbolDiv.classList.add("deck-symbol");
-  if (category === "numbers") symbolDiv.classList.add("number");
-  else if (category === "hieroglyphs") symbolDiv.classList.add("hieroglyph");
-  else if (category === "words") symbolDiv.classList.add("word");
-  else if (category === "images") symbolDiv.classList.add("image");
+    function createSymbolDiv(symbol, category, theme) {
+      const symbolDiv = document.createElement("div");
+      symbolDiv.classList.add("deck-symbol");
+      if (category === "numbers") symbolDiv.classList.add("number");
+      else if (category === "hieroglyphs")
+        symbolDiv.classList.add("hieroglyph");
+      else if (category === "words") symbolDiv.classList.add("word");
+      else if (category === "images") symbolDiv.classList.add("image");
 
-  const size = getSymbolSize();
-  symbolDiv.style.width = category === "words" ? "auto" : `${size}px`;
-  symbolDiv.style.height = `${size}px`;
-  symbolDiv.style.lineHeight = `${size}px`;
-  symbolDiv.style.fontSize = category === "words" ? "12px" : "14px";
-  if (category === "words") {
-    symbolDiv.style.minWidth = `${size}px`;
-    symbolDiv.style.maxWidth = `${size + 75}px`;
-    symbolDiv.style.padding = "0 5px";
-  }
-  if (category === "images") {
-    symbolDiv.style.padding = "2px";
-    symbolDiv.style.margin = "3px";
-  }
-
-  if (
-    category === "numbers" ||
-    category === "hieroglyphs" ||
-    category === "words"
-  ) {
-    symbolDiv.textContent = symbol;
-  } else if (category === "images") {
-    const img = document.createElement("img");
-    img.src = `resource/images/${theme}/${symbol}`;
-    img.style.width = "calc(100% - 4px)";
-    img.style.height = "calc(100% - 4px)";
-    img.onerror = () => {
-      img.alt = "Зображення не знайдено";
-      img.src = "resource/images/default.png";
-      console.warn(`Не вдалося завантажити зображення: ${img.src}`);
-    };
-    symbolDiv.appendChild(img);
-  }
-  return symbolDiv;
-}
+      if (
+        category === "numbers" ||
+        category === "hieroglyphs" ||
+        category === "words"
+      ) {
+        symbolDiv.textContent = symbol;
+      } else if (category === "images") {
+        const img = document.createElement("img");
+        img.src = `resource/images/${theme}/${symbol}`;
+        img.onerror = () => {
+          img.alt = "Зображення не знайдено";
+          img.src = "resource/images/default.png";
+          console.warn(`Не вдалося завантажити зображення: ${img.src}`);
+        };
+        symbolDiv.appendChild(img);
+      }
+      return symbolDiv;
+    }
 
     function getSymbolValue(symbolElement, category) {
-      if (!symbolElement) return null;
       if (category === "numbers")
         return parseInt(symbolElement.textContent.trim());
       if (category === "images")
@@ -2057,13 +1932,10 @@ function createSymbolDiv(symbol, category, theme) {
     }
 
     function moveCardToUsedDeck(cardIndex) {
-      const initialDeckDisplay = StateModule.getDOMCache().initialDeckDisplay;
-      if (!initialDeckDisplay) {
-        console.warn("Initial deck display not found");
-        return;
-      }
-
-      const initialCards = initialDeckDisplay.querySelectorAll(".deck-card");
+      const initialCards =
+        StateModule.getDOMCache().initialDeckDisplay.querySelectorAll(
+          ".deck-card"
+        );
       const cardToMove = Array.from(initialCards).find(
         (card) => parseInt(card.dataset.index) === cardIndex
       );
@@ -2071,14 +1943,14 @@ function createSymbolDiv(symbol, category, theme) {
         console.log(
           `Переміщення картки з індексом ${cardIndex} до usedDeckDisplay`
         );
-        initialDeckDisplay.removeChild(cardToMove);
+        StateModule.getDOMCache().initialDeckDisplay.removeChild(cardToMove);
         cardToMove.classList.remove("in-game");
         cardToMove.classList.add("used-card");
 
-        const highlightMode = document.getElementById("highlightMode1")?.checked
+        const highlightMode = document.getElementById("highlightMode1").checked
           ? "mode1"
           : "mode2";
-        if (document.getElementById("highlightCheckbox")?.checked) {
+        if (document.getElementById("highlightCheckbox").checked) {
           const highlightedSymbols = new Map();
           cardToMove
             .querySelectorAll(".deck-symbol.highlighted")
@@ -2093,11 +1965,13 @@ function createSymbolDiv(symbol, category, theme) {
               );
             });
 
+          // Очищаємо підсвічування перед переміщенням у mode2
           if (highlightMode === "mode2") {
             cardToMove.querySelectorAll(".deck-symbol").forEach((symbol) => {
               symbol.classList.remove("highlighted");
               symbol.style.removeProperty("--highlight-color");
             });
+            // Якщо є активне підсвічування в usedDeckDisplay, застосовуємо його
             if (lastHighlightedUsedCardIndex !== null) {
               HighlightMode2.highlight(
                 lastHighlightedUsedCardIndex,
@@ -2124,7 +1998,7 @@ function createSymbolDiv(symbol, category, theme) {
             highlightMode === "mode2" &&
             lastHighlightedInitialCardIndex === cardIndex
           ) {
-            lastHighlightedInitialCardIndex = null;
+            lastHighlightedInitialCardIndex = null; // Скидаємо, але не підсвічуємо автоматично
           }
         } else {
           StateModule.getDOMCache().usedDeckDisplay.appendChild(cardToMove);
@@ -2133,12 +2007,12 @@ function createSymbolDiv(symbol, category, theme) {
     }
 
     function highlightMatchingSymbols(selectedCardIndex, dobbleDeck, category) {
-      if (!document.getElementById("highlightCheckbox")?.checked) {
+      if (!document.getElementById("highlightCheckbox").checked) {
         clearDeckHighlighting();
         return;
       }
 
-      const highlightMode = document.getElementById("highlightMode1")?.checked
+      const highlightMode = document.getElementById("highlightMode1").checked
         ? "mode1"
         : "mode2";
       if (highlightMode === "mode1") {
@@ -2157,13 +2031,10 @@ function createSymbolDiv(symbol, category, theme) {
     }
 
     function updateInGameHighlighting(leftIdx, rightIdx) {
-      const initialDeckDisplay = StateModule.getDOMCache().initialDeckDisplay;
-      if (!initialDeckDisplay) {
-        console.warn("Initial deck display not found");
-        return;
-      }
-
-      const allInitialCards = initialDeckDisplay.querySelectorAll(".deck-card");
+      const allInitialCards =
+        StateModule.getDOMCache().initialDeckDisplay.querySelectorAll(
+          ".deck-card"
+        );
       allInitialCards.forEach((card) => {
         const cardIndex = parseInt(card.dataset.index);
         if (cardIndex === leftIdx || cardIndex === rightIdx) {
@@ -2174,195 +2045,175 @@ function createSymbolDiv(symbol, category, theme) {
       });
     }
 
-    function initializeEventListeners() {
-      const showDeckCheckbox = document.getElementById("showDeckCheckbox");
-      const highlightCheckbox = document.getElementById("highlightCheckbox");
-      const initialDeckDisplay = StateModule.getDOMCache().initialDeckDisplay;
-      const usedDeckDisplay = StateModule.getDOMCache().usedDeckDisplay;
+    document
+      .getElementById("showDeckCheckbox")
+      .addEventListener("change", function () {
+        const isChecked = this.checked;
+        document.getElementById("highlightCheckboxLabel").style.display =
+          isChecked ? "block" : "none";
+        if (!isChecked) {
+          document.getElementById("highlightCheckbox").checked = false;
+          document.getElementById("highlightOptions").style.display = "none";
+          clearDeckHighlighting();
+          lastHighlightedInitialCardIndex = null;
+          lastHighlightedUsedCardIndex = null;
+        }
+      });
 
-      if (showDeckCheckbox) {
-        showDeckCheckbox.addEventListener("change", function () {
-          const isChecked = this.checked;
-          document.getElementById("highlightCheckboxLabel").style.display =
-            isChecked ? "block" : "none";
-          if (!isChecked) {
-            highlightCheckbox.checked = false;
-            document.getElementById("highlightOptions").style.display = "none";
+    document
+      .getElementById("highlightCheckbox")
+      .addEventListener("change", function () {
+        const isChecked = this.checked;
+        document.getElementById("highlightOptions").style.display =
+          isChecked && MainModalModule.getShowDeck() ? "block" : "none";
+        if (!isChecked) {
+          clearDeckHighlighting();
+          lastHighlightedInitialCardIndex = null;
+          lastHighlightedUsedCardIndex = null;
+        }
+      });
+
+    StateModule.getDOMCache().initialDeckDisplay.addEventListener(
+      "click",
+      (event) => {
+        const deckCard = event.target.closest(".deck-card");
+        if (deckCard && !deckCard.classList.contains("used-card")) {
+          const selectedCardIndex = parseInt(deckCard.dataset.index);
+          console.log(
+            `Клікнуто картку з індексом ${selectedCardIndex} у початковій колоді`
+          );
+
+          if (!document.getElementById("highlightCheckbox").checked) return;
+
+          const mode = document.getElementById("highlightMode1").checked
+            ? "mode1"
+            : "mode2";
+          if (
+            lastHighlightedInitialCardIndex === selectedCardIndex &&
+            mode === "mode1"
+          ) {
             clearDeckHighlighting();
             lastHighlightedInitialCardIndex = null;
             lastHighlightedUsedCardIndex = null;
+          } else if (
+            lastHighlightedInitialCardIndex === selectedCardIndex &&
+            mode === "mode2"
+          ) {
+            clearDeckHighlighting("#initialDeckDisplay");
+            lastHighlightedInitialCardIndex = null;
+          } else {
+            if (mode === "mode2") clearDeckHighlighting("#initialDeckDisplay");
+            else if (lastHighlightedInitialCardIndex !== selectedCardIndex)
+              clearDeckHighlighting();
+            lastHighlightedInitialCardIndex = selectedCardIndex;
+            lastHighlightedUsedCardIndex = null;
+            highlightMatchingSymbols(
+              selectedCardIndex,
+              StateModule.getGameState().deck,
+              MainModalModule.getCategory()
+            );
           }
-        });
+        }
       }
+    );
 
-      if (highlightCheckbox) {
-        highlightCheckbox.addEventListener("change", function () {
-          const isChecked = this.checked;
-          document.getElementById("highlightOptions").style.display =
-            isChecked && MainModalModule.getShowDeck() ? "block" : "none";
-          if (!isChecked) {
+    StateModule.getDOMCache().usedDeckDisplay.addEventListener(
+      "click",
+      (event) => {
+        const deckCard = event.target.closest(".deck-card");
+        if (deckCard && deckCard.classList.contains("used-card")) {
+          const selectedCardIndex = parseInt(deckCard.dataset.index);
+          console.log(
+            `Клікнуто картку з індексом ${selectedCardIndex} у використаній колоді`
+          );
+
+          if (!document.getElementById("highlightCheckbox").checked) return;
+
+          const mode = document.getElementById("highlightMode1").checked
+            ? "mode1"
+            : "mode2";
+          if (
+            lastHighlightedUsedCardIndex === selectedCardIndex &&
+            mode === "mode1"
+          ) {
             clearDeckHighlighting();
             lastHighlightedInitialCardIndex = null;
             lastHighlightedUsedCardIndex = null;
-          }
-        });
-      }
-
-      if (initialDeckDisplay) {
-        initialDeckDisplay.addEventListener("click", (event) => {
-          const deckCard = event.target.closest(".deck-card");
-          if (deckCard && !deckCard.classList.contains("used-card")) {
-            const selectedCardIndex = parseInt(deckCard.dataset.index);
-            console.log(
-              `Клікнуто картку з індексом ${selectedCardIndex} у початковій колоді`
-            );
-
-            if (!highlightCheckbox?.checked) return;
-
-            const mode = document.getElementById("highlightMode1")?.checked
-              ? "mode1"
-              : "mode2";
-            if (
-              lastHighlightedInitialCardIndex === selectedCardIndex &&
-              mode === "mode1"
-            ) {
+          } else if (
+            lastHighlightedUsedCardIndex === selectedCardIndex &&
+            mode === "mode2"
+          ) {
+            clearDeckHighlighting("#usedDeckDisplay");
+            lastHighlightedUsedCardIndex = null;
+          } else {
+            if (mode === "mode2") clearDeckHighlighting("#usedDeckDisplay");
+            else if (lastHighlightedUsedCardIndex !== selectedCardIndex)
               clearDeckHighlighting();
-              lastHighlightedInitialCardIndex = null;
-              lastHighlightedUsedCardIndex = null;
-            } else if (
-              lastHighlightedInitialCardIndex === selectedCardIndex &&
-              mode === "mode2"
-            ) {
-              clearDeckHighlighting("#initialDeckDisplay");
-              lastHighlightedInitialCardIndex = null;
-            } else {
-              if (mode === "mode2")
-                clearDeckHighlighting("#initialDeckDisplay");
-              else if (lastHighlightedInitialCardIndex !== selectedCardIndex)
-                clearDeckHighlighting();
-              lastHighlightedInitialCardIndex = selectedCardIndex;
-              lastHighlightedUsedCardIndex = null;
-              highlightMatchingSymbols(
-                selectedCardIndex,
-                StateModule.getGameState().deck,
-                MainModalModule.getCategory()
-              );
-            }
-          }
-        });
-      }
-
-      if (usedDeckDisplay) {
-        usedDeckDisplay.addEventListener("click", (event) => {
-          const deckCard = event.target.closest(".deck-card");
-          if (deckCard && deckCard.classList.contains("used-card")) {
-            const selectedCardIndex = parseInt(deckCard.dataset.index);
-            console.log(
-              `Клікнуто картку з індексом ${selectedCardIndex} у використаній колоді`
-            );
-
-            if (!highlightCheckbox?.checked) return;
-
-            const mode = document.getElementById("highlightMode1")?.checked
-              ? "mode1"
-              : "mode2";
-            if (
-              lastHighlightedUsedCardIndex === selectedCardIndex &&
-              mode === "mode1"
-            ) {
-              clearDeckHighlighting();
-              lastHighlightedInitialCardIndex = null;
-              lastHighlightedUsedCardIndex = null;
-            } else if (
-              lastHighlightedUsedCardIndex === selectedCardIndex &&
-              mode === "mode2"
-            ) {
-              clearDeckHighlighting("#usedDeckDisplay");
-              lastHighlightedUsedCardIndex = null;
-            } else {
-              if (mode === "mode2") clearDeckHighlighting("#usedDeckDisplay");
-              else if (lastHighlightedUsedCardIndex !== selectedCardIndex)
-                clearDeckHighlighting();
-              lastHighlightedUsedCardIndex = selectedCardIndex;
-              lastHighlightedInitialCardIndex = null;
-              highlightMatchingSymbols(
-                selectedCardIndex,
-                StateModule.getGameState().deck,
-                MainModalModule.getCategory()
-              );
-            }
-          }
-        });
-      }
-
-      const highlightMode1 = document.getElementById("highlightMode1");
-      if (highlightMode1) {
-        highlightMode1.addEventListener("change", () => {
-          if (!highlightCheckbox?.checked) return;
-          clearDeckHighlighting();
-          if (lastHighlightedInitialCardIndex !== null) {
-            HighlightMode1.highlight(
-              lastHighlightedInitialCardIndex,
-              StateModule.getGameState().deck,
-              MainModalModule.getCategory()
-            );
-          } else if (lastHighlightedUsedCardIndex !== null) {
-            HighlightMode1.highlight(
-              lastHighlightedUsedCardIndex,
+            lastHighlightedUsedCardIndex = selectedCardIndex;
+            lastHighlightedInitialCardIndex = null;
+            highlightMatchingSymbols(
+              selectedCardIndex,
               StateModule.getGameState().deck,
               MainModalModule.getCategory()
             );
           }
-        });
+        }
       }
+    );
 
-      const highlightMode2 = document.getElementById("highlightMode2");
-      if (highlightMode2) {
-        highlightMode2.addEventListener("change", () => {
-          if (!highlightCheckbox?.checked) return;
-          clearDeckHighlighting();
-          if (lastHighlightedInitialCardIndex !== null) {
-            HighlightMode2.highlight(
-              lastHighlightedInitialCardIndex,
-              StateModule.getGameState().deck,
-              MainModalModule.getCategory()
-            );
-          }
-          if (lastHighlightedUsedCardIndex !== null) {
-            HighlightMode2.highlight(
-              lastHighlightedUsedCardIndex,
-              StateModule.getGameState().deck,
-              MainModalModule.getCategory()
-            );
-          }
-        });
+    document.getElementById("highlightMode1").addEventListener("change", () => {
+      if (!document.getElementById("highlightCheckbox").checked) return;
+      clearDeckHighlighting();
+      if (lastHighlightedInitialCardIndex !== null) {
+        HighlightMode1.highlight(
+          lastHighlightedInitialCardIndex,
+          StateModule.getGameState().deck,
+          MainModalModule.getCategory()
+        );
+      } else if (lastHighlightedUsedCardIndex !== null) {
+        HighlightMode1.highlight(
+          lastHighlightedUsedCardIndex,
+          StateModule.getGameState().deck,
+          MainModalModule.getCategory()
+        );
       }
+    });
 
-      const showInitialDeckCheckbox = document.getElementById(
-        "showInitialDeckCheckbox"
-      );
-      if (showInitialDeckCheckbox) {
-        showInitialDeckCheckbox.addEventListener("change", function () {
-          initialDeckDisplay.style.display = this.checked ? "flex" : "none";
-        });
+    document.getElementById("highlightMode2").addEventListener("change", () => {
+      if (!document.getElementById("highlightCheckbox").checked) return;
+      clearDeckHighlighting();
+      if (lastHighlightedInitialCardIndex !== null) {
+        HighlightMode2.highlight(
+          lastHighlightedInitialCardIndex,
+          StateModule.getGameState().deck,
+          MainModalModule.getCategory()
+        );
       }
-
-      const showUsedDeckCheckbox = document.getElementById(
-        "showUsedDeckCheckbox"
-      );
-      if (showUsedDeckCheckbox) {
-        showUsedDeckCheckbox.addEventListener("change", function () {
-          usedDeckDisplay.style.display = this.checked ? "flex" : "none";
-        });
+      if (lastHighlightedUsedCardIndex !== null) {
+        HighlightMode2.highlight(
+          lastHighlightedUsedCardIndex,
+          StateModule.getGameState().deck,
+          MainModalModule.getCategory()
+        );
       }
-    }
+    });
 
-    // Відкладаємо ініціалізацію слухачів до завантаження DOM
-    if (document.readyState === "loading") {
-      document.addEventListener("DOMContentLoaded", initializeEventListeners);
-    } else {
-      initializeEventListeners();
-    }
+    document
+      .getElementById("showInitialDeckCheckbox")
+      .addEventListener("change", function () {
+        StateModule.getDOMCache().initialDeckDisplay.style.display = this
+          .checked
+          ? "flex"
+          : "none";
+      });
+
+    document
+      .getElementById("showUsedDeckCheckbox")
+      .addEventListener("change", function () {
+        StateModule.getDOMCache().usedDeckDisplay.style.display = this.checked
+          ? "flex"
+          : "none";
+      });
 
     return {
       displayDeck,
@@ -2374,11 +2225,13 @@ function createSymbolDiv(symbol, category, theme) {
   })();
 
   // Модуль "Показати підказку" через IIFE
+  // Модуль "Показати підказку" через IIFE
   const HintModule = (function () {
     let isHintVisible = false;
-    let hintTimeout = null;
-    let isAutoHintActive = false;
+    let hintTimeout = null; // Змінна для таймера "Ручної підказки"
+    let isAutoHintActive = false; // Додаємо явне визначення змінної
 
+    // Спільна функція для показу підказки
     function showHint() {
       const leftCard = document.querySelector('.card[data-position="left"]');
       const rightCard = document.querySelector('.card[data-position="right"]');
@@ -2431,6 +2284,7 @@ function createSymbolDiv(symbol, category, theme) {
       positionHint();
     }
 
+    // Спільна функція для приховування підказки
     function hideHint() {
       StateModule.getDOMCache().hintDisplay.style.display = "none";
       isHintVisible = false;
@@ -2440,58 +2294,33 @@ function createSymbolDiv(symbol, category, theme) {
       }
     }
 
+    // Спільна функція для позиціонування підказки
     function positionHint() {
-      const button = document.getElementById("showHintButton");
-      if (!button) return;
-
-      const buttonRect = button.getBoundingClientRect();
+      const buttonRect = document
+        .getElementById("showHintButton")
+        .getBoundingClientRect();
       const gameContainerRect =
         StateModule.getDOMCache().gameContainer.getBoundingClientRect();
 
-      const hintDisplay = StateModule.getDOMCache().hintDisplay;
-      const hintHeight = hintDisplay.offsetHeight;
+      const leftPosition = buttonRect.right - gameContainerRect.left + 15;
+      const hintHeight = StateModule.getDOMCache().hintDisplay.offsetHeight;
       const buttonHeight = buttonRect.height;
-
-      let leftPosition = buttonRect.right - gameContainerRect.left + 10;
-      let topPosition =
+      const topPosition =
         buttonRect.top -
         gameContainerRect.top +
         (buttonHeight - hintHeight) / 2;
 
-      // Адаптація для маленьких екранів
-      if (window.innerWidth < 768) {
-        leftPosition =
-          buttonRect.left -
-          gameContainerRect.left -
-          hintDisplay.offsetWidth -
-          10;
-        if (leftPosition < 10) {
-          leftPosition = buttonRect.right - gameContainerRect.left + 10;
-        }
-        topPosition = buttonRect.bottom - gameContainerRect.top + 5;
-      }
-
-      hintDisplay.style.left = `${leftPosition}px`;
-      hintDisplay.style.top = `${topPosition}px`;
+      StateModule.getDOMCache().hintDisplay.style.left = `${leftPosition}px`;
+      StateModule.getDOMCache().hintDisplay.style.top = `${topPosition}px`;
     }
 
+    // Новий метод для скидання стану підказки
     function resetHintState() {
       hideHint();
       isAutoHintActive = false;
     }
 
-    function toggleHint() {
-      if (document.getElementById("autoHintRadio").checked) {
-        if (AutoHintLogic.getIsActive()) {
-          AutoHintLogic.disable();
-        } else {
-          AutoHintLogic.enable();
-        }
-      } else if (document.getElementById("manualHintRadio").checked) {
-        ManualHintLogic.showTemporary();
-      }
-    }
-
+    // IIFE для логіки "Постійна підказка"
     const AutoHintLogic = (function () {
       function enable() {
         if (!isHintVisible) {
@@ -2514,6 +2343,7 @@ function createSymbolDiv(symbol, category, theme) {
       };
     })();
 
+    // IIFE для логіки "Ручна підказка (2 сек.)"
     const ManualHintLogic = (function () {
       function showTemporary() {
         if (!isHintVisible) {
@@ -2529,11 +2359,25 @@ function createSymbolDiv(symbol, category, theme) {
       };
     })();
 
+    // Функція для перемикання логіки підказок
+    function toggleHint() {
+      if (document.getElementById("autoHintRadio").checked) {
+        if (AutoHintLogic.getIsActive()) {
+          AutoHintLogic.disable();
+        } else {
+          AutoHintLogic.enable();
+        }
+      } else if (document.getElementById("manualHintRadio").checked) {
+        ManualHintLogic.showTemporary();
+      }
+    }
+
+    // Обробники подій для радіокнопок
     document
       .getElementById("manualHintRadio")
       .addEventListener("change", function () {
         if (this.checked) {
-          AutoHintLogic.disable();
+          AutoHintLogic.disable(); // Вимикаємо постійну підказку
         }
       });
 
@@ -2541,6 +2385,7 @@ function createSymbolDiv(symbol, category, theme) {
       .getElementById("autoHintRadio")
       .addEventListener("change", function () {
         if (this.checked && !AutoHintLogic.getIsActive()) {
+          // Активуємо лише при явному натисканні на кнопку "Показати підказку"
         }
       });
 
@@ -2548,7 +2393,7 @@ function createSymbolDiv(symbol, category, theme) {
       showHint,
       hideHint,
       toggleHint,
-      resetHintState,
+      resetHintState, // Додаємо новий метод
       get isHintVisible() {
         return isHintVisible;
       },
@@ -2569,39 +2414,38 @@ function createSymbolDiv(symbol, category, theme) {
   const HighlightModule = (function () {
     let isBlinkingActive = false;
 
+    // Спільна функція для очищення всіх підсвічувань
     function clearAllHighlights() {
       const leftCard = document.querySelector('.card[data-position="left"]');
       const rightCard = document.querySelector('.card[data-position="right"]');
-      if (!leftCard || !rightCard) {
-        console.warn("Cards not found");
-        return;
+      if (leftCard && rightCard) {
+        const leftSymbols = leftCard.querySelectorAll(".symbol");
+        const rightSymbols = rightCard.querySelectorAll(".symbol");
+        const category = MainModalModule.getCategory();
+        leftSymbols.forEach((symbol) => {
+          symbol.classList.remove("highlighted-main");
+          if (category === "words") {
+            symbol.style.color = "#000000";
+            symbol.style.webkitTextStroke = "";
+            symbol.style.textShadow = "";
+          } else if (category === "images") {
+            symbol.style.backgroundColor = "";
+          }
+        });
+        rightSymbols.forEach((symbol) => {
+          symbol.classList.remove("highlighted-main");
+          if (category === "words") {
+            symbol.style.color = "#000000";
+            symbol.style.webkitTextStroke = "";
+            symbol.style.textShadow = "";
+          } else if (category === "images") {
+            symbol.style.backgroundColor = "";
+          }
+        });
       }
-
-      const leftSymbols = leftCard.querySelectorAll(".symbol");
-      const rightSymbols = rightCard.querySelectorAll(".symbol");
-      const category = MainModalModule.getCategory();
-      leftSymbols.forEach((symbol) => {
-        symbol.classList.remove("highlighted-main");
-        if (category === "words") {
-          symbol.style.color = "#000000";
-          symbol.style.webkitTextStroke = "";
-          symbol.style.textShadow = "";
-        } else if (category === "images") {
-          symbol.style.backgroundColor = "";
-        }
-      });
-      rightSymbols.forEach((symbol) => {
-        symbol.classList.remove("highlighted-main");
-        if (category === "words") {
-          symbol.style.color = "#000000";
-          symbol.style.webkitTextStroke = "";
-          symbol.style.textShadow = "";
-        } else if (category === "images") {
-          symbol.style.backgroundColor = "";
-        }
-      });
     }
 
+    // Спільна функція для очищення підсвічування конкретного символу
     function clearHighlight(leftSymbols, rightSymbols, commonSymbol, category) {
       leftSymbols.forEach((symbol) => {
         if (symbol.dataset.symbol === commonSymbol) {
@@ -2629,6 +2473,7 @@ function createSymbolDiv(symbol, category, theme) {
       });
     }
 
+    // IIFE для логіки "Миготіння"
     const BlinkHighlightLogic = (function () {
       let localBlinkInterval = null;
 
@@ -2642,10 +2487,7 @@ function createSymbolDiv(symbol, category, theme) {
         const rightCard = document.querySelector(
           '.card[data-position="right"]'
         );
-        if (!leftCard || !rightCard) {
-          console.warn("Cards not found");
-          return;
-        }
+        if (!leftCard || !rightCard) return;
 
         const leftSymbols = Array.from(leftCard.querySelectorAll(".symbol"));
         const rightSymbols = Array.from(rightCard.querySelectorAll(".symbol"));
@@ -2728,16 +2570,14 @@ function createSymbolDiv(symbol, category, theme) {
       };
     })();
 
+    // IIFE для логіки "Одноразового підсвічування"
     const SingleHighlightLogic = (function () {
       function highlight() {
         const leftCard = document.querySelector('.card[data-position="left"]');
         const rightCard = document.querySelector(
           '.card[data-position="right"]'
         );
-        if (!leftCard || !rightCard) {
-          console.warn("Cards not found");
-          return;
-        }
+        if (!leftCard || !rightCard) return;
 
         const leftSymbols = Array.from(leftCard.querySelectorAll(".symbol"));
         const rightSymbols = Array.from(rightCard.querySelectorAll(".symbol"));
@@ -2776,8 +2616,9 @@ function createSymbolDiv(symbol, category, theme) {
       };
     })();
 
+    // Публічні методи модуля
     function highlightMatchingMainCardSymbols() {
-      BlinkHighlightLogic.stop();
+      BlinkHighlightLogic.stop(); // Зупиняємо миготіння перед одноразовим підсвічуванням
       SingleHighlightLogic.highlight();
     }
 
@@ -2810,6 +2651,7 @@ function createSymbolDiv(symbol, category, theme) {
     };
   })();
 
+  // Публічний інтерфейс HintsCoreModule
   return {
     DeckModule,
     HintModule,
