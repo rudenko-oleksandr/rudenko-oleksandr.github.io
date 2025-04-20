@@ -1800,10 +1800,14 @@ const HintsCoreModule = (function () {
           });
       }
 
-      // Очищаємо initialDeckDisplay, але залишаємо usedDeckDisplay без повного очищення
+      // Очищаємо initialDeckDisplay
       initialDeckDisplay.innerHTML = "";
 
-      // Відображаємо картки в initialDeckDisplay
+      // Створюємо масив для впорядкованого відображення карток
+      const inGameCards = [];
+      const otherCards = [];
+
+      // Розподіляємо картки на in-game та інші
       deckData.forEach((cardSymbols, cardIndex) => {
         if (!usedCardsData.includes(cardIndex)) {
           const card = document.createElement("div");
@@ -1825,9 +1829,16 @@ const HintsCoreModule = (function () {
 
           if (cardIndex === leftIdx || cardIndex === rightIdx) {
             card.classList.add("in-game");
+            inGameCards.push(card);
+          } else {
+            otherCards.push(card);
           }
-          initialDeckDisplay.appendChild(card);
         }
+      });
+
+      // Додаємо спочатку in-game картки, потім решту
+      [...inGameCards, ...otherCards].forEach((card) => {
+        initialDeckDisplay.appendChild(card);
       });
 
       // Відображаємо картки в usedDeckDisplay у порядку додавання
@@ -1855,7 +1866,7 @@ const HintsCoreModule = (function () {
             }
           });
 
-          usedDeckDisplay.appendChild(card); // Додаємо в кінець
+          usedDeckDisplay.appendChild(card);
         }
       });
 
@@ -2225,190 +2236,197 @@ const HintsCoreModule = (function () {
   })();
 
   // Модуль "Показати підказку" через IIFE
-  // Модуль "Показати підказку" через IIFE
-  const HintModule = (function () {
-    let isHintVisible = false;
-    let hintTimeout = null; // Змінна для таймера "Ручної підказки"
-    let isAutoHintActive = false; // Додаємо явне визначення змінної
+const HintModule = (function () {
+  let isHintVisible = false;
+  let hintTimeout = null;
+  let isAutoHintActive = false;
 
-    // Спільна функція для показу підказки
-    function showHint() {
-      const leftCard = document.querySelector('.card[data-position="left"]');
-      const rightCard = document.querySelector('.card[data-position="right"]');
-      if (!leftCard || !rightCard) return;
+  // Спільна функція для показу підказки
+  function showHint() {
+    const leftCard = document.querySelector('.card[data-position="left"]');
+    const rightCard = document.querySelector('.card[data-position="right"]');
+    if (!leftCard || !rightCard) return;
 
-      const leftSymbols = Array.from(leftCard.querySelectorAll(".symbol"));
-      const rightSymbols = Array.from(rightCard.querySelectorAll(".symbol"));
-      const category = MainModalModule.getCategory();
-      const theme = MainModalModule.getImageTheme();
+    const leftSymbols = Array.from(leftCard.querySelectorAll(".symbol"));
+    const rightSymbols = Array.from(rightCard.querySelectorAll(".symbol"));
+    const category = MainModalModule.getCategory();
+    const theme = MainModalModule.getImageTheme();
 
-      let commonSymbol = null;
-      leftSymbols.forEach((leftSymbol) => {
-        const leftValue = leftSymbol.dataset.symbol;
-        rightSymbols.forEach((rightSymbol) => {
-          const rightValue = rightSymbol.dataset.symbol;
-          if (leftValue === rightValue) commonSymbol = leftValue;
-        });
+    let commonSymbol = null;
+    leftSymbols.forEach((leftSymbol) => {
+      const leftValue = leftSymbol.dataset.symbol;
+      rightSymbols.forEach((rightSymbol) => {
+        const rightValue = rightSymbol.dataset.symbol;
+        if (leftValue === rightValue) commonSymbol = leftValue;
       });
+    });
 
-      if (!commonSymbol) {
-        console.error("Спільний символ не знайдено!");
-        return;
-      }
-
-      StateModule.getDOMCache().hintDisplay.innerHTML = "";
-
-      const hintSymbol = document.createElement("div");
-      hintSymbol.classList.add("hint-symbol");
-      if (category === "numbers" || category === "hieroglyphs") {
-        hintSymbol.textContent = commonSymbol;
-      } else if (category === "words") {
-        hintSymbol.classList.add("word");
-        hintSymbol.textContent = commonSymbol;
-      } else if (category === "images") {
-        hintSymbol.classList.add("image");
-        const img = document.createElement("img");
-        img.src = `resource/images/${theme}/${commonSymbol}`;
-        img.onerror = () => {
-          img.alt = "Зображення не знайдено";
-          img.src = "resource/images/default.png";
-          console.warn(`Не вдалося завантажити зображення: ${img.src}`);
-        };
-        hintSymbol.appendChild(img);
-      }
-
-      StateModule.getDOMCache().hintDisplay.appendChild(hintSymbol);
-      StateModule.getDOMCache().hintDisplay.style.display = "block";
-      isHintVisible = true;
-
-      positionHint();
+    if (!commonSymbol) {
+      console.error("Спільний символ не знайдено!");
+      return;
     }
 
-    // Спільна функція для приховування підказки
-    function hideHint() {
-      StateModule.getDOMCache().hintDisplay.style.display = "none";
-      isHintVisible = false;
-      if (hintTimeout) {
-        clearTimeout(hintTimeout);
-        hintTimeout = null;
+    StateModule.getDOMCache().hintDisplay.innerHTML = "";
+
+    const hintSymbol = document.createElement("div");
+    hintSymbol.classList.add("hint-symbol");
+    if (category === "numbers" || category === "hieroglyphs") {
+      hintSymbol.textContent = commonSymbol;
+    } else if (category === "words") {
+      hintSymbol.classList.add("word");
+      hintSymbol.textContent = commonSymbol;
+    } else if (category === "images") {
+      hintSymbol.classList.add("image");
+      const img = document.createElement("img");
+      img.src = `resource/images/${theme}/${commonSymbol}`;
+      img.onerror = () => {
+        img.alt = "Зображення не знайдено";
+        img.src = "resource/images/default.png";
+        console.warn(`Не вдалося завантажити зображення: ${img.src}`);
+      };
+      hintSymbol.appendChild(img);
+    }
+
+    StateModule.getDOMCache().hintDisplay.appendChild(hintSymbol);
+    StateModule.getDOMCache().hintDisplay.style.display = "block";
+    isHintVisible = true;
+
+    positionHint();
+  }
+
+  // Спільна функція для приховування підказки
+  function hideHint() {
+    StateModule.getDOMCache().hintDisplay.style.display = "none";
+    isHintVisible = false;
+    if (hintTimeout) {
+      clearTimeout(hintTimeout);
+      hintTimeout = null;
+    }
+  }
+
+  // Спільна функція для позиціонування підказки
+  function positionHint() {
+    const buttonRect = document
+      .getElementById("showHintButton")
+      .getBoundingClientRect();
+    const gameContainerRect =
+      StateModule.getDOMCache().gameContainer.getBoundingClientRect();
+
+    const leftPosition = buttonRect.right - gameContainerRect.left + 15;
+    const hintHeight = StateModule.getDOMCache().hintDisplay.offsetHeight;
+    const buttonHeight = buttonRect.height;
+    const topPosition =
+      buttonRect.top - gameContainerRect.top + (buttonHeight - hintHeight) / 2;
+
+    StateModule.getDOMCache().hintDisplay.style.left = `${leftPosition}px`;
+    StateModule.getDOMCache().hintDisplay.style.top = `${topPosition}px`;
+  }
+
+  // Новий метод для скидання стану підказки
+  function resetHintState() {
+    hideHint();
+    isAutoHintActive = false;
+  }
+
+  // IIFE для логіки "Постійна підказка"
+  const AutoHintLogic = (function () {
+    function enable() {
+      if (!isHintVisible) {
+        showHint();
       }
+      isAutoHintActive = true;
     }
 
-    // Спільна функція для позиціонування підказки
-    function positionHint() {
-      const buttonRect = document
-        .getElementById("showHintButton")
-        .getBoundingClientRect();
-      const gameContainerRect =
-        StateModule.getDOMCache().gameContainer.getBoundingClientRect();
-
-      const leftPosition = buttonRect.right - gameContainerRect.left + 15;
-      const hintHeight = StateModule.getDOMCache().hintDisplay.offsetHeight;
-      const buttonHeight = buttonRect.height;
-      const topPosition =
-        buttonRect.top -
-        gameContainerRect.top +
-        (buttonHeight - hintHeight) / 2;
-
-      StateModule.getDOMCache().hintDisplay.style.left = `${leftPosition}px`;
-      StateModule.getDOMCache().hintDisplay.style.top = `${topPosition}px`;
-    }
-
-    // Новий метод для скидання стану підказки
-    function resetHintState() {
-      hideHint();
+    function disable() {
+      if (isHintVisible) {
+        hideHint();
+      }
       isAutoHintActive = false;
     }
 
-    // IIFE для логіки "Постійна підказка"
-    const AutoHintLogic = (function () {
-      function enable() {
-        if (!isHintVisible) {
-          showHint();
-        }
-        isAutoHintActive = true;
-      }
+    return {
+      enable,
+      disable,
+      getIsActive: () => isAutoHintActive,
+    };
+  })();
 
-      function disable() {
-        if (isHintVisible) {
+  // IIFE для логіки "Ручна підказка (2 сек.)"
+  const ManualHintLogic = (function () {
+    function showTemporary() {
+      if (!isHintVisible) {
+        showHint();
+        hintTimeout = setTimeout(() => {
           hideHint();
-        }
-        isAutoHintActive = false;
-      }
-
-      return {
-        enable,
-        disable,
-        getIsActive: () => isAutoHintActive,
-      };
-    })();
-
-    // IIFE для логіки "Ручна підказка (2 сек.)"
-    const ManualHintLogic = (function () {
-      function showTemporary() {
-        if (!isHintVisible) {
-          showHint();
-          hintTimeout = setTimeout(() => {
-            hideHint();
-          }, 2000);
-        }
-      }
-
-      return {
-        showTemporary,
-      };
-    })();
-
-    // Функція для перемикання логіки підказок
-    function toggleHint() {
-      if (document.getElementById("autoHintRadio").checked) {
-        if (AutoHintLogic.getIsActive()) {
-          AutoHintLogic.disable();
-        } else {
-          AutoHintLogic.enable();
-        }
-      } else if (document.getElementById("manualHintRadio").checked) {
-        ManualHintLogic.showTemporary();
+        }, 2000);
       }
     }
 
-    // Обробники подій для радіокнопок
-    document
-      .getElementById("manualHintRadio")
-      .addEventListener("change", function () {
-        if (this.checked) {
-          AutoHintLogic.disable(); // Вимикаємо постійну підказку
-        }
-      });
-
-    document
-      .getElementById("autoHintRadio")
-      .addEventListener("change", function () {
-        if (this.checked && !AutoHintLogic.getIsActive()) {
-          // Активуємо лише при явному натисканні на кнопку "Показати підказку"
-        }
-      });
-
     return {
-      showHint,
-      hideHint,
-      toggleHint,
-      resetHintState, // Додаємо новий метод
-      get isHintVisible() {
-        return isHintVisible;
-      },
-      get isAutoHintActive() {
-        return AutoHintLogic.getIsActive();
-      },
-      set isAutoHintActive(value) {
-        if (value) {
-          AutoHintLogic.enable();
-        } else {
-          AutoHintLogic.disable();
-        }
-      },
+      showTemporary,
     };
   })();
+
+  // Функція для перемикання логіки підказок
+  function toggleHint() {
+    if (document.getElementById("autoHintRadio").checked) {
+      if (AutoHintLogic.getIsActive()) {
+        AutoHintLogic.disable();
+      } else {
+        AutoHintLogic.enable();
+      }
+    } else if (document.getElementById("manualHintRadio").checked) {
+      ManualHintLogic.showTemporary();
+    }
+  }
+
+  // Оновлений обробник події resize для оновлення позиції підказки
+  function handleWindowResize() {
+    if (isHintVisible) {
+      positionHint();
+    }
+  }
+
+  // Ініціалізація обробника resize при завантаженні модуля
+  window.addEventListener("resize", handleWindowResize);
+
+  // Обробники подій для радіокнопок
+  document
+    .getElementById("manualHintRadio")
+    .addEventListener("change", function () {
+      if (this.checked) {
+        AutoHintLogic.disable();
+      }
+    });
+
+  document
+    .getElementById("autoHintRadio")
+    .addEventListener("change", function () {
+      if (this.checked && !AutoHintLogic.getIsActive()) {
+        // Активуємо лише при явному натисканні на кнопку "Показати підказку"
+      }
+    });
+
+  return {
+    showHint,
+    hideHint,
+    toggleHint,
+    resetHintState,
+    get isHintVisible() {
+      return isHintVisible;
+    },
+    get isAutoHintActive() {
+      return AutoHintLogic.getIsActive();
+    },
+    set isAutoHintActive(value) {
+      if (value) {
+        AutoHintLogic.enable();
+      } else {
+        AutoHintLogic.disable();
+      }
+    },
+  };
+})();
 
   // Модуль "Підсвітити однакові елементи" через IIFE
   const HighlightModule = (function () {

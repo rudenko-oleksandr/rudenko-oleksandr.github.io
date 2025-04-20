@@ -692,6 +692,13 @@ select {
   flex-wrap: nowrap;
 }
 
+#logsToggleContainer label {
+  font-size: 8px; /* 50% від 16px, для консистентності з .highlight-radios label */
+  color: #333;
+  display: flex;
+  align-items: center;
+}
+
 #logsToggleContainer input[type="checkbox"] {
   margin-right: 2.5px; /* 50% від 5px */
 }
@@ -1205,6 +1212,10 @@ select {
     margin: 7.5px auto; /* 75% від 10px */
   }
 
+  #logsToggleContainer label {
+    font-size: 12px; /* 75% від 16px */
+  }
+
   #logsToggleContainer input[type="checkbox"] {
     margin-right: 3.75px; /* 75% від 5px */
   }
@@ -1605,6 +1616,10 @@ select {
 
   #logsToggleContainer {
     margin: 10px auto;
+  }
+
+  #logsToggleContainer label {
+    font-size: 16px; /* 100% */
   }
 
   #logsToggleContainer input[type="checkbox"] {
