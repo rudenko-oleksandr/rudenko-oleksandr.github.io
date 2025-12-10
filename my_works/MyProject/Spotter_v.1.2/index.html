@@ -1,0 +1,496 @@
+<!DOCTYPE html>
+<html lang="uk">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Гра Spotter</title>
+    <link rel="stylesheet" href="styles/style.css" />
+  </head>
+  <body>
+    <h1>Гра "Spotter"</h1>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <h2>Вас вітає гра "Споттер"!</h2>
+        <div>
+          <label for="elementCategory">Категорія елементів:</label>
+          <select id="elementCategory">
+            <option value="numbers" selected>Цифри</option>
+            <option value="images">Зображення</option>
+            <option value="hieroglyphs">Ієрогліфи</option>
+            <option value="words">Слова</option>
+          </select>
+        </div>
+        <div id="imageThemeContainer">
+          <label for="imageTheme">Тематика зображень:</label>
+          <select id="imageTheme">
+            <option value="classic" selected>Класична</option>
+            <option value="gray_green">Сіро-зелена</option>
+          </select>
+        </div>
+        <div id="numSymbolsNumbersContainer">
+          <label for="numSymbolsNumbers">Кількість символів на картці:</label>
+          <select id="numSymbolsNumbers">
+            <option value="3">3</option>
+            <option value="4" selected>4</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+            <option value="12">12</option>
+            <option value="14">14</option>
+            <option value="18">18</option>
+            <option value="20">20</option>
+            <option value="24">24</option>
+            <option value="30">30</option>
+            <option value="32">32</option>
+            <option value="38">38</option>
+            <option value="42">42</option>
+            <option value="44">44</option>
+            <option value="48">48</option>
+            <option value="54">54</option>
+          </select>
+        </div>
+        <div id="numSymbolsImagesContainer">
+          <label for="numSymbolsImages">Кількість символів на картці:</label>
+          <select id="numSymbolsImages">
+            <option value="3">3</option>
+            <option value="4" selected>4</option>
+            <option value="6">6</option>
+          </select>
+        </div>
+        <div id="numSymbolsHieroglyphsContainer">
+          <label for="numSymbolsHieroglyphs"
+            >Кількість символів на картці:</label
+          >
+          <select id="numSymbolsHieroglyphs">
+            <option value="3">3</option>
+            <option value="4" selected>4</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+            <option value="12">12</option>
+            <option value="14">14</option>
+            <option value="18">18</option>
+          </select>
+        </div>
+        <div id="numSymbolsWordsContainer">
+          <label for="numSymbolsWords">Кількість символів на картці:</label>
+          <select id="numSymbolsWords">
+            <option value="3">3</option>
+            <option value="4" selected>4</option>
+            <option value="6">6</option>
+            <option value="8">8</option>
+            <option value="12">12</option>
+            <option value="14">14</option>
+          </select>
+        </div>
+        <div id="numCardsSliderContainer">
+          <label for="numCardsSlider">Кількість карток у грі:</label>
+          <div class="slider-wrapper">
+            <div class="slider-container">
+              <input
+                type="range"
+                id="numCardsSlider"
+                min="2"
+                max="13"
+                value="13"
+              />
+              <div id="sliderTicks"></div>
+              <div id="sliderValues">
+                <span id="minCards">2</span>
+                <span id="midCards">7</span>
+                <span id="maxCards">13</span>
+              </div>
+            </div>
+            <div class="swiper-container">
+              <button id="decreaseCards" class="swiper-button">-</button>
+              <span id="currentCardsValue" class="current-value">13</span>
+              <button id="increaseCards" class="swiper-button">+</button>
+            </div>
+          </div>
+        </div>
+        <div>
+          <label for="difficultyLevel">Рівень складності:</label>
+          <select id="difficultyLevel">
+            <option value="light" selected>Легкий</option>
+            <option value="medium">Середній</option>
+            <option value="medium_modified">Середній модифікований</option>
+          </select>
+        </div>
+        <div id="modificationContainer" style="display: none">
+          <label for="modificationSelect">Модифікація:</label>
+          <select id="modificationSelect">
+            <option value="pulsation" selected>Пульсація</option>
+            <option value="flickering">Миготіння</option>
+            <option value="trembling">Дрижання</option>
+          </select>
+        </div>
+        <div id="pulsationSpeedContainer" style="display: none">
+          <label for="pulsationSpeed">Швидкість пульсації:</label>
+          <select id="pulsationSpeed">
+            <option value="slow">Повільна (1.5 сек)</option>
+            <option value="medium">Середня (1 сек)</option>
+            <option value="fast">Швидка (0.5 сек)</option>
+            <option value="asynchronous">Асинхронна</option>
+          </select>
+        </div>
+        <div id="flickerSpeedContainer" style="display: none">
+          <label for="flickerSpeed">Швидкість миготіння:</label>
+          <select id="flickerSpeed">
+            <option value="slow">Повільна (1.5 сек)</option>
+            <option value="medium">Середня (1.0 сек)</option>
+            <option value="fast">Швидка (0.5 сек)</option>
+            <option value="asynchronous">Асинхронна</option>
+          </select>
+        </div>
+        <div id="trembleSpeedContainer" style="display: none">
+          <label for="trembleSpeed">Швидкість тремтіння:</label>
+          <select id="trembleSpeed">
+            <option value="slow">Повільна (1.5 сек)</option>
+            <option value="medium">Середня (1.0 сек)</option>
+            <option value="fast">Швидка (0.5 сек)</option>
+            <option value="asynchronous">Асинхронна</option>
+          </select>
+        </div>
+        <label>
+          <input type="checkbox" id="showLogsCheckbox" />
+          Показати логи
+        </label>
+        <label>
+          <input type="checkbox" id="showStopGeneralTimerCheckbox" />
+          Зупинити загальний таймер
+        </label>
+        <label>
+          <input type="checkbox" id="showStopPartialTimerCheckbox" />
+          Зупинити таймер знаходження пари
+        </label>
+        <label>
+          <input type="checkbox" id="showHighlightButtonCheckbox" />
+          Показати кнопку "Підсвітити однакові елементи"
+        </label>
+        <label>
+          <input type="checkbox" id="showHintButtonCheckbox" />
+          Показати кнопку "Показати підказку"
+        </label>
+        <label>
+          <input type="checkbox" id="showStopPulsationButtonCheckbox" />
+          Показати кнопку "Зупинити пульсацію"
+        </label>
+        <div class="checkbox-container">
+          <input type="checkbox" id="dependOnCardElementsCheckbox" disabled />
+          <label for="dependOnCardElementsCheckbox"
+            >Залежність тимчасової зупинки від кількості елементів на
+            картках</label
+          >
+        </div>
+
+        <label>
+          <input type="checkbox" id="showStopBlinkButtonCheckbox" />
+          Показати кнопку "Зупинити миготіння"
+        </label>
+        <div class="checkbox-container">
+          <input
+            type="checkbox"
+            id="dependOnCardElementsBlinkCheckbox"
+            disabled
+          />
+          <label for="dependOnCardElementsBlinkCheckbox"
+            >Залежність тимчасової зупинки від кількості елементів на
+            картках</label
+          >
+        </div>
+
+
+		  <label>
+			<input type="checkbox" id="showStopTremblingButtonCheckbox" />
+			Показати кнопку "Зупинити дрижання"
+		 </label>
+		 <div class="checkbox-container">
+			<input
+			  type="checkbox"
+			  id="dependOnCardElementsTremblingCheckbox"
+			  disabled
+			/>
+			<label for="dependOnCardElementsTremblingCheckbox"
+			  >Залежність тимчасової зупинки від кількості елементів на
+			  картках</label
+			>
+		 </div>
+
+
+
+        <label>
+          <input type="checkbox" id="showDeckCheckbox" />
+          Показати колоду
+        </label>
+        <div>
+          <button id="startGameButton">Почати гру</button>
+          <button id="closeButton">Вихід</button>
+        </div>
+      </div>
+    </div>
+    <div id="endGameModal" class="modal">
+      <div class="modal-content">
+        <h2>Гра була завершена достроково!</h2>
+        <button id="newGameButton">Нова гра</button>
+        <button id="exitButton">Вихід</button>
+      </div>
+    </div>
+    <div id="completeGameModal" class="modal">
+      <div class="modal-content">
+        <h2>Вітаємо! Ви завершили гру!</h2>
+        <button id="newGameButtonComplete">Нова гра</button>
+        <button id="exitButtonComplete">Вихід</button>
+      </div>
+    </div>
+    <div id="gameContainer">
+      <div id="timersContainer">
+        <div id="totalTimeTimer">
+          <p>Загальний час гри</p>
+          <span>00:00</span>
+        </div>
+        <div id="pairTimeTimer">
+          <p>Час знаходження пари</p>
+          <span>00:00</span>
+        </div>
+      </div>
+      <div id="gameBoard"></div>
+      <div id="hintControls">
+        <div class="control-group">
+          <div class="general-timer-radios">
+            <label>
+              <input
+                type="radio"
+                id="resetGeneralTimerRadio"
+                name="stopGeneralTimerMode"
+              />
+              Обнулити загальний час гри
+            </label>
+            <button id="stopGeneralTimerButton">
+              Зупинити загальний таймер
+            </button>
+            <label>
+              <input
+                type="radio"
+                id="pauseGeneralTimerRadio"
+                name="stopGeneralTimerMode"
+                checked
+              />
+              Зупинити загальний час гри
+            </label>
+          </div>
+          <div class="partial-timer-radios">
+            <label>
+              <input
+                type="radio"
+                name="partialTimerAction"
+                id="resetPartialTimerRadio"
+              />
+              Обнулити час знаходження пари
+            </label>
+            <button id="stopPartialTimerButton">
+              Зупинити таймер знаходження пари
+            </button>
+            <label>
+              <input
+                type="radio"
+                name="partialTimerAction"
+                id="pausePartialTimerRadio"
+                checked
+              />
+              Зупинити час знаходження пари
+            </label>
+          </div>
+          <div class="highlight-radios">
+            <label>
+              <input
+                type="radio"
+                id="blinkHighlightRadio"
+                name="highlightMainMode"
+              />
+              Постійне підсвічування
+            </label>
+            <button id="highlightMainCardsButton">
+              Підсвітити однакові елементи
+            </button>
+            <label>
+              <input
+                type="radio"
+                id="singleHighlightRadio"
+                name="highlightMainMode"
+                checked
+              />
+              Одноразове підсвічування
+            </label>
+          </div>
+          <div class="hint-radios">
+            <label>
+              <input type="radio" id="autoHintRadio" name="hintMode" />
+              Постійна підказка
+            </label>
+            <button id="showHintButton">Показати підказку</button>
+            <label id="manualHintLabel">
+              <input
+                type="radio"
+                id="manualHintRadio"
+                name="hintMode"
+                checked
+              />
+              Ручна підказка
+            </label>
+          </div>
+          <div class="pulsation-radios">
+            <label>
+              <input
+                type="radio"
+                id="permanentStopPulsationRadio"
+                name="pulsationMode"
+              />
+              Постійна зупинка
+            </label>
+            <button id="stopPulsationButton">Зупинити пульсацію</button>
+            <label>
+              <input
+                type="radio"
+                id="temporaryStopPulsationRadio"
+                name="pulsationMode"
+                checked
+              />
+              Тимчасова зупинка  
+				  <!-- <span class="countdown">(2 сек.)</span> -->
+            </label>
+          </div>
+
+
+          <div class="blink-radios">
+            <label>
+              <input
+                type="radio"
+                id="permanentStopBlinkRadio"
+                name="blinkMode"
+                checked
+              />
+              Постійна зупинка
+            </label>
+            <button id="stopBlinkButton">Зупинити миготіння</button>
+            <label>
+              <input
+                type="radio"
+                id="temporaryStopBlinkRadio"
+                name="blinkMode"
+              />
+              Тимчасова зупинка <span class="countdown">(2 сек.)</span>
+            </label>
+            <!-- <div class="checkbox-container">
+              <input
+                type="checkbox"
+                id="dependOnCardElementsBlinkCheckbox"
+                disabled
+              />
+              <label for="dependOnCardElementsBlinkCheckbox"
+                >Залежність тимчасової зупинки від кількості елементів на
+                картках</label
+              >
+            </div> -->
+          </div>
+
+			 <div class="trembling-radios">
+				<label>
+				  <input
+					 type="radio"
+					 id="permanentStopTremblingRadio"
+					 name="tremblingMode"
+					 checked
+				  />
+				  Постійна зупинка
+				</label>
+				<button id="stopTremblingButton">Зупинити дрижання</button>
+				<label>
+				  <input
+					 type="radio"
+					 id="temporaryStopTremblingRadio"
+					 name="tremblingMode"
+				  />
+				  Тимчасова зупинка <span class="countdown">(2 сек.)</span>
+				</label>
+				<!-- <div class="checkbox-container">
+				  <input
+					 type="checkbox"
+					 id="dependOnCardElementsTremblingCheckbox"
+					 disabled
+				  />
+				  <label for="dependOnCardElementsTremblingCheckbox"
+					 >Залежність тимчасової зупинки від кількості елементів на
+					 картках</label
+				  >
+				</div> -->
+			 </div>
+
+
+        </div>
+      </div>
+      <div id="hintDisplay"></div>
+      <button id="endGameButton">Завершити гру</button>
+      <div id="message"></div>
+      <div id="logsContainer">
+        <h3>Логи гри</h3>
+        <div id="logsList"></div>
+      </div>
+      <div id="logsToggleContainer">
+        <label>
+          <input
+            type="checkbox"
+            id="toggleLogsRadio"
+            name="toggleLogs"
+            checked
+          />
+          Логи гри (Show/Hide)
+        </label>
+        <label id="scrollToBottomLabel">
+          <input type="checkbox" id="scrollToBottomCheckbox" />
+          Скрол до низу
+        </label>
+      </div>
+      <div id="highlightControlContainer">
+        <label id="highlightCheckboxLabel" style="display: none">
+          <input type="checkbox" id="highlightCheckbox" />
+          Увімкнути підсвічування
+        </label>
+        <div id="highlightOptions" style="display: none">
+          <label>
+            <input
+              type="radio"
+              name="highlightMode"
+              id="highlightMode1"
+              value="mode1"
+              checked
+            />
+            Логіка 1: Підсвічування всіх карток
+          </label>
+          <label>
+            <input
+              type="radio"
+              name="highlightMode"
+              id="highlightMode2"
+              value="mode2"
+            />
+            Логіка 2: Роздільне підсвічування
+          </label>
+        </div>
+      </div>
+      <div class="deck-explanation">
+        <label>
+          <input type="checkbox" id="showInitialDeckCheckbox" checked />
+          Картки, які ще не побували в грі або зараз знаходяться у грі.
+        </label>
+      </div>
+      <div id="initialDeckDisplay"></div>
+      <div id="deckExplanation" class="deck-explanation">
+        <label>
+          <input type="checkbox" id="showUsedDeckCheckbox" checked />
+          Картки, які вже побували в грі.
+        </label>
+      </div>
+      <div id="usedDeckDisplay"></div>
+    </div>
+    <script src="script/script.js"></script>
+  </body>
+</html>
